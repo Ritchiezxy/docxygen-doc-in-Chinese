@@ -54,85 +54,89 @@ $(document).ready(function(){initNavTree('features.html','');});
 <div id="doc-content">
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Features </div>  </div>
+<div class="title">特性</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a name="a21_features"></a> </p><ul>
 <li>
-Requires very little overhead from the writer of the documentation. Plain text will do, Markdown is support, and for more fancy or structured output HTML tags and/or some of doxygen's special commands can be used. </li>
+只需要文档发布者的很少的开销，因为使用纯文本就可以了编写。doxygen也支持Markdown，而更高级的或结构化的输出需要使用HTML标记和/或一些doxygen的特殊命令。</li>
 <li>
-Cross platform: works on Windows and many Unix flavors (including Linux and MacOSX). </li>
+跨平台:适用于Windows和许多Unix版本(包括Linux和MacOSX)。</li>
 <li>
-Indexes, organizes and generates browsable and cross-referenced output even from undocumented code. </li>
+即使是来自未文档化的代码，也可以建立索引、组织，生成可浏览和可交叉引用的输出。</li>
 <li>
-Generates structured XML output for parsed sources, which can be used by external tools. </li>
+为已解析的源代码生成结构化的XML输出，外部工具可以使用这些输出。</li>
 <li>
-Supports C/C++, Java, (Corba and Microsoft) Java, Python, VHDL, PHP IDL, C#, Fortran, TCL, Objective-C 2.0, and to some extent D sources. </li>
+支持C/ C++， Java， (Corba和Microsoft) Java, Python, VHDL, PHP IDL, c#， Fortran, TCL, 
+Objective-C 2.0，以及某种程度上的D源代码。</li>
 <li>
-Supports documentation of files, namespaces, packages, classes, structs, unions, templates, variables, functions, typedefs, enums and defines. </li>
+支持文件、名称空间、包、类、结构、联合、模板、变量、函数、类型定义、枚举和定义的文档。</li>
 <li>
-Javadoc (1.1), qdoc3 (partially), and ECMA-334 (C# spec.) compatible. </li>
+Javadoc(1.1)、qdoc3(部分)和ECMA-334 (c#规范)兼容。</li>
 <li>
-Comes with a GUI frontend (Doxywizard) to ease editing the options and run doxygen. The GUI is available on Windows, Linux, and MacOSX. </li>
+提供了一个GUI前端(Doxywizard)来简化编辑选项和运行doxygen。该GUI可用于Windows、Linux和MacOSX。</li>
 <li>
-Automatically generates class and collaboration diagrams in HTML (as clickable image maps) and <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> (as Encapsulated PostScript images). </li>
+自动生成HTML中的类和协作关系图(作为可单击的图像映射)和(作为封装的PostScript图像)。 </li>
 <li>
-Uses the <code>dot</code> tool of the Graphviz tool kit to generate include dependency graphs, collaboration diagrams, call graphs, directory structure graphs, and graphical class hierarchy graphs. </li>
+使用Graphviz工具包的dot工具生成包括依赖关系图、协作图、调用图、目录结构图和图形类层次图。</li>
 <li>
-Allows grouping of entities in modules and creating a hierarchy of modules. </li>
+允许对模块中的实体进行分组并创建模块的层次结构。</li>
 <li>
-Flexible comment placement: Allows you to put documentation in the header file (before the declaration of an entity), source file (before the definition of an entity) or in a separate file. </li>
+灵活的注释放置:允许将文档放在头文件(在实体声明之前)、源文件(在实体定义之前)或单独的文件中。</li>
 <li>
-Generates a list of all members of a class (including any inherited members) along with their protection level. </li>
+生成一个类的所有成员(包括任何继承的成员)及其保护级别的列表。</li>
 <li>
-Outputs documentation in on-line format (XHTML and UNIX man page) and off-line format ( <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> and RTF) simultaneously (any of these can be disabled if desired). All formats are optimized for ease of reading. <br  />
- Furthermore, compressed HTML can be generated from HTML output using Microsoft's HTML Help Workshop (Windows only) and PDF can be generated from the <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> output. </li>
+同时以联机格式(XHTML和UNIX手册页)和脱机格式( <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> 
+和RTF)输出文档(如果需要，可以禁用任何一种格式)。所有格式都经过优化，便于阅读。此外，可以使用Microsoft的HTML Help 
+Workshop(仅限Windows)从HTML输出生成压缩的HTML，也可以从 <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> 
+输出生成PDF。</li>
 <li>
-Support for various third party help formats including HTML Help, docsets, Qt-Help, and eclipse help. </li>
+支持各种第三方帮助格式，包括HTML帮助、docset、Qt-Help和eclipse帮助。</li>
 <li>
-Includes a full C preprocessor to allow proper parsing of conditional code fragments and to allow expansion of all or part of macros definitions. </li>
+包括一个完整的C预处理器，允许正确解析条件代码片段，并允许扩展所有或部分宏定义。</li>
 <li>
-Automatically detects public, protected and private sections, as well as the Qt specific signal and slots sections. Extraction of private class members is optional. </li>
+自动检测公共、保护和私有部分，以及Qt特定的信号和插槽部分。私有类成员的提取是可选的。</li>
 <li>
-Automatically generates references to documented classes, files, namespaces and members. Documentation of global functions, global variables, typedefs, defines and enumerations is also supported. </li>
+自动生成对文档化的类、文件、名称空间和成员的引用。还支持全局函数、全局变量、类型定义和枚举的文档。</li>
 <li>
-References to base/super classes and inherited/overridden members are generated automatically. </li>
+对基/超类和继承/覆盖成员的引用将自动生成。</li>
 <li>
-Includes a fast, rank based search engine to search for strings or words in the class and member documentation (PHP based). </li>
+包括一个快速的，基于排名的搜索引擎来搜索类和成员文档中的字符串或单词(基于PHP)。</li>
 <li>
-Includes an Javascript based live search feature to search for symbols as you type (for small to medium sized projects). </li>
+包括一个基于Javascript的实时搜索功能，以搜索您键入的符号(用于中小型项目)。</li>
 <li>
-You can type normal HTML tags in your documentation. Doxygen will convert them to their equivalent <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/>, RTF, and man-page counterparts automatically. </li>
+您可以在文档中键入普通的HTML标记。Doxygen会自动将它们转换成相应的RTF和man-page版本。</li>
+	<li>允许以独立于位置的方式引用为其他项目(或同一项目的另一部分)生成的文档。</li>
 <li>
-Allows references to documentation generated for other (doxygen documented) projects (or another part of the same project) in a location independent way. </li>
+允许包含与文档自动交叉引用的源代码示例。</li>
 <li>
-Allows inclusion of source code examples that are automatically cross-referenced with the documentation. </li>
+还支持包含未文档化的类，这样就可以快速地了解大段代码的结构和接口，而无需查看实现细节。</li>
 <li>
-Inclusion of undocumented classes is also supported, allowing to quickly learn the structure and interfaces of a (large) piece of code without looking into the implementation details. </li>
+允许自动交叉引用(文档化的)实体及其在源代码中的定义。</li>
 <li>
-Allows automatic cross-referencing of (documented) entities with their definition in the source code. </li>
+为了便于阅读，所有源代码片段都突出显示了语法。</li>
 <li>
-All source code fragments are syntax highlighted for ease of reading. </li>
+允许在文档中包含函数/成员/类定义。</li>
 <li>
-Allows inclusion of function/member/class definitions in the documentation. </li>
+所有选项都是从易于编辑和(可选)注释的配置文件中读取的。</li>
 <li>
-All options are read from an easy to edit and (optionally) annotated configuration file. </li>
+文档和搜索引擎可以转移到另一个位置或机器，而无需重新生成文档。</li>
 <li>
-Documentation and search engine can be transferred to another location or machine without regenerating the documentation. </li>
+支持多种不同的字符编码，并在内部和生成的输出中使用UTF-8。</li>
 <li>
-Supports many different character encodings and uses UTF-8 internally and for the generated output. </li>
+Doxygen可以生成一个布局，您可以使用它来修改每个页面的布局。</li>
 <li>
-Doxygen can generate a layout which you can use and edit to change the layout of each page. </li>
+有100多个可配置选项来微调输出。</li>
 <li>
-There more than a 100 configurable options to fine-tune the output. </li>
-<li>
-Can cope with large projects easily. </li>
+能够轻松处理大型项目。</li>
 </ul>
-<p>Although doxygen can now be used in any project written in a language that is supported by doxygen, initially it was specifically designed to be used for projects that make use of Qt Software's <a href="https://www.qt.io/developers/">Qt toolkit</a>. I have tried to make doxygen &lsquo;Qt-compatible&rsquo;. That is: Doxygen can read the documentation contained in the Qt source code and create a class browser that looks quite similar to the one that is generated by Qt Software. Doxygen understands the C++ extensions used by Qt such as signals and slots and many of the markup commands used in the Qt sources.</p>
-<p>Doxygen can also automatically generate links to existing documentation that was generated with doxygen or with Qt's non-public class browser generator. For a Qt based project this means that whenever you refer to members or classes belonging to the Qt toolkit, a link will be generated to the Qt documentation. This is done independent of where this documentation is located!</p>
+<p>
+虽然doxygen现在可以用于任何由doxygen支持的语言编写的项目中，但最初它是专门为使用Qt软件的Qt工具包的项目设计的。我试着让doxygen与qt兼容。也就是说:Doxygen可以读取Qt源代码中包含的文档，并创建一个与Qt软件生成的类浏览器非常相似的类浏览器。Doxygen理解Qt使用的C++扩展，比如信号和插槽，以及Qt源代码中使用的许多标记命令。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p>Doxygen还可以自动生成到现有文档的链接，这些文档是用Doxygen或Qt的非公共类浏览器生成器生成的。<br />
+对于基于Qt的项目，这意味着每当您引用属于Qt工具包的成员或类时，都会生成到Qt文档的链接。<br />
+这与文档的位置无关!</p>
 <p> 
-Go to the <a href="doxygen_usage.html">next</a> section or return to the
- <a href="index.html">index</a>.
+转到 下一节 返回到 <a href="index.html">索引</a>。
  </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

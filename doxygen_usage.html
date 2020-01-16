@@ -54,51 +54,54 @@ $(document).ready(function(){initNavTree('doxygen_usage.html','');});
 <div id="doc-content">
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Doxygen usage </div>  </div>
+<div class="title">Doxygen 用法 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Doxygen is a command line based utility. Calling <code>doxygen</code> with the <code>--help</code> option at the command line will give you a brief description of the usage of the program.</p>
-<p>All options consist of a leading character <code>-</code>, followed by one character and one or more arguments depending on the option.</p>
-<p>To generate a manual for your project you typically need to follow these steps: </p><ol>
+<div class="textblock"><p>Doxygen是一个基于命令行的实用工具。在命令行中使用 <code>doxygen 选项调用 --help</code> 
+	，可以得到该程序用法的简要说明。</p>
+<p>所有选项都包含一个前导字符 “-”，后跟一个字符和一个或多个参数(取决于选项)。</p>
+<p>要为您的项目生成手册，您通常需要遵循以下步骤:</p><ol>
 <li>
-You document your source code with special documentation blocks (see section <a class="el" href="docblocks.html#specialblock">Special comment blocks</a>). </li>
+您可以使用特殊的文档块来记录源代码(请参阅“特殊注释块”一节)。</li>
 <li>
-You generate a configuration file (see section <a class="el" href="config.html">Configuration</a>) by calling doxygen with the <code>-g</code> option: <pre class="fragment">doxygen -g &lt;config_file&gt;
+通过使用-g选项调用doxygen生成一个配置文件(请参阅配置一节): <pre class="fragment">doxygen -g &lt;config_file&gt;
 </pre> </li>
 <li>
-You edit the configuration file so it matches your project. In the configuration file you can specify the input files and a lot of optional information. </li>
+编辑配置文件，使其与项目匹配。在配置文件中，可以指定输入文件和许多可选信息。</li>
 <li>
-You let doxygen generate the documentation, based on the settings in the configuration file: <pre class="fragment">doxygen &lt;config_file&gt;
+让doxygen根据配置文件中的设置生成文档: <pre class="fragment">doxygen &lt;config_file&gt;
 </pre> </li>
 </ol>
-<p>If you have a configuration file generated with an older version of doxygen, you can upgrade it to the current version by running doxygen with the -u option. </p><pre class="fragment">doxygen -u &lt;config_file&gt;
-</pre><p> All configuration settings in the original configuration file will be copied to the new configuration file. Any new options will have their default value. Note that comments that you may have added in the original configuration file will be lost.</p>
-<h1><a class="anchor" id="doxygen_finetune"></a>
-Fine-tuning the output</h1>
-<p>If you want to fine-tune the way the output looks, doxygen allows you generate default style sheet, header, and footer files that you can edit afterwards: </p><ul>
+<p>如果您有一个用旧版本的doxygen生成的配置文件，您可以通过运行带有-u选项的doxygen将其升级到当前版本。</p><pre class="fragment">doxygen -u &lt;config_file&gt;
+</pre>
+	原始配置文件中的所有配置设置都将复制到新配置文件中。任何新选项都有其默认值。注意，您可能在原始配置文件中添加的注释将丢失。<h1>微调的输出</h1>
+<p>如果你想微调输出的方式，doxygen允许你生成默认的样式表，标题，和脚注文件，你可以编辑后:</p><ul>
 <li>
-<p class="startli">For HTML output, you can generate the default header file (see <a class="el" href="config.html#cfg_html_header">HTML_HEADER</a>), the default footer (see <a class="el" href="config.html#cfg_html_footer">HTML_FOOTER</a>), and the default style sheet (see <a class="el" href="config.html#cfg_html_stylesheet">HTML_STYLESHEET</a>), using the following command: </p><pre class="fragment">doxygen -w html header.html footer.html stylesheet.css &lt;config_file&gt;
-</pre><p> The <code>config_file</code> is optional. When omitted doxygen will search for a file named <code>Doxyfile</code> and process that. When this is also not found it will used the default settings.</p>
+<p class="startli">对于HTML输出，可以使用以下命令生成默认的头文件(见 <a class="el" href="config.html#cfg_html_header">HTML_HEADER</a>)、默认的页脚(见 <a class="el" href="config.html#cfg_html_footer">HTML_FOOTER</a>)和默认的样式表(见<a class="el" href="config.html#cfg_html_stylesheet">HTML_STYLESHEET):</a></p><pre class="fragment">doxygen -w html header.html footer.html stylesheet.css &lt;config_file&gt;
+</pre><p> 
+config_file是可选的。当省略config_file时，doxygen将搜索一个名为Doxyfile的文件并处理它。当这个也没有被发现时，它将使用默认设置。</p>
 <p class="endli"></p>
 </li>
 <li>
-For <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> output, you can generate the first and last part of <code>refman.tex</code> (see <a class="el" href="config.html#cfg_latex_header">LATEX_HEADER</a> and <a class="el" href="config.html#cfg_latex_footer">LATEX_FOOTER</a>) and the style sheet included by that header (normally <code>doxygen.sty</code>), using the following command: <pre class="fragment">doxygen -w latex header.tex footer.tex doxygen.sty &lt;config_file&gt;
-</pre> If you need non-default options (for instance to use extra <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> packages) you need to make a configuration file with those options set correctly and then specify that configuration file after the generated files (make a backup of the configuration file first so you don't loose it in case you forget to specify one of the output files). </li>
+对于 <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> 
+输出，您可以使用以下命令生成<code>refman.tex</code> 的第一部分和最后一部分(参见 <a class="el" href="config.html#cfg_latex_header">LATEX_HEADER</a> 
+和 <a class="el" href="config.html#cfg_latex_footer">LATEX_FOOTER</a>)，以及该header包含的样式表(通常是<code>doxygen.sty):</code> <pre class="fragment">doxygen -w latex header.tex footer.tex doxygen.sty &lt;config_file&gt;
+</pre> </li>
 <li>
-For RTF output, you can generate the default style sheet file (see <a class="el" href="config.html#cfg_rtf_stylesheet_file">RTF_STYLESHEET_FILE</a>) using: <pre class="fragment">doxygen -w rtf rtfstyle.cfg
+如果您需要非默认选项(例如使用额外的包)，您需要使配置文件正确设置这些选项，然后在生成的文件之后指定配置文件(首先备份配置文件，以免忘记指定某个输出文件)。For RTF output, you can generate the default style sheet file (see <a class="el" href="config.html#cfg_rtf_stylesheet_file">RTF_STYLESHEET_FILE</a>) using: <pre class="fragment">doxygen -w rtf rtfstyle.cfg
 </pre> </li>
 </ul>
-<dl class="section warning"><dt>Warning</dt><dd>When using a custom header you are responsible for the proper inclusion of any scripts and style sheets that doxygen needs, which is dependent on the configuration options and may changes when upgrading to a new doxygen release.</dd></dl>
-<dl class="section note"><dt>Note</dt><dd><ul>
+<dl class="section warning"><dt>警告</dt><dd>
+	使用自定义头文件时，您需要负责适当包含doxygen所需的脚本和样式表，这取决于配置选项，在升级到新的doxygen版本时可能会发生变化。</dd></dl>
+<dl class="section note"><dt>注意</dt><dd><ul>
 <li>
-If you do not want documentation for each item inside the configuration file then you can use the optional <code>-s</code> option. This can use be used in combination with the <code>-u</code> option, to add or strip the documentation from an existing configuration file. Please use the <code>-s</code> option if you send me a configuration file as part of a bug report! </li>
+如果不希望为配置文件中的每个项提供文档，则可以使用可选的-s选项。这可以与-u选项结合使用，以添加或删除现有配置文件中的文档。如果您将配置文件作为bug报告的一部分发送给我，请使用-s选项!</li>
 <li>
-To make doxygen read/write to standard input/output instead of from/to a file, use <code>-</code> for the file name. </li>
+要使doxygen读/写为标准输入/输出，而不是从/到文件，使用&quot;-&quot;作为文件名。</li>
 </ul>
 </dd></dl>
 <p> 
-Go to the <a href="doxywizard_usage.html">next</a> section or return to the
- <a href="index.html">index</a>.
+转到 <a href="doxywizard_usage.html">下一节</a> 或返回到 <a href="index.html">索引</a>。
  </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

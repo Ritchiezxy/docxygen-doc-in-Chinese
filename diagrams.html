@@ -54,79 +54,89 @@ $(document).ready(function(){initNavTree('diagrams.html','');});
 <div id="doc-content">
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Graphs and diagrams </div>  </div>
+<div class="title">图形和图表</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Doxygen has built-in support to generate inheritance diagrams for C++ classes.</p>
-<p>Doxygen can use the "dot" tool from graphviz to generate more advanced diagrams and graphs. Graphviz is an open-source, cross-platform graph drawing toolkit and can be found at <a href="http://www.graphviz.org/">http://www.graphviz.org/</a></p>
-<p>If you have the "dot" tool in the path, you can set <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> to <code>YES</code> in the configuration file to let doxygen use it.</p>
-<p>Doxygen uses the "dot" tool to generate the following graphs: </p><ul>
+<div class="textblock"><p>Doxygen内置了对生成C++类继承图的支持。</p>
+<p>Doxygen可以使用graphviz中的“dot”工具来生成更高级的图表。Graphviz是一个开源的、跨平台的图形绘制工具包，可以在<a href="http://www.graphviz.org/">http://www.graphviz.org/</a> 
+找到它</p>
+<p>如果环境变量的path中有“dot”工具的路径，可以在配置文件中将 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 
+设置为 <code>YES</code> ，让doxygen使用它。</p>
+<p>Doxygen使用“dot”工具生成以下图形:</p><ul>
 <li>
-A graphical representation of the class hierarchy will be drawn, along with the textual one. Currently this feature is supported for HTML only.<br  />
- <b>Warning:</b> When you have a very large class hierarchy where many classes derive from a common base class, the resulting image may become too big to handle for some browsers. </li>
+将绘制类层次结构的图形表示和文本表示。目前这个特性只支持HTML。<br  />
+ <b>警告:</b>当您有一个非常大的类层次结构，其中许多类派生自一个公共基类时，生成的图像可能会变得太大，以至于某些浏览器无法处理。</li>
 <li>
-An inheritance graph will be generated for each documented class showing the direct and indirect inheritance relations. This disables the generation of the built-in class inheritance diagrams. </li>
+将为每个文档化的类生成一个继承图，显示直接和间接继承关系。这将禁止生成内置的类继承关系图。</li>
 <li>
-An include dependency graph is generated for each documented file that includes at least one other file. This feature is currently supported for HTML and RTF only. </li>
+对于包含至少一个其他文件的每个文档文件，将生成包含依赖关系图。这个特性目前只支持HTML和RTF。</li>
 <li>
-An inverse include dependency graph is also generated showing for a (header) file, which other files include it. </li>
+还生成了一个逆包含依赖关系图，显示一个(标头)文件，其他文件包括它。</li>
 <li>
-A graph is drawn for each documented class and struct that shows: <ul>
+为每个文档化的类和结构绘制一个图表，将显示: <ul>
 <li>
-the inheritance relations with base classes. </li>
+与基类的继承关系。</li>
 <li>
-the usage relations with other structs and classes (e.g. class <code>A</code> has a member variable <code>m_a</code> of type class <code>B</code>, then <code>A</code> has an arrow to <code>B</code> with <code>m_a</code> as label). </li>
+与其他结构和类的使用关系(例如，类A有一个成员变量m_a，类型为B，然后A有一个指向B的箭头，以m_a作为标签)。</li>
 </ul>
 </li>
 <li>
-if <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a> is set to YES, a graphical call graph is drawn for each function showing the functions that the function directly or indirectly calls (see also section <a class="el" href="commands.html#cmdcallgraph">\callgraph</a> and section <a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a>). </li>
+如果 <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a> 被设置为 YES, 
+，则会为每个函数绘制图形化的调用图，显示该函数直接或间接调用的函数(请参阅\callgraph和\hidecallgraph)。</li>
 <li>
-if <a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a> is set to YES, a graphical caller graph is drawn for each function showing the functions that the function is directly or indirectly called by (see also section <a class="el" href="commands.html#cmdcallergraph">\callergraph</a> and section <a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a>). </li>
+如果<a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a> 被设置为 
+YES,，则会为每个函数绘制图形化的调用者图形，显示直接或间接调用该函数的函数(请参阅 <a class="el" href="commands.html#cmdcallergraph">\callergraph</a> 
+部分和 <a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a>部分). </li>
 </ul>
-<p>Using a <a class="el" href="customize.html">layout file</a> you can determine which of the graphs are actually shown.</p>
-<p>The options <a class="el" href="config.html#cfg_dot_graph_max_nodes">DOT_GRAPH_MAX_NODES</a> and <a class="el" href="config.html#cfg_max_dot_graph_depth">MAX_DOT_GRAPH_DEPTH</a> can be used to limit the size of the various graphs.</p>
-<p>The elements in the class diagrams in HTML and RTF have the following meaning: </p><ul>
+<p>使用布局文件可以确定实际显示了哪些图形。</p>
+<p>选项 <a class="el" href="config.html#cfg_dot_graph_max_nodes">DOT_GRAPH_MAX_NODES</a> 
+和 <a class="el" href="config.html#cfg_max_dot_graph_depth">MAX_DOT_GRAPH_DEPTH</a> 
+可用于限制各种图形的大小。</p>
+<p>HTML和RTF中的类图元素有以下含义:</p><ul>
 <li>
-A <b>yellow</b> box indicates a class. A box can have a little marker in the lower right corner to indicate that the class contains base classes that are hidden. For the class diagrams the maximum tree width is currently 8 elements. If a tree is wider some nodes will be hidden. If the box is filled with a dashed pattern the inheritance relation is virtual. </li>
+<b>黄色</b>框表示一个类。方框的右下角可以有一个小标记，以指示类包含隐藏的基类。对于类图，当前树的最大宽度是8个元素。如果树较宽，则会隐藏一些节点。如果框中填充了虚线模式，则继承关系是虚的。</li>
 <li>
-A <b>white</b> box indicates that the documentation of the class is currently shown. </li>
+<b>白框</b>表示类的文档当前已显示。</li>
 <li>
-A <b>gray</b> box indicates an undocumented class. </li>
+<b>灰色</b>框表示未归档的类。</li>
 <li>
-A <b>solid dark blue</b> arrow indicates public inheritance. </li>
+<b>纯深蓝色</b>箭头表示公共继承。</li>
 <li>
-A <b>dashed dark green</b> arrow indicates protected inheritance. </li>
+<b>带虚线的深绿色箭头</b> 表示受保护的继承。</li>
 <li>
-A <b>dotted dark green</b> arrow indicates private inheritance. </li>
+<b>点状的深绿色箭头</b> 表示私有继承。</li>
 </ul>
-<p>The elements in the class diagram in <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> have the following meaning: </p><ul>
+<p> <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> 
+中的类图元素有以下含义:</p><ul>
 <li>
-A <b>white</b> box indicates a class. A <b>marker</b> in the lower right corner of the box indicates that the class has base classes that are hidden. If the box has a <b>dashed</b> border this indicates virtual inheritance. </li>
+白方框表示一个类。框的右下角有一个标记，表示该类有隐藏的基类。如果框中有虚线边框，则表示虚拟继承。</li>
 <li>
-A <b>solid</b> arrow indicates public inheritance. </li>
+实线箭头表示公共继承。</li>
 <li>
-A <b>dashed</b> arrow indicates protected inheritance. </li>
+虚线箭头表示受保护的继承。</li>
 <li>
-A <b>dotted</b> arrow indicates private inheritance. </li>
+点箭头表示私有继承。</li>
 </ul>
-<p>The elements in the graphs generated by the dot tool have the following meaning: </p><ul>
+<p>dot工具生成的图形元素有以下含义:</p><ul>
 <li>
-A <b>white</b> box indicates a class or struct or file. </li>
+白框表示类、结构或文件。</li>
 <li>
-A box with a <b>red</b> border indicates a node that has <em>more</em> arrows than are shown! In other words: the graph is <em>truncated</em> with respect to this node. The reason why a graph is sometimes truncated is to prevent images from becoming too large. For the graphs generated with dot doxygen tries to limit the width of the resulting image to 1024 pixels. <br  />
+带有红色边框的框表示节点的箭头比显示的多!换句话说:该图相对于此节点被截断。图有时被截断的原因是为了防止图像变得太大。对于用dot 
+doxygen生成的图形，尝试将结果图像的宽度限制在1024像素。<br  />
  </li>
 <li>
-A <b>black</b> box indicates that the class' documentation is currently shown. </li>
+一个黑框表示类的文档为当前显示。</li>
 <li>
-A <b>dark blue</b> arrow indicates an include relation (for the include dependency graph) or public inheritance (for the other graphs). </li>
+深蓝色箭头表示包含关系(对于包含依赖关系图)或公共继承(对于其他图)。</li>
 <li>
-A <b>dark green</b> arrow indicates protected inheritance. </li>
+深绿色箭头表示受保护的继承。</li>
 <li>
-A <b>dark red</b> arrow indicates private inheritance. </li>
+暗红色箭头表示私有继承。</li>
 <li>
-A <b>purple dashed</b> arrow indicated a "usage" relation, the edge of the arrow is labeled with the variable(s) responsible for the relation. Class <code>A</code> uses class <code>B</code>, if class <code>A</code> has a member variable <code>m</code> of type C, where B is a subtype of C (e.g. <code>C</code> could be <code>B</code>, <code>B*</code>, <code>T&lt;B&gt;*</code>). </li>
+紫色虚线箭头表示“使用”关系，箭头的边缘用负责关系的变量标记。类A使用类B，如果类A有一个C类型的成员变量m，其中B是C的子类型(例如C可以是B, B*， 
+T&lt;B&gt;*等)。</li>
 </ul>
-<p>Here are a couple of header files that together show the various diagrams that doxygen can generate:</p>
+<p>下面是一些头文件，它们一起显示了doxygen可以生成的各种图表:</p>
 <p><code>diagrams_a.h</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef _DIAGRAMS_A_H</span></div>
 <div class="line"><span class="preprocessor">#define _DIAGRAMS_A_H</span></div>
 <div class="line"><span class="keyword">class </span>A { <span class="keyword">public</span>: A *m_self; };</div>
@@ -155,14 +165,9 @@ A <b>purple dashed</b> arrow indicated a "usage" relation, the edge of the arrow
 <div class="line"><span class="keyword">class </span>E : <span class="keyword">public</span> D {};</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --><p> 
-Click <a href="examples/diagrams/html/index.html">here</a>
-for the corresponding HTML documentation that is generated by doxygen<br/>
-(<code>EXTRACT_ALL</code> = <code>YES</code> is used here).
- </p>
+	单击此处查看由doxygen生成的相应HTML文档(这里使用EXTRACT_ALL = YES)。</p>
 <p> 
-Go to the <a href="preprocessing.html">next</a> section or return to the
-<a href="index.html">index</a>.
- </p>
+转到 <a href="preprocessing.html">下一节</a>或返回到<a href="index.html">索引。</a></p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

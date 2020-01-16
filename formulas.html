@@ -54,18 +54,23 @@ $(document).ready(function(){initNavTree('formulas.html','');});
 <div id="doc-content">
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Including formulas </div>  </div>
+<div class="title">包含公式</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Doxygen allows you to put <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> formulas in the output (this works only for the HTML, <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> and RTF output. To be able to include formulas (as images) in the HTML and RTF documentation, you will also need to have the following tools installed </p><ul>
+<div class="textblock"><p>Doxygen允许您在输出中放入 <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> 
+	公式(这只适用于HTML、<img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> 
+	和RTF输出。为了能够在HTML和RTF文档中包含公式(比如图像)，还需要安装以下工具</p><ul>
 <li>
-<code>latex:</code> the <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> compiler, needed to parse the formulas. To test I have used the teTeX 1.0 distribution. </li>
+<code>latex:</code> <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> 
+编译器，被用来解析公式。为了测试，我使用了teTeX 1.0发行版。</li>
 <li>
-<code>dvips:</code> a tool to convert DVI files to PostScript files I have used version 5.92b from Radical Eye software for testing. </li>
+<code>dvips:</code> 将DVI文件转换为PostScript文件的工具我使用了Radical Eye软件的5.92b版本进行测试。</li>
 <li>
-<code>gs:</code> the GhostScript interpreter for converting PostScript files to bitmaps. I have used Aladdin GhostScript 8.0 for testing. </li>
+<code>gs:</code> 用于将PostScript文件转换为位图的GhostScript解释器。我使用阿拉丁GhostScript 8.0进行测试。</li>
 </ul>
-<p>For the HTML output there is also an alternative solution using <a href="https://www.mathjax.org">MathJax</a> which does not require the above tools. If you enable <a class="el" href="config.html#cfg_use_mathjax">USE_MATHJAX</a> in the configuration then the latex formulas will be copied to the HTML "as is" and a client side javascript will parse them and turn them into (interactive) images.</p>
+<p>对于HTML输出，还有一个使用<a href="https://www.mathjax.org">MathJax</a> 
+的替代解决方案，它不需要上述工具。如果您在配置中启用了<a class="el" href="config.html#cfg_use_mathjax">USE_MATHJAX</a> 
+，那么latex公式将被复制到HTML“原样”中，客户端javascript将解析它们并将它们转换为(交互式)图像。</p>
 <p>There are three ways to include formulas in the documentation. </p><ol>
 <li>
 <p class="startli">Using in-text formulas that appear in the running text. These formulas should be put between a pair of \f$ commands, so </p><pre class="fragment">  The distance between \f$(x_1,y_1)\f$ and \f$(x_2,y_2)\f$ is 

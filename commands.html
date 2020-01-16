@@ -54,22 +54,21 @@ $(document).ready(function(){initNavTree('commands.html','');});
 <div id="doc-content">
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Special Commands </div>  </div>
+<div class="title">特殊命令</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="cmd_intro"></a>
-Introduction</h1>
-<p>All commands in the documentation start with a backslash (<b>\</b>) or an at-sign (<b>@</b>). If you prefer you can replace all commands starting with a backslash below by their counterparts that start with an at-sign.</p>
-<p>Some commands have one or more arguments. Each argument has a certain range: </p><ul>
+<div class="textblock"><h1><a class="anchor" id="cmd_intro"></a>介绍</h1>
+<p>文档中的所有命令都以反斜杠(\)或at符号(@)开头。如果您愿意，可以将所有以反斜杠开头的命令替换为以at符号开头的对应命令。</p>
+<p>有些命令有一个或多个参数。每个参数都有一定的范围:</p><ul>
 <li>
-If &lt;sharp&gt; braces are used the argument is a single word. </li>
+如果使用了&lt;sharp&gt;大括号，则参数为单个单词。</li>
 <li>
-If (round) braces are used the argument extends until the end of the line on which the command was found. </li>
+如果使用(圆形)大括号，则参数将一直扩展到找到命令的行尾。</li>
 <li>
-If {curly} braces are used the argument extends until the next paragraph. Paragraphs are delimited by a blank line or by a section indicator. Note that {curly} braces are also used for command options, here the braces are mandatory and just 'normal' characters. The starting curly brace has to directly follow the command, so without whitspace. </li>
+如果使用大括号{花括号，则参数扩展到下一段。段落由空行或段落指示符分隔。注意{花括号也用于命令选项，这里的花括号是强制性的，只是“正常”字符。开始的大括号必须直接跟在命令后面，所以没有空格。</li>
 </ul>
-<p>If in addition to the above argument specifiers [square] brackets are used the argument is optional, unless they are placed between quotes in that case they are a mandatory part of the command argument.</p>
-<p>Here is an alphabetically sorted list of all commands with references to their documentation: <a class="anchor" id="showsecreflist"></a></p><div>
+<p>如果除上述参数说明符[方括号]外，参数是可选的，除非它们放在引号之间，否则它们是命令参数的强制部分。</p>
+<p>这里是一个按字母顺序排列的所有命令列表，以下是它们文档的链接:</p><div>
 <ul class="multicol">
 <li><a href="commands.html#cmda">\a</a></li>
 <li><a href="commands.html#cmdaddindex">\addindex</a></li>
@@ -260,13 +259,14 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
 <li><a href="commands.html#cmdmdash">\---</a></li>
 </ul>
 </div>
-<p>The following subsections provide a list of all commands that are recognized by doxygen. Unrecognized commands are treated as normal text.</p>
-<p> </p><center><p> </p><h2> ---  Structural indicators  ---  </h2>
+<p>下面的小节提供了doxygen可以识别的所有命令的列表。无法识别的命令被视为正常文本。</p>
+<p> </p><center><p> </p><h2> ---  结构指示器  ---  </h2>
 <p> </p></center><p></p>
 <h1><a class="anchor" id="cmdaddtogroup"></a>
 \addtogroup &lt;name&gt; [(title)]</h1>
-<p><a name="a297_:5caddtogroup"></a> Defines a group just like <a class="el" href="commands.html#cmddefgroup">\defgroup</a>, but in contrast to that command using the same &lt;name&gt; more than once will not result in a warning, but rather one group with a merged documentation and the first title found in any of the commands.</p>
-<p>The title is optional, so this command can also be used to add a number of entities to an existing group using <code>@{</code> and <code>@}</code> like this:</p>
+<p><a name="a297_:5caddtogroup"></a>
+定义一个组，就像\defgroup一样，但是与使用相同的&lt;name&gt;命令相比，多次使用相同的&lt;name&gt;不会导致警告，而是一个组合并了文档，并且在任何命令中都可以找到第一个标题。</p>
+<p>标题是可选的，所以这个命令也可以用来添加一些实体到一个现有的组像下边一样使用@{和@}：</p>
 <pre class="fragment">  /*! \addtogroup mygrp
    *  Additional documentation for group 'mygrp'
    *  @{
@@ -285,57 +285,92 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
   }
 
   /*! @} */
-</pre><dl class="section see"><dt>See also</dt><dd>page <a class="el" href="grouping.html">Grouping</a>, sections <a class="el" href="commands.html#cmddefgroup">\defgroup</a>, <a class="el" href="commands.html#cmdingroup">\ingroup</a>, and <a class="el" href="commands.html#cmdweakgroup">\weakgroup</a>.</dd></dl>
+</pre><dl class="section see"><dt>参考</dt>
+		<dd>&nbsp;<a class="el" href="grouping.html">Grouping</a>、 <a class="el" href="commands.html#cmddefgroup">\defgroup</a>、<a class="el" href="commands.html#cmdingroup">\ingroup</a>以及 <a class="el" href="commands.html#cmdweakgroup">\weakgroup</a>。</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdcallgraph"></a>
 \callgraph</h1>
-<p><a name="a298_:5ccallgraph"></a> When this command is put in a comment block of a function or method and <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> is set to <code>YES</code>, then doxygen will generate a call graph for that function (provided the implementation of the function or method calls other documented functions). The call graph will be generated regardless of the value of <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a>. </p><dl class="section note"><dt>Note</dt><dd>The completeness (and correctness) of the call graph depends on the doxygen code parser which is not perfect.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdcallergraph">\callergraph</a>, section <a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a>, section <a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a> and option <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a></dd></dl>
+<p>当这个命令被放在一个函数或方法的注释块中，并且 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 
+<code>被设置为YES</code>, ，那么doxygen就会为这个函数生成一个调用图(提供函数或方法调用其他文档中的函数的实现)。不管 <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a><a href="config.html#cfg_call_graph">的值是多少，都会生成调用图。</a></p><dl class="section note"><dt>
+		注意</dt><dd>调用图的完整性(和正确性)取决于不完美的doxygen代码解析器。</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>
+	<a class="el" href="commands.html#cmdcallergraph">\callergraph</a>、 <a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a>、 <a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a>以及<a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a>等章节。</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdhidecallgraph"></a>
 \hidecallgraph</h1>
-<p><a name="a299_:5chidecallgraph"></a> When this command is put in a comment block of a function or method and then doxygen will not generate a call graph for that function. The call graph will not be generated regardless of the value of <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a>. </p><dl class="section note"><dt>Note</dt><dd>The completeness (and correctness) of the call graph depends on the doxygen code parser which is not perfect.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdcallergraph">\callergraph</a>, section <a class="el" href="commands.html#cmdcallgraph">\callgraph</a>, section <a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a> and option <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a></dd></dl>
+<p><a name="a299_:5chidecallgraph"></a>
+当这个命令被放在一个函数或方法的注释块中时，doxygen将不会生成该函数的调用图。无论 <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a>的值如何，都不会生成调用图。</p><dl class="section note"><dt>
+		注意</dt><dd>调用图的完整性(和正确性)取决于不完美的doxygen代码解析器。</dd></dl>
+<dl class="section see"><dt>参考</dt>
+	<dd><a class="el" href="commands.html#cmdcallergraph">\callergraph</a>、<a class="el" href="commands.html#cmdcallgraph">\callgraph</a>,、<a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a> 
+	以及 <a class="el" href="config.html#cfg_call_graph">CALL_GRAPH</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdcallergraph"></a>
 \callergraph</h1>
-<p><a name="a300_:5ccallergraph"></a> When this command is put in a comment block of a function or method and <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> is set to <code>YES</code>, then doxygen will generate a caller graph for that function (provided the implementation of the function or method is called by other documented functions). The caller graph will be generated regardless of the value of <a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a>. </p><dl class="section note"><dt>Note</dt><dd>The completeness (and correctness) of the caller graph depends on the doxygen code parser which is not perfect.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdcallgraph">\callgraph</a>, section <a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a>, section <a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a> and option <a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a></dd></dl>
+<p>当这个命令被放入一个函数或方法的注释块中, <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 
+被设置为YES,那么doxygen将生成该函数的调用器(提供函数或方法的实现被其他文档函数调用)。调用者图将被生成,而不考虑 <a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a><a href="config.html#cfg_caller_graph">的值。</a></p><dl class="section note"><dt>
+		注意</dt><dd>调用者图的完整性(和正确性)取决于doxygen代码解析器，它并不完美。</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>
+	<a class="el" href="commands.html#cmdcallgraph">\callgraph</a>、<a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a>、<a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a> 
+	以及<a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdhidecallergraph"></a>
 \hidecallergraph</h1>
-<p><a name="a301_:5chidecallergraph"></a> When this command is put in a comment block of a function or method and then doxygen will not generate a caller graph for that function. The caller graph will not be generated regardless of the value of <a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a>. </p><dl class="section note"><dt>Note</dt><dd>The completeness (and correctness) of the caller graph depends on the doxygen code parser which is not perfect.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdcallergraph">\callergraph</a>, section <a class="el" href="commands.html#cmdcallgraph">\callgraph</a>, section <a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a> and option <a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a></dd></dl>
+<p><a name="a301_:5chidecallergraph"></a>
+当这个命令被放在一个函数或方法的注释块中时，doxygen将不会生成该函数的调用者图。无论 <a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a>的值如何，都不会生成调用者图形。</p><dl class="section note"><dt>
+		注意</dt><dd>调用者图的完整性(和正确性)取决于doxygen代码解析器，它并不完美。</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>
+	<a class="el" href="commands.html#cmdcallergraph">\callergraph</a>、 <a class="el" href="commands.html#cmdcallgraph">\callgraph</a>、<a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a> 
+	以及<a class="el" href="config.html#cfg_caller_graph">CALLER_GRAPH</a>。</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdshowrefby"></a>
 \showrefby</h1>
-<p><a name="a302_:5cshowrefby"></a> When this command is put in a comment block of a function, method or variable, then doxygen will generate an overview for that function, method, variable of the, documented, funcions and methods that call / use it. The overview will be generated regardless of the value of <a class="el" href="config.html#cfg_referenced_by_relation">REFERENCED_BY_RELATION</a>. </p><dl class="section note"><dt>Note</dt><dd>The completeness (and correctness) of the overview depends on the doxygen code parser which is not perfect.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdshowrefs">\showrefs</a>, section <a class="el" href="commands.html#cmdhiderefby">\hiderefby</a>, section <a class="el" href="commands.html#cmdhiderefs">\hiderefs</a> and option <a class="el" href="config.html#cfg_referenced_by_relation">REFERENCED_BY_RELATION</a></dd></dl>
+<p><a name="a302_:5cshowrefby"></a>
+当这个命令被放入一个函数、方法或变量的注释块时，doxygen将生成该函数、方法、变量、文档、函数和调用/使用它的方法的概述。无论 <a class="el" href="config.html#cfg_referenced_by_relation">REFERENCED_BY_RELATION</a> 
+的值如何，都会生成概述。</p><dl class="section note"><dt>注意</dt><dd>
+		调用者图的完整性(和正确性)取决于doxygen代码解析器，它并不完美。</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>
+	<a class="el" href="commands.html#cmdshowrefs">\showrefs</a>、 <a class="el" href="commands.html#cmdhiderefby">\hiderefby</a>、 <a class="el" href="commands.html#cmdhiderefs">\hiderefs</a> 
+	以及 <a class="el" href="config.html#cfg_referenced_by_relation">REFERENCED_BY_RELATION</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdhiderefby"></a>
 \hiderefby</h1>
-<p><a name="a303_:5chiderefby"></a> When this command is put in a comment block of a function, method or variable then doxygen will not generate an overview for that function, method or variable of the functions and methods that call / use it. The overview will not be generated regardless of the value of <a class="el" href="config.html#cfg_referenced_by_relation">REFERENCED_BY_RELATION</a>. </p><dl class="section note"><dt>Note</dt><dd>The completeness (and correctness) of the overview depends on the doxygen code parser which is not perfect.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdshowrefs">\showrefs</a>, section <a class="el" href="commands.html#cmdshowrefby">\showrefby</a>, section <a class="el" href="commands.html#cmdhiderefs">\hiderefs</a> and option <a class="el" href="config.html#cfg_referenced_by_relation">REFERENCED_BY_RELATION</a></dd></dl>
+<p><a name="a303_:5chiderefby"></a>
+当这个命令被放在一个函数、方法或变量的注释块中时，doxygen将不会生成该函数、方法或变量的概述，也不会生成调用/使用它的函数和方法。无论<a class="el" href="config.html#cfg_referenced_by_relation">REFERENCED_BY_RELATION</a>的值如何，都不会生成概述。</p><dl class="section note"><dt>
+		注意</dt><dd>调用者图的完整性(和正确性)取决于doxygen代码解析器，它并不完美。</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>
+	<a class="el" href="commands.html#cmdshowrefs">\showrefs</a>、 <a class="el" href="commands.html#cmdshowrefby">\showrefby</a>、 <a class="el" href="commands.html#cmdhiderefs">\hiderefs</a> 
+	以及 <a class="el" href="config.html#cfg_referenced_by_relation">REFERENCED_BY_RELATION</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdshowrefs"></a>
 \showrefs</h1>
-<p><a name="a304_:5cshowrefs"></a> When this command is put in a comment block of a function or method, then doxygen will generate an overview for that function or method of the functions and methods that call it. The overview will be generated regardless of the value of <a class="el" href="config.html#cfg_references_relation">REFERENCES_RELATION</a>. </p><dl class="section note"><dt>Note</dt><dd>The completeness (and correctness) of the overview depends on the doxygen code parser which is not perfect.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdshowrefby">\showrefby</a>, section <a class="el" href="commands.html#cmdhiderefby">\hiderefby</a>, section <a class="el" href="commands.html#cmdhiderefs">\hiderefs</a> and option <a class="el" href="config.html#cfg_references_relation">REFERENCES_RELATION</a></dd></dl>
+<p><a name="a304_:5cshowrefs"></a>&nbsp;当将此命令放入函数或方法的注释块时，doxygen将生成调用该函数和方法的函数或方法的概述。无论<a class="el" href="config.html#cfg_references_relation">REFERENCES_RELATION</a>的值如何，都会生成概述。</p><dl class="section note"><dt>
+		注意</dt><dd>调用者图的完整性(和正确性)取决于doxygen代码解析器，它并不完美。</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>
+	<a class="el" href="commands.html#cmdshowrefby">\showrefby</a>、 <a class="el" href="commands.html#cmdhiderefby">\hiderefby</a>、<a class="el" href="commands.html#cmdhiderefs">\hiderefs</a> 
+	以及 <a class="el" href="config.html#cfg_references_relation">REFERENCES_RELATION</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdhiderefs"></a>
 \hiderefs</h1>
-<p><a name="a305_:5chiderefs"></a> When this command is put in a comment block of a function or method and then doxygen will not generate an overview for that function or method of the functions and methods that call it. The overview will not be generated regardless of the value of <a class="el" href="config.html#cfg_references_relation">REFERENCES_RELATION</a>. </p><dl class="section note"><dt>Note</dt><dd>The completeness (and correctness) of the overview depends on the doxygen code parser which is not perfect.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdshowrefs">\showrefs</a>, section <a class="el" href="commands.html#cmdshowrefby">\showrefby</a>, section <a class="el" href="commands.html#cmdhiderefby">\hiderefby</a> and option <a class="el" href="config.html#cfg_references_relation">REFERENCES_RELATION</a></dd></dl>
+<p><a name="a305_:5chiderefs"></a>&nbsp;当将此命令放在函数或方法的注释块中，则doxygen将不会生成调用该函数和方法的函数或方法的概述。无论<a class="el" href="config.html#cfg_references_relation">REFERENCES_RELATION</a>的值如何，都不会生成概述。</p><dl class="section note"><dt>
+		注意</dt><dd>调用者图的完整性(和正确性)取决于doxygen代码解析器，它并不完美。</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>
+	<a class="el" href="commands.html#cmdshowrefs">\showrefs</a>、 <a class="el" href="commands.html#cmdshowrefby">\showrefby</a>、<a class="el" href="commands.html#cmdhiderefby">\hiderefby</a> 
+	以及 <a class="el" href="config.html#cfg_references_relation">REFERENCES_RELATION</a></dd>
+	</dl>
 <hr  />
  <h1><a class="anchor" id="cmdcategory"></a>
 \category &lt;name&gt; [&lt;header-file&gt;] [&lt;header-name&gt;]</h1>
-<p><a name="a306_:5ccategory"></a> For Objective-C only: Indicates that a comment block contains documentation for a class category with name &lt;name&gt;. The arguments are equal to the <a class="el" href="commands.html#cmdclass">\class</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
+<p><a name="a306_:5ccategory"></a>仅用于Objective-C:指示一个注释块包含一个类类别的名称&lt;name&gt;的文档。参数等于<a class="el" href="commands.html#cmdclass">\class</a> 
+命令。</p>
+<dl class="section see"><dt>参考</dt><dd>&nbsp;<a class="el" href="commands.html#cmdclass">\class</a>。</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdclass"></a>
 \class &lt;name&gt; [&lt;header-file&gt;] [&lt;header-name&gt;]</h1>
-<p><a name="a307_:5cclass"></a> Indicates that a comment block contains documentation for a class with name &lt;name&gt;. Optionally a header file and a header name can be specified. If the header-file is specified, a link to a verbatim copy of the header will be included in the HTML documentation. The &lt;header-name&gt; argument can be used to overwrite the name of the link that is used in the class documentation to something other than &lt;header-file&gt;. This can be useful if the include name is not located on the default include path (like &lt;X11/X.h&gt;). With the &lt;header-name&gt; argument you can also specify how the include statement should look like, by adding either quotes or sharp brackets around the name. Sharp brackets are used if just the name is given. Note that the last two arguments can also be specified using the <a class="el" href="commands.html#cmdheaderfile">\headerfile</a> command.</p>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment">/* A dummy class */</span></div>
+<p><a name="a307_:5cclass"></a>
+指示注释块包含名称&lt;name&gt;的类的文档。还可以指定头文件和头名称。如果指定了header-file，则HTML文档中将包含到该header的逐字副本的链接。&lt;header-name&gt;参数可用于将类文档中使用的链接的名称改写为其他内容，而不是&lt;header-file&gt;。如果include名称没有位于默认的include路径上(比如&lt;X11/X.h&gt;)，这将非常有用。使用&lt;header-name&gt;参数，您还可以通过在名称周围添加引号或尖括号来指定include语句的外观。如果只是给出名称，则使用尖括号。注意，最后两个参数也可以使用<a class="el" href="commands.html#cmdheaderfile">\headerfile</a> 
+命令指定。</p>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment">/* A dummy class */</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>Test</div>
 <div class="line">{</div>
@@ -347,14 +382,12 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
 <div class="line"><span class="comment"> * Some details about the Test class.</span></div>
 <div class="line"><span class="comment"> */</span></div>
 </div><!-- fragment -->  
-  Click <a href="examples/class/html/index.html">here</a>
-  for the corresponding HTML documentation that is generated by doxygen.
-   </dd></dl>
+    <a href="examples/class/html/index.html">单击此处查看由doxygen生成的相应HTML文档。</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmddef"></a>
 \def &lt;name&gt;</h1>
-<p><a name="a308_:5cdef"></a> Indicates that a comment block contains documentation for a <code>#define</code> macro.</p>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! \file define.h</span></div>
+<p>指示注释块包含#define宏的文档。</p>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! \file define.h</span></div>
 <div class="line"><span class="comment">    \brief testing defines</span></div>
 <div class="line"><span class="comment">    </span></div>
 <div class="line"><span class="comment">    This is to test the documentation of defines.</span></div>
@@ -375,25 +408,26 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
 <div class="line"><span class="preprocessor">#define MIN(x,y) ((x)&gt;(y)?(y):(x)) </span></div>
 <div class="line"><span class="comment">        /*!&lt; Computes the minimum of \a x and \a y. */</span></div>
 </div><!-- fragment -->  
-  Click <a href="examples/define/html/define_8h.html">here</a>
-  for the corresponding HTML documentation that is generated by doxygen.
-   </dd></dl>
+    单击<a href="examples/define/html/define_8h.html">此处</a> 
+	查看由doxygen生成的相应HTML文档。</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmddefgroup"></a>
 \defgroup &lt;name&gt; (group title)</h1>
-<p><a name="a309_:5cdefgroup"></a> Indicates that a comment block contains documentation for a <a class="el" href="grouping.html#modules">group</a> of classes, files or namespaces. This can be used to categorize classes, files or namespaces, and document those categories. You can also use groups as members of other groups, thus building a hierarchy of groups.</p>
-<p>The &lt;name&gt; argument should be a single-word identifier.</p>
-<dl class="section see"><dt>See also</dt><dd>page <a class="el" href="grouping.html">Grouping</a>, sections <a class="el" href="commands.html#cmdingroup">\ingroup</a>, <a class="el" href="commands.html#cmdaddtogroup">\addtogroup</a>, and <a class="el" href="commands.html#cmdweakgroup">\weakgroup</a>.</dd></dl>
+<p><a name="a309_:5cdefgroup"></a>
+指示注释块包含一组类、文件或名称空间的文档。这可以用来对类、文件或名称空间进行分类，并记录这些类别。您还可以使用组作为其他组的成员，从而构建组的层次结构。</p>
+<p>&lt;name&gt;参数应该是一个单字标识符。</p>
+<dl class="section see"><dt>参考</dt><dd><a class="el" href="grouping.html">Grouping</a>、 <a class="el" href="commands.html#cmdingroup">\ingroup</a>、<a class="el" href="commands.html#cmdaddtogroup">\addtogroup</a>、 <a class="el" href="commands.html#cmdweakgroup">\weakgroup</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmddir"></a>
 \dir [&lt;path fragment&gt;]</h1>
-<p><a name="a310_:5cdir"></a> Indicates that a comment block contains documentation for a directory. The "path fragment" argument should include the directory name and enough of the path to be unique with respect to the other directories in the project. The <a class="el" href="config.html#cfg_strip_from_path">STRIP_FROM_PATH</a> option determines what is stripped from the full path before it appears in the output.</p>
+<p><a name="a310_:5cdir"></a>指示注释块包含目录的文档。“路径片段”参数应该包括目录名和足够多的路径，使之与项目中的其他目录相对应。<a class="el" href="config.html#cfg_strip_from_path">STRIP_FROM_PATH</a>选项确定在完整路径出现在输出之前从该路径删除什么。</p>
 <hr  />
  <h1><a class="anchor" id="cmdenum"></a>
 \enum &lt;name&gt;</h1>
-<p><a name="a311_:5cenum"></a> Indicates that a comment block contains documentation for an enumeration, with name &lt;name&gt;. If the enum is a member of a class and the documentation block is located outside the class definition, the scope of the class should be specified as well. If a comment block is located directly in front of an enum declaration, the <code>\enum</code> comment may be omitted.</p>
-<dl class="section user"><dt>Note:</dt><dd>The type of an anonymous enum cannot be documented, but the values of an anonymous enum can.</dd></dl>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>Enum_Test</div>
+<p><a name="a311_:5cenum"></a>
+指示注释块包含枚举的文档，其名称&lt;name&gt;。如果enum是类的成员，并且文档块位于类定义之外，那么也应该指定类的作用域。如果注释块直接位于enum声明前面，则可以省略\enum注释。</p>
+<dl class="section user"><dt>注意:</dt><dd>匿名枚举的类型不能被记录，但是匿名枚举的值可以。</dd></dl>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>Enum_Test</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">enum</span> TEnum { Val1, Val2 };</div>
@@ -427,7 +461,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
 <p><a name="a312_:5cexample"></a> Indicates that a comment block contains documentation for a source code example. The name of the source file is &lt;file-name&gt;. The contents of this file will be included in the documentation, just after the documentation contained in the comment block. You can add option <code>{lineno}</code> to enable line numbers for the example if desired. All examples are placed in a list. The source code is scanned for documented members and classes. If any are found, the names are cross-referenced with the documentation. Source files or directories can be specified using the <a class="el" href="config.html#cfg_example_path">EXAMPLE_PATH</a> tag of doxygen's configuration file.</p>
 <p>If &lt;file-name&gt; itself is not unique for the set of example files specified by the <a class="el" href="config.html#cfg_example_path">EXAMPLE_PATH</a> tag, you can include part of the absolute path to disambiguate it.</p>
 <p>If more than one source file is needed for the example, the <a class="el" href="commands.html#cmdinclude">\include</a> command can be used.</p>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment">/** A Example_Test class.</span></div>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment">/** A Example_Test class.</span></div>
 <div class="line"><span class="comment"> *  More details about this class.</span></div>
 <div class="line"><span class="comment"> */</span></div>
 <div class="line"> </div>
@@ -455,7 +489,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
   Click <a href="examples/example/html/examples.html">here</a>
   for the corresponding HTML documentation that is generated by doxygen.
    </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdinclude">\include</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdinclude">\include</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdendinternal"></a>
 \endinternal</h1>
@@ -469,13 +503,13 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
   Click <a href="examples/manual/html/index.html">here</a>
   for the corresponding HTML documentation that is generated by doxygen.
    </p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdimplements">\implements</a> and section <a class="el" href="commands.html#cmdmemberof">\memberof</a></dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdimplements">\implements</a> and section <a class="el" href="commands.html#cmdmemberof">\memberof</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdfile"></a>
 \file [&lt;name&gt;]</h1>
 <p><a name="a315_:5cfile"></a> Indicates that a comment block contains documentation for a source or header file with name &lt;name&gt;. The file name may include (part of) the path if the file-name alone is not unique. If the file name is omitted (i.e. the line after <code>\file</code> is left blank) then the documentation block that contains the <code>\file</code> command will belong to the file it is located in.</p>
 <dl class="section user"><dt>Important:</dt><dd>The documentation of global functions, variables, typedefs, and enums will only be included in the output if the file they are in is documented as well.</dd></dl>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment">/** \file file.h</span></div>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment">/** \file file.h</span></div>
 <div class="line"><span class="comment"> * A brief file description.</span></div>
 <div class="line"><span class="comment"> * A more elaborated file description.</span></div>
 <div class="line"><span class="comment"> */</span></div>
@@ -489,7 +523,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
   Click <a href="examples/file/html/file_8h.html">here</a>
   for the corresponding HTML documentation that is generated by doxygen.
    </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>In the above example <a class="el" href="config.html#cfg_javadoc_autobrief">JAVADOC_AUTOBRIEF</a> has been set to <code>YES</code> in the configuration file.</dd></dl>
+<dl class="section note"><dt>注意</dt><dd>In the above example <a class="el" href="config.html#cfg_javadoc_autobrief">JAVADOC_AUTOBRIEF</a> has been set to <code>YES</code> in the configuration file.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdfn"></a>
 \fn (function declaration)</h1>
@@ -498,7 +532,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
 <p>A full function declaration including arguments should be specified after the <code>\fn</code> command on a <em>single</em> line, since the argument ends at the end of the line!</p>
 <p>This command is equivalent to <a class="el" href="commands.html#cmdvar">\var</a>, <a class="el" href="commands.html#cmdtypedef">\typedef</a>, and <a class="el" href="commands.html#cmdproperty">\property</a>.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Do not use this command if it is not absolutely needed, since it will lead to duplication of information and thus to errors.</dd></dl>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>Fn_Test</div>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>Fn_Test</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *member(<span class="keywordtype">char</span>,<span class="keywordtype">int</span>) <span class="keywordflow">throw</span>(std::out_of_range);</div>
@@ -523,7 +557,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
   Click <a href="examples/func/html/class_fn___test.html">here</a>
   for the corresponding HTML documentation that is generated by doxygen.
    </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdvar">\var</a>, <a class="el" href="commands.html#cmdproperty">\property</a>, and <a class="el" href="commands.html#cmdtypedef">\typedef</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdvar">\var</a>, <a class="el" href="commands.html#cmdproperty">\property</a>, and <a class="el" href="commands.html#cmdtypedef">\typedef</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdheaderfile"></a>
 \headerfile &lt;header-file&gt; [&lt;header-name&gt;]</h1>
@@ -539,7 +573,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
  <h1><a class="anchor" id="cmdhideinitializer"></a>
 \hideinitializer</h1>
 <p><a name="a318_:5chideinitializer"></a> By default the value of a define and the initializer of a variable are displayed unless they are longer than 30 lines. By putting this command in a comment block of a define or variable, the initializer is always hidden. The maximum number of initialization lines can be changed by means of the configuration parameter <a class="el" href="config.html#cfg_max_initializer_lines">MAX_INITIALIZER_LINES</a>, the default value is 30.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdshowinitializer">\showinitializer</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdshowinitializer">\showinitializer</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdidlexcept"></a>
 \idlexcept &lt;name&gt;</h1>
@@ -554,24 +588,24 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
   Click <a href="examples/manual/html/index.html">here</a>
   for the corresponding HTML documentation that is generated by doxygen.
    </p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdextends">\extends</a> and section <a class="el" href="commands.html#cmdmemberof">\memberof</a></dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdextends">\extends</a> and section <a class="el" href="commands.html#cmdmemberof">\memberof</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdingroup"></a>
 \ingroup (&lt;groupname&gt; [&lt;groupname&gt; &lt;groupname&gt;])</h1>
 <p><a name="a321_:5cingroup"></a> If the <code>\ingroup</code> command is placed in a comment block of a class, file or namespace, then it will be added to the group or groups identified by &lt;groupname&gt;.</p>
-<dl class="section see"><dt>See also</dt><dd>page <a class="el" href="grouping.html">Grouping</a>, sections <a class="el" href="commands.html#cmddefgroup">\defgroup</a>, <a class="el" href="commands.html#cmdaddtogroup">\addtogroup</a>, and <a class="el" href="commands.html#cmdweakgroup">\weakgroup</a></dd></dl>
+<dl class="section see"><dt>参考</dt><dd>page <a class="el" href="grouping.html">Grouping</a>, sections <a class="el" href="commands.html#cmddefgroup">\defgroup</a>, <a class="el" href="commands.html#cmdaddtogroup">\addtogroup</a>, and <a class="el" href="commands.html#cmdweakgroup">\weakgroup</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdinterface"></a>
 \interface &lt;name&gt; [&lt;header-file&gt;] [&lt;header-name&gt;]</h1>
 <p><a name="a322_:5cinterface"></a> Indicates that a comment block contains documentation for an interface with name &lt;name&gt;. The arguments are equal to the arguments of the <a class="el" href="commands.html#cmdclass">\class</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdinternal"></a>
 \internal</h1>
 <p><a name="a323_:5cinternal"></a> This command starts a documentation fragment that is meant for internal use only. The fragment naturally ends at the end of the comment block. You can also force the internal section to end earlier by using the <a class="el" href="commands.html#cmdendinternal">\endinternal</a> command.</p>
 <p>If the <code>\internal</code> command is put inside a section (see for example <a class="el" href="commands.html#cmdsection">\section</a>) all subsections after the command are considered to be internal as well. Only a new section at the same level will end the fragment that is considered internal.</p>
 <p>You can use <a class="el" href="config.html#cfg_internal_docs">INTERNAL_DOCS</a> in the configuration file to show (<code>YES</code>) or hide (<code>NO</code>) the internal documentation.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdendinternal">\endinternal</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdendinternal">\endinternal</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdmainpage"></a>
 \mainpage [(title)]</h1>
@@ -591,7 +625,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
  * etc...
  */
 </pre><p>You can refer to the main page using: <code><a class="el" href="commands.html#cmdref">\ref</a> index</code>.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdsection">\section</a>, section <a class="el" href="commands.html#cmdsubsection">\subsection</a>, and section <a class="el" href="commands.html#cmdpage">\page</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdsection">\section</a>, section <a class="el" href="commands.html#cmdsubsection">\subsection</a>, and section <a class="el" href="commands.html#cmdpage">\page</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdmemberof"></a>
 \memberof &lt;name&gt;</h1>
@@ -602,7 +636,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
   Click <a href="examples/manual/html/index.html">here</a>
   for the corresponding HTML documentation that is generated by doxygen.
   </p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdextends">\extends</a>, <a class="el" href="commands.html#cmdimplements">\implements</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprotected">\protected</a> and <a class="el" href="commands.html#cmdprivate">\private</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdextends">\extends</a>, <a class="el" href="commands.html#cmdimplements">\implements</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprotected">\protected</a> and <a class="el" href="commands.html#cmdprivate">\private</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdname"></a>
 \name [(header)]</h1>
@@ -617,7 +651,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
  <h1><a class="anchor" id="cmdnosubgrouping"></a>
 \nosubgrouping</h1>
 <p><a name="a328_:5cnosubgrouping"></a> This command can be put in the documentation of a class. It can be used in combination with member grouping to avoid that doxygen puts a member group as a subgroup of a Public/Protected/Private/... section.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdpublicsection">\publicsection</a>, <a class="el" href="commands.html#cmdprotectedsection">\protectedsection</a> and <a class="el" href="commands.html#cmdprivatesection">\privatesection</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdpublicsection">\publicsection</a>, <a class="el" href="commands.html#cmdprotectedsection">\protectedsection</a> and <a class="el" href="commands.html#cmdprivatesection">\privatesection</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdoverload"></a>
 \overload [(function declaration)]</h1>
@@ -627,9 +661,9 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
 </blockquote>
 <p>If the documentation for the overloaded member function is not located in front of the function declaration or definition, the optional argument should be used to specify the correct function.</p>
 <p>Any other documentation that is inside the documentation block will by appended after the generated message.</p>
-<dl class="section user"><dt>Note 1:</dt><dd>You are responsible that there is indeed an earlier documented member that is overloaded by this one. To prevent that document reorders the documentation you should set <a class="el" href="config.html#cfg_sort_member_docs">SORT_MEMBER_DOCS</a> to <code>NO</code> in this case. </dd></dl>
-<dl class="section user"><dt>Note 2:</dt><dd>The <code>\overload</code> command does not work inside a one-line comment. </dd></dl>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>Overload_Test </div>
+<dl class="section user"><dt>注意 1:</dt><dd>You are responsible that there is indeed an earlier documented member that is overloaded by this one. To prevent that document reorders the documentation you should set <a class="el" href="config.html#cfg_sort_member_docs">SORT_MEMBER_DOCS</a> to <code>NO</code> in this case. </dd></dl>
+<dl class="section user"><dt>注意 2:</dt><dd>The <code>\overload</code> command does not work inside a one-line comment. </dd></dl>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>Overload_Test </div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> drawRect(<span class="keywordtype">int</span>,<span class="keywordtype">int</span>,<span class="keywordtype">int</span>,<span class="keywordtype">int</span>);</div>
@@ -666,7 +700,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
  <h1><a class="anchor" id="cmdpage"></a>
 \page &lt;name&gt; (title)</h1>
 <p><a name="a331_:5cpage"></a> Indicates that a comment block contains a piece of documentation that is not directly related to one specific class, file or member. The HTML generator creates a page containing the documentation. The <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> generator starts a new section in the chapter 'Page documentation'.</p>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! \page page1 A documentation page</span></div>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! \page page1 A documentation page</span></div>
 <div class="line"><span class="comment">  \tableofcontents</span></div>
 <div class="line"><span class="comment">  Leading text.</span></div>
 <div class="line"><span class="comment">  \section sec An example section</span></div>
@@ -685,54 +719,54 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
   Click <a href="examples/page/html/pages.html">here</a>
   for the corresponding HTML documentation that is generated by doxygen.
    </dd></dl>
-<dl class="section user"><dt>Note:</dt><dd>The &lt;name&gt; argument consists of a combination of letters and number digits. If you wish to use upper case letters (e.g. <code>MYPAGE1</code>), or mixed case letters (e.g. <code>MyPage1</code>) in the &lt;name&gt; argument, you should set <a class="el" href="config.html#cfg_case_sense_names">CASE_SENSE_NAMES</a> to <code>YES</code>. However, this is advisable only if your file system is case sensitive. Otherwise (and for better portability) you should use all lower case letters (e.g. <code>mypage1</code>) for &lt;name&gt; in all references to the page.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdsection">\section</a>, section <a class="el" href="commands.html#cmdsubsection">\subsection</a>, and section <a class="el" href="commands.html#cmdref">\ref</a>.</dd></dl>
+<dl class="section user"><dt>注意:</dt><dd>The &lt;name&gt; argument consists of a combination of letters and number digits. If you wish to use upper case letters (e.g. <code>MYPAGE1</code>), or mixed case letters (e.g. <code>MyPage1</code>) in the &lt;name&gt; argument, you should set <a class="el" href="config.html#cfg_case_sense_names">CASE_SENSE_NAMES</a> to <code>YES</code>. However, this is advisable only if your file system is case sensitive. Otherwise (and for better portability) you should use all lower case letters (e.g. <code>mypage1</code>) for &lt;name&gt; in all references to the page.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdsection">\section</a>, section <a class="el" href="commands.html#cmdsubsection">\subsection</a>, and section <a class="el" href="commands.html#cmdref">\ref</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdprivate"></a>
 \private</h1>
 <p><a name="a332_:5cprivate"></a> Indicates that the member documented by the comment block is private, i.e., should only be accessed by other members in the same class.</p>
 <p>Note that doxygen automatically detects the protection level of members in object-oriented languages. This command is intended for use only when the language does not support the concept of protection level natively (e.g. C, PHP 4).</p>
 <p>For starting a section of private members, in a way similar to the "private:" class marker in C++, use <a class="el" href="commands.html#cmdprivatesection">\privatesection</a>.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprotected">\protected</a> and <a class="el" href="commands.html#cmdprivatesection">\privatesection</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprotected">\protected</a> and <a class="el" href="commands.html#cmdprivatesection">\privatesection</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdprivatesection"></a>
 \privatesection</h1>
 <p><a name="a333_:5cprivatesection"></a> Starting a section of private members, in a way similar to the "private:" class marker in C++. Indicates that the member documented by the comment block is private, i.e., should only be accessed by other members in the same class.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprotected">\protected</a> and <a class="el" href="commands.html#cmdprivate">\private</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprotected">\protected</a> and <a class="el" href="commands.html#cmdprivate">\private</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdproperty"></a>
 \property (qualified property name)</h1>
 <p><a name="a334_:5cproperty"></a> Indicates that a comment block contains documentation for a property (either global or as a member of a class). This command is equivalent to <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdtypedef">\typedef</a>, and <a class="el" href="commands.html#cmdvar">\var</a>.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdtypedef">\typedef</a>, and <a class="el" href="commands.html#cmdvar">\var</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdtypedef">\typedef</a>, and <a class="el" href="commands.html#cmdvar">\var</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdprotected"></a>
 \protected</h1>
 <p><a name="a335_:5cprotected"></a> Indicates that the member documented by the comment block is protected, i.e., should only be accessed by other members in the same or derived classes.</p>
 <p>Note that doxygen automatically detects the protection level of members in object-oriented languages. This command is intended for use only when the language does not support the concept of protection level natively (e.g. C, PHP 4).</p>
 <p>For starting a section of protected members, in a way similar to the "protected:" class marker in C++, use <a class="el" href="commands.html#cmdprotectedsection">\protectedsection</a>.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprivate">\private</a> and <a class="el" href="commands.html#cmdprotectedsection">\protectedsection</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprivate">\private</a> and <a class="el" href="commands.html#cmdprotectedsection">\protectedsection</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdprotectedsection"></a>
 \protectedsection</h1>
 <p><a name="a336_:5cprotectedsection"></a> Starting a section of protected members, in a way similar to the "protected:" class marker in C++. Indicates that the member documented by the comment block is protected, i.e., should only be accessed by other members in the same or derived classes.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprivate">\private</a> and <a class="el" href="commands.html#cmdprotected">\protected</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdpublic">\public</a>, <a class="el" href="commands.html#cmdprivate">\private</a> and <a class="el" href="commands.html#cmdprotected">\protected</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdprotocol"></a>
 \protocol &lt;name&gt; [&lt;header-file&gt;] [&lt;header-name&gt;]</h1>
 <p><a name="a337_:5cprotocol"></a> Indicates that a comment block contains documentation for a protocol in Objective-C with name &lt;name&gt;. The arguments are equal to the <a class="el" href="commands.html#cmdclass">\class</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdpublic"></a>
 \public</h1>
 <p><a name="a338_:5cpublic"></a> Indicates that the member documented by the comment block is public, i.e., can be accessed by any other class or function.</p>
 <p>Note that doxygen automatically detects the protection level of members in object-oriented languages. This command is intended for use only when the language does not support the concept of protection level natively (e.g. C, PHP 4).</p>
 <p>For starting a section of public members, in a way similar to the "public:" class marker in C++, use <a class="el" href="commands.html#cmdpublicsection">\publicsection</a>.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdprotected">\protected</a>, <a class="el" href="commands.html#cmdprivate">\private</a> and <a class="el" href="commands.html#cmdpublicsection">\publicsection</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdprotected">\protected</a>, <a class="el" href="commands.html#cmdprivate">\private</a> and <a class="el" href="commands.html#cmdpublicsection">\publicsection</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdpublicsection"></a>
 \publicsection</h1>
 <p><a name="a339_:5cpublicsection"></a> Starting a section of public members, in a way similar to the "public:" class marker in C++. Indicates that the member documented by the comment block is public, i.e., can be accessed by any other class or function.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdprotected">\protected</a>, <a class="el" href="commands.html#cmdprivate">\private</a> and <a class="el" href="commands.html#cmdpublic">\public</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdmemberof">\memberof</a>, <a class="el" href="commands.html#cmdprotected">\protected</a>, <a class="el" href="commands.html#cmdprivate">\private</a> and <a class="el" href="commands.html#cmdpublic">\public</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdpure"></a>
 \pure</h1>
@@ -742,7 +776,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
  <h1><a class="anchor" id="cmdrelates"></a>
 \relates &lt;name&gt;</h1>
 <p><a name="a341_:5crelates"></a> This command can be used in the documentation of a non-member function &lt;name&gt;. It puts the function inside the 'related function' section of the class documentation. This command is useful for documenting non-friend functions that are nevertheless strongly coupled to a certain class. It prevents the need of having to document a file, but only works for functions.</p>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! </span></div>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! </span></div>
 <div class="line"><span class="comment"> * A String class.</span></div>
 <div class="line"><span class="comment"> */</span> </div>
 <div class="line">  </div>
@@ -785,7 +819,7 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
  <h1><a class="anchor" id="cmdshowinitializer"></a>
 \showinitializer</h1>
 <p><a name="a345_:5cshowinitializer"></a> By default the value of a define and the initializer of a variable are only displayed if they are less than 30 lines long. By putting this command in a comment block of a define or variable, the initializer is shown unconditionally. The maximum number of initialization lines can be changed by means of the configuration parameter <a class="el" href="config.html#cfg_max_initializer_lines">MAX_INITIALIZER_LINES</a>, the default value is 30.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdhideinitializer">\hideinitializer</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdhideinitializer">\hideinitializer</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdstatic"></a>
 \static</h1>
@@ -795,33 +829,34 @@ If {curly} braces are used the argument extends until the next paragraph. Paragr
  <h1><a class="anchor" id="cmdstruct"></a>
 \struct &lt;name&gt; [&lt;header-file&gt;] [&lt;header-name&gt;]</h1>
 <p><a name="a347_:5cstruct"></a> Indicates that a comment block contains documentation for a struct with name &lt;name&gt;. The arguments are equal to the arguments of the <a class="el" href="commands.html#cmdclass">\class</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdtypedef"></a>
 \typedef (typedef declaration)</h1>
 <p><a name="a348_:5ctypedef"></a> Indicates that a comment block contains documentation for a typedef (either global or as a member of a class). This command is equivalent to <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdproperty">\property</a>, and <a class="el" href="commands.html#cmdvar">\var</a>.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdproperty">\property</a>, and <a class="el" href="commands.html#cmdvar">\var</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdproperty">\property</a>, and <a class="el" href="commands.html#cmdvar">\var</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdunion"></a>
 \union &lt;name&gt; [&lt;header-file&gt;] [&lt;header-name&gt;]</h1>
 <p><a name="a349_:5cunion"></a> Indicates that a comment block contains documentation for a union with name &lt;name&gt;. The arguments are equal to the arguments of the <a class="el" href="commands.html#cmdclass">\class</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdclass">\class</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdvar"></a>
 \var (variable declaration)</h1>
 <p><a name="a350_:5cvar"></a> Indicates that a comment block contains documentation for a variable or enum value (either global or as a member of a class). This command is equivalent to <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdproperty">\property</a>, and <a class="el" href="commands.html#cmdtypedef">\typedef</a>.</p>
 <p>Note that for PHP one can also specify the type of the variable. The syntax is similar as for the <code>phpDocumentor</code> but the description has to start at the next line, i.e. </p><pre class="fragment">@var  datatype $varname
 Description
-</pre><dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdproperty">\property</a>, and <a class="el" href="commands.html#cmdtypedef">\typedef</a>.</dd></dl>
+</pre><dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdfn">\fn</a>, <a class="el" href="commands.html#cmdproperty">\property</a>, and <a class="el" href="commands.html#cmdtypedef">\typedef</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdvhdlflow"></a>
 \vhdlflow [(title for the flow chart)]</h1>
-<p><a name="a351_:5cvhdlflow"></a> This is a VHDL specific command, which can be put in the documentation of a process to produce a flow chart of the logic in the process. Optionally a title for the flow chart can be given. </p><dl class="section note"><dt>Note</dt><dd>Currently the flow chart will only appear in the HTML output.</dd></dl>
+<p><a name="a351_:5cvhdlflow"></a> This is a VHDL specific command, which can be put in the documentation of a process to produce a flow chart of the logic in the process. Optionally a title for the flow chart can be given. </p><dl class="section note"><dt>
+		注意</dt><dd>Currently the flow chart will only appear in the HTML output.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdweakgroup"></a>
 \weakgroup &lt;name&gt; [(title)]</h1>
 <p><a name="a352_:5cweakgroup"></a> Can be used exactly like <a class="el" href="commands.html#cmdaddtogroup">\addtogroup</a>, but has a lower priority when it comes to resolving conflicting grouping definitions.</p>
-<dl class="section see"><dt>See also</dt><dd>page <a class="el" href="grouping.html">Grouping</a> and section <a class="el" href="commands.html#cmdaddtogroup">\addtogroup</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>page <a class="el" href="grouping.html">Grouping</a> and section <a class="el" href="commands.html#cmdaddtogroup">\addtogroup</a>.</dd></dl>
 <hr  />
 <p> </p><center><p> </p><h2> ---  Section indicators  ---  </h2>
 <p> </p></center><p></p>
@@ -833,7 +868,7 @@ Description
  <h1><a class="anchor" id="cmdauthor"></a>
 \author { list of authors }</h1>
 <p><a name="a354_:5cauthor"></a> Starts a paragraph where one or more author names may be entered. The paragraph will be indented. The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. Multiple adjacent <code>\author</code> commands will be joined into a single paragraph. Each author description will start a new line. Alternatively, one <code>\author</code> command may mention several authors. The <code>\author</code> command ends when a blank line or some other sectioning command is encountered.</p>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! </span></div>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! </span></div>
 <div class="line"><span class="comment"> *  \brief     Pretty nice class.</span></div>
 <div class="line"><span class="comment"> *  \details   This class is used to demonstrate a number of section commands.</span></div>
 <div class="line"><span class="comment"> *  \author    John Doe</span></div>
@@ -909,8 +944,8 @@ class Implementation : public Intf
 
 /// @endcond
 </pre><p>The output will be different depending on whether or not <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a> contains <code>TEST</code>, or <code>DEV</code> </p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdendcond">\endcond</a> and <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Due to the moment of parsing the <code>\cond</code> and <a class="el" href="commands.html#cmdendcond">\endcond</a> commands cannot be used in <a class="el" href="config.html#cfg_aliases">ALIASES</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdendcond">\endcond</a> and <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a>. </dd></dl>
+<dl class="section note"><dt>注意</dt><dd>Due to the moment of parsing the <code>\cond</code> and <a class="el" href="commands.html#cmdendcond">\endcond</a> commands cannot be used in <a class="el" href="config.html#cfg_aliases">ALIASES</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdcopyright"></a>
 \copyright { copyright description }</h1>
@@ -931,23 +966,23 @@ class Implementation : public Intf
  <h1><a class="anchor" id="cmdelse"></a>
 \else</h1>
 <p><a name="a363_:5celse"></a> Starts a conditional section if the previous conditional section was not enabled. The previous section should have been started with a <a class="el" href="commands.html#cmdif">\if</a>, <a class="el" href="commands.html#cmdifnot">\ifnot</a>, or <a class="el" href="commands.html#cmdelseif">\elseif</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="commands.html#cmdif">\if</a>, <a class="el" href="commands.html#cmdifnot">\ifnot</a>, <a class="el" href="commands.html#cmdelseif">\elseif</a>, <a class="el" href="commands.html#cmdendif">\endif.</a></dd></dl>
+<dl class="section see"><dt>参考</dt><dd><a class="el" href="commands.html#cmdif">\if</a>, <a class="el" href="commands.html#cmdifnot">\ifnot</a>, <a class="el" href="commands.html#cmdelseif">\elseif</a>, <a class="el" href="commands.html#cmdendif">\endif.</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdelseif"></a>
 \elseif (section-label)</h1>
 <p><a name="a364_:5celseif"></a> Starts a conditional documentation section if the previous section was not enabled. A conditional section is disabled by default. To enable it you must put the section-label after the <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a> tag in the configuration file. The section label can be a logical expression build of section names, round brackets, &amp;&amp; (AND), || (OR) and ! (NOT). Conditional blocks can be nested. A nested section is only enabled if all enclosing sections are enabled as well.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdendif">\endif</a>, <a class="el" href="commands.html#cmdifnot">\ifnot</a>, <a class="el" href="commands.html#cmdelse">\else</a>, and <a class="el" href="commands.html#cmdelseif">\elseif</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdendif">\endif</a>, <a class="el" href="commands.html#cmdifnot">\ifnot</a>, <a class="el" href="commands.html#cmdelse">\else</a>, and <a class="el" href="commands.html#cmdelseif">\elseif</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdendcond"></a>
 \endcond</h1>
 <p><a name="a365_:5cendcond"></a> Ends a conditional section that was started by <a class="el" href="commands.html#cmdcond">\cond</a>.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdcond">\cond</a>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Due to the moment of parsing the <code>\endcond</code> and <a class="el" href="commands.html#cmdcond">\cond</a> commands cannot be used in <a class="el" href="config.html#cfg_aliases">ALIASES</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdcond">\cond</a>. </dd></dl>
+<dl class="section note"><dt>注意</dt><dd>Due to the moment of parsing the <code>\endcond</code> and <a class="el" href="commands.html#cmdcond">\cond</a> commands cannot be used in <a class="el" href="config.html#cfg_aliases">ALIASES</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdendif"></a>
 \endif</h1>
 <p><a name="a366_:5cendif"></a> Ends a conditional section that was started by <a class="el" href="commands.html#cmdif">\if</a> or <a class="el" href="commands.html#cmdifnot">\ifnot</a> For each <a class="el" href="commands.html#cmdif">\if</a> or <a class="el" href="commands.html#cmdifnot">\ifnot</a> one and only one matching <a class="el" href="commands.html#cmdendif">\endif</a> must follow.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdif">\if</a> and <a class="el" href="commands.html#cmdifnot">\ifnot</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdif">\if</a> and <a class="el" href="commands.html#cmdifnot">\ifnot</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdexception"></a>
 \exception &lt;exception-object&gt; { exception description }</h1>
@@ -959,7 +994,7 @@ class Implementation : public Intf
 </p>
 <p>The section label can be a logical expression build of section names, round brackets, &amp;&amp; (AND), || (OR) and ! (NOT). If you use an expression you need to wrap it in round brackets, i.e <code>\cond (!LABEL1 &amp;&amp; LABEL2)</code>.</p>
 <p>Conditional blocks can be nested. A nested section is only enabled if all enclosing sections are enabled as well.</p>
-<dl class="section user"><dt>Example:</dt><dd><pre class="fragment">  /*! Unconditionally shown documentation.
+<dl class="section user"><dt>例如：</dt><dd><pre class="fragment">  /*! Unconditionally shown documentation.
    *  \if Cond1
    *    Only included if Cond1 is set.
    *  \endif
@@ -991,12 +1026,12 @@ class Example
            "dutch=\if dutch" \
            "enddutch=\endif"
 </pre><p>and <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a> can be used to enable either <code>english</code> or <code>dutch</code>.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdendif">\endif</a>, <a class="el" href="commands.html#cmdifnot">\ifnot</a>, <a class="el" href="commands.html#cmdelse">\else</a>, <a class="el" href="commands.html#cmdelseif">\elseif</a>, and <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdendif">\endif</a>, <a class="el" href="commands.html#cmdifnot">\ifnot</a>, <a class="el" href="commands.html#cmdelse">\else</a>, <a class="el" href="commands.html#cmdelseif">\elseif</a>, and <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdifnot"></a>
 \ifnot (section-label)</h1>
 <p><a name="a369_:5cifnot"></a> Starts a conditional documentation section. The section ends with a matching <a class="el" href="commands.html#cmdendif">\endif</a> command. This conditional section is enabled by default. To disable it you must put the section-label after the <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a> tag in the configuration file. The section label can be a logical expression build of section names, round brackets, &amp;&amp; (AND), || (OR) and ! (NOT).</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdendif">\endif</a>, <a class="el" href="commands.html#cmdif">\if</a>, <a class="el" href="commands.html#cmdelse">\else</a>, and <a class="el" href="commands.html#cmdelseif">\elseif</a>, and <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdendif">\endif</a>, <a class="el" href="commands.html#cmdif">\if</a>, <a class="el" href="commands.html#cmdelse">\else</a>, and <a class="el" href="commands.html#cmdelseif">\elseif</a>, and <a class="el" href="config.html#cfg_enabled_sections">ENABLED_SECTIONS</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdinvariant"></a>
 \invariant { description of invariant }</h1>
@@ -1011,7 +1046,7 @@ class Example
 <p><a name="a372_:5cpar"></a> If a paragraph title is given this command starts a paragraph with a user defined heading. The heading extends until the end of the line. The paragraph following the command will be indented.</p>
 <p>If no paragraph title is given this command will start a new paragraph. This will also work inside other paragraph commands (like <a class="el" href="commands.html#cmdparam">\param</a> or <a class="el" href="commands.html#cmdwarning">\warning</a>) without ending that command.</p>
 <p>The text of the paragraph has no special internal structure. All visual enhancement commands may be used inside the paragraph. The <code>\par</code> command ends when a blank line or some other sectioning command is encountered.</p>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! \class Par_Test</span></div>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment">/*! \class Par_Test</span></div>
 <div class="line"><span class="comment"> * Normal text.</span></div>
 <div class="line"><span class="comment"> *</span></div>
 <div class="line"><span class="comment"> * \par User defined paragraph:</span></div>
@@ -1061,7 +1096,7 @@ class Example
  <h1><a class="anchor" id="cmdparblock"></a>
 \parblock</h1>
 <p><a name="a374_:5cparblock"></a> For commands that expect a single paragraph as argument (such as <a class="el" href="commands.html#cmdpar">\par</a>, <a class="el" href="commands.html#cmdparam">\param</a> and <a class="el" href="commands.html#cmdwarning">\warning</a>), the <a class="el" href="commands.html#cmdparblock">\parblock</a> command allows to start a description that covers multiple paragraphs, which then ends with <a class="el" href="commands.html#cmdendparblock">\endparblock</a>.</p>
-<p>Example: </p><pre class="fragment">/** Example of a param command with a description consisting of two paragraphs
+<p>例如： </p><pre class="fragment">/** Example of a param command with a description consisting of two paragraphs
  *  \param p 
  *  \parblock
  *  First paragraph of the param description.
@@ -1117,7 +1152,7 @@ class Example
 \sa { references }</h1>
 <p><a name="a385_:5csa"></a> Starts a paragraph where one or more cross-references to classes, functions, methods, variables, files or URL may be specified. Two names joined by either <code>::</code> or <code>#</code> are understood as referring to a class and one of its members. One of several overloaded methods or constructors may be selected by including a parenthesized list of argument types after the method name.</p>
 <p>Synonymous to <a class="el" href="commands.html#cmdsee">\see</a>.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="autolink.html">autolink</a> for information on how to create links to objects.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="autolink.html">autolink</a> for information on how to create links to objects.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdsee"></a>
 \see { references }</h1>
@@ -1138,8 +1173,8 @@ class Example
  <h1><a class="anchor" id="cmdthrow"></a>
 \throw &lt;exception-object&gt; { exception description }</h1>
 <p><a name="a390_:5cthrow"></a> Synonymous <a class="el" href="commands.html#cmdexception">\exception</a>.</p>
-<dl class="section user"><dt>Note:</dt><dd>the command <a class="el" href="commands.html#cmdthrows">\throws</a> is a synonym for this command.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdexception">\exception</a></dd></dl>
+<dl class="section user"><dt>注意:</dt><dd>the command <a class="el" href="commands.html#cmdthrows">\throws</a> is a synonym for this command.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdexception">\exception</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdthrows"></a>
 \throws &lt;exception-object&gt; { exception description }</h1>
@@ -1186,7 +1221,7 @@ class Example
  <h1><a class="anchor" id="cmdanchor"></a>
 \anchor &lt;word&gt;</h1>
 <p><a name="a397_:5canchor"></a> This command places an invisible, named anchor into the documentation to which you can refer with the <a class="el" href="commands.html#cmdref">\ref</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdref">\ref</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdref">\ref</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdcite"></a>
 \cite &lt;label&gt;</h1>
@@ -1196,18 +1231,18 @@ class Example
  <h1><a class="anchor" id="cmdendlink"></a>
 \endlink</h1>
 <p><a name="a399_:5cendlink"></a> This command ends a link that is started with the <a class="el" href="commands.html#cmdlink">\link</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdlink">\link</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdlink">\link</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdlink"></a>
 \link &lt;link-object&gt;</h1>
 <p><a name="a400_:5clink"></a> The links that are automatically generated by doxygen always have the name of the object they point to as link-text.</p>
 <p>The <code>\link</code> command can be used to create a link to an object (a file, class, or member) with a user specified link-text. The link command should end with an <a class="el" href="commands.html#cmdendlink">\endlink</a> command. All text between the <code>\link</code> and <a class="el" href="commands.html#cmdendlink">\endlink</a> commands serves as text for a link to the &lt;link-object&gt; specified as the first argument of <code>\link</code>.</p>
-<dl class="section see"><dt>See also</dt><dd>Section <a class="el" href="autolink.html">autolink</a> for more information on automatically generated links and valid link-objects.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>Section <a class="el" href="autolink.html">autolink</a> for more information on automatically generated links and valid link-objects.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdref"></a>
 \ref &lt;name&gt; ["(text)"]</h1>
 <p><a name="a401_:5cref"></a> Creates a reference to a named section, subsection, page or anchor. For HTML documentation the reference command will generate a link to the section. For a section or subsection the title of the section will be used as the text of the link. For an anchor the optional text between quotes will be used or &lt;name&gt; if no text is specified. For <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> documentation the reference command will generate a section number for sections or the text followed by a page number if &lt;name&gt; refers to an anchor.</p>
-<dl class="section see"><dt>See also</dt><dd>Section <a class="el" href="commands.html#cmdpage">\page</a> for an example of the <code>\ref</code> command.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>Section <a class="el" href="commands.html#cmdpage">\page</a> for an example of the <code>\ref</code> command.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdrefitem"></a>
 \refitem &lt;name&gt;</h1>
@@ -1227,7 +1262,7 @@ class Example
 <p>This command behaves similar as <a class="el" href="commands.html#cmdref">\ref</a> in the sense that it creates a reference to a page labeled &lt;name&gt; with the optional link text as specified in the second argument.</p>
 <p>It differs from the <a class="el" href="commands.html#cmdref">\ref</a> command in that it only works for pages, and creates a parent-child relation between pages, where the child page (or sub page) is identified by label &lt;name&gt;.</p>
 <p>See the <a class="el" href="commands.html#cmdsection">\section</a> and <a class="el" href="commands.html#cmdsubsection">\subsection</a> commands if you want to add structure without creating multiple pages.</p>
-<dl class="section note"><dt>Note</dt><dd>Each page can be the sub page of only one other page and no cyclic relations are allowed, i.e. the page hierarchy must have a tree structure.</dd></dl>
+<dl class="section note"><dt>注意</dt><dd>Each page can be the sub page of only one other page and no cyclic relations are allowed, i.e. the page hierarchy must have a tree structure.</dd></dl>
 <p>Here is an example: </p><pre class="fragment">/*! \mainpage A simple manual
 
 Some general info.
@@ -1260,19 +1295,19 @@ Make sure you have first read \ref intro "the introduction".
 \section &lt;section-name&gt; (section title)</h1>
 <p><a name="a407_:5csection"></a> Creates a section with name &lt;section-name&gt;. The title of the section should be specified as the second argument of the <code>\section</code> command.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This command only works inside related page documentation and <em>not</em> in other documentation blocks!</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>Section <a class="el" href="commands.html#cmdpage">\page</a> for an example of the <code>\section</code> command.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>Section <a class="el" href="commands.html#cmdpage">\page</a> for an example of the <code>\section</code> command.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdsubsection"></a>
 \subsection &lt;subsection-name&gt; (subsection title)</h1>
 <p><a name="a408_:5csubsection"></a> Creates a subsection with name &lt;subsection-name&gt;. The title of the subsection should be specified as the second argument of the <code>\subsection</code> command.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This command only works inside a section of a related page documentation block and <em>not</em> in other documentation blocks!</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>Section <a class="el" href="commands.html#cmdpage">\page</a> for an example of the <code>\subsection</code> command.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>Section <a class="el" href="commands.html#cmdpage">\page</a> for an example of the <code>\subsection</code> command.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdsubsubsection"></a>
 \subsubsection &lt;subsubsection-name&gt; (subsubsection title)</h1>
 <p><a name="a409_:5csubsubsection"></a> Creates a subsubsection with name &lt;subsubsection-name&gt;. The title of the subsubsection should be specified as the second argument of the <code>\subsubsection</code> command.</p>
 <dl class="section warning"><dt>Warning</dt><dd>This command only works inside a subsection of a related page documentation block and <em>not</em> in other documentation blocks!</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>Section <a class="el" href="commands.html#cmdpage">\page</a> for an example of the <a class="el" href="commands.html#cmdsection">\section</a> command and <a class="el" href="commands.html#cmdsubsection">\subsection</a> command.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>Section <a class="el" href="commands.html#cmdpage">\page</a> for an example of the <a class="el" href="commands.html#cmdsection">\section</a> command and <a class="el" href="commands.html#cmdsubsection">\subsection</a> command.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdparagraph"></a>
 \paragraph &lt;paragraph-name&gt; (paragraph title)</h1>
@@ -1288,7 +1323,7 @@ Make sure you have first read \ref intro "the introduction".
 <p>You can add option <code>{lineno}</code> to enable line numbers for the included code if desired.</p>
 <p>The class and member declarations and definitions inside the code fragment are 'remembered' during the parsing of the comment block that contained the <code>\dontinclude</code> command.</p>
 <p>For line by line descriptions of source files, one or more lines of the example can be displayed using the <a class="el" href="commands.html#cmdline">\line</a>, <a class="el" href="commands.html#cmdskip">\skip</a>, <a class="el" href="commands.html#cmdskipline">\skipline</a>, and <a class="el" href="commands.html#cmduntil">\until</a> commands. An internal pointer is used for these commands. The <code>\dontinclude</code> command sets the pointer to the first line of the example.</p>
-<dl class="section user"><dt>Example:</dt><dd><div class="fragment"><div class="line"><span class="comment"></span> </div>
+<dl class="section user"><dt>例如：</dt><dd><div class="fragment"><div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/*! A test class. */</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>Include_Test</div>
@@ -1319,7 +1354,7 @@ Make sure you have first read \ref intro "the introduction".
   Click <a href="examples/include/html/pag_example.html">here</a>
   for the corresponding HTML documentation that is generated by doxygen.
    </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdline">\line</a>, <a class="el" href="commands.html#cmdskip">\skip</a>, <a class="el" href="commands.html#cmdskipline">\skipline</a>, <a class="el" href="commands.html#cmduntil">\until</a>, and <a class="el" href="commands.html#cmdinclude">\include</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdline">\line</a>, <a class="el" href="commands.html#cmdskip">\skip</a>, <a class="el" href="commands.html#cmdskipline">\skipline</a>, <a class="el" href="commands.html#cmduntil">\until</a>, and <a class="el" href="commands.html#cmdinclude">\include</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdinclude"></a>
 \include['{'option'}'] &lt;file-name&gt;</h1>
@@ -1331,20 +1366,20 @@ Make sure you have first read \ref intro "the introduction".
 <p>Alternatively, the <a class="el" href="commands.html#cmdsnippet">\snippet</a> command can be used to include only a fragment of a source file. For this to work the fragment has to be marked.</p>
 <dl class="section note"><dt>Note</dt><dd>Doxygen's special commands do not work inside blocks of code. It is allowed to nest C-style comments inside a code block though.</dd></dl>
 <p>The <code>option</code> can either be <code>lineno</code> or <code>doc</code>. The <code>option</code> <code>lineno</code> can be used to enable line numbers for the included code if desired. The <code>option</code> <code>doc</code> can be used to treat the file as documentation rather than code.</p>
-<dl class="section note"><dt>Note</dt><dd>Some that when using the <code>{doc}</code> option, commands like <a class="el" href="commands.html#cmdcond">\cond</a> and <a class="el" href="commands.html#cmdif">\if</a> don't work with this command due to the moment of parsing.</dd>
+<dl class="section note"><dt>注意</dt><dd>Some that when using the <code>{doc}</code> option, commands like <a class="el" href="commands.html#cmdcond">\cond</a> and <a class="el" href="commands.html#cmdif">\if</a> don't work with this command due to the moment of parsing.</dd>
 <dd>
 The included documentation should not have comment signs in it as they will appear in the documentation as well.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdexample">\example</a>, <a class="el" href="commands.html#cmddontinclude">\dontinclude</a>, <a class="el" href="commands.html#cmdverbatim">\verbatim</a>, <a class="el" href="commands.html#cmdincludedoc">\includedoc</a>, and <a class="el" href="commands.html#cmdsnippet">\snippet</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdexample">\example</a>, <a class="el" href="commands.html#cmddontinclude">\dontinclude</a>, <a class="el" href="commands.html#cmdverbatim">\verbatim</a>, <a class="el" href="commands.html#cmdincludedoc">\includedoc</a>, and <a class="el" href="commands.html#cmdsnippet">\snippet</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdincludelineno"></a>
 \includelineno &lt;file-name&gt;</h1>
 <p><a name="a413_:5cincludelineno"></a> This command is obsolete and is still supported for backward compatibility reasons, it works the same way as <a class="el" href="commands.html#cmdinclude">\include{lineno}</a></p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdinclude">\include{lineno}</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdinclude">\include{lineno}</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdincludedoc"></a>
 \includedoc &lt;file-name&gt;</h1>
 <p><a name="a414_:5cincludedoc"></a> This command is obsolete and is still supported for backward compatibility reasons, it works the same way as <a class="el" href="commands.html#cmdinclude">\include{doc}</a></p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdinclude">\include{doc}</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdinclude">\include{doc}</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdline"></a>
 \line ( pattern )</h1>
@@ -1362,7 +1397,7 @@ The included documentation should not have comment signs in it as they will appe
 \skipline ( pattern )</h1>
 <p><a name="a417_:5cskipline"></a> This command searches line by line through the example that was last included using <a class="el" href="commands.html#cmdinclude">\include</a> or <a class="el" href="commands.html#cmddontinclude">\dontinclude</a> until it finds a line that contains the specified pattern. It then writes the line to the output.</p>
 <p>The internal pointer that is used to keep track of the current line in the example, is set to the start of the line following the line that is written (or to the end of the example if the pattern could not be found).</p>
-<dl class="section user"><dt>Note:</dt><dd>The command: <pre class="fragment">\skipline pattern</pre> is equivalent to: <pre class="fragment">\skip pattern
+<dl class="section user"><dt>注意:</dt><dd>The command: <pre class="fragment">\skipline pattern</pre> is equivalent to: <pre class="fragment">\skip pattern
 \line pattern</pre></dd></dl>
 <p>See section <a class="el" href="commands.html#cmddontinclude">\dontinclude</a> for an example.</p>
 <hr  />
@@ -1385,7 +1420,7 @@ The included documentation should not have comment signs in it as they will appe
 <div class="line">    QUrl(<span class="stringliteral">&quot;mydata://image.png&quot;</span>), QVariant(image));</div>
 </div><!-- fragment --><p>Note also that the [block_id] markers should appear exactly twice in the source file.</p>
 <p>The <code>option</code> can either be <code>lineno</code> or <code>doc</code>. The <code>option</code> <code>lineno</code> can be used to enable line numbers for the included code if desired. The <code>option</code> <code>doc</code> can be used to treat the file as documentation rather than code.</p>
-<dl class="section note"><dt>Note</dt><dd>Some that when using the <code>{doc}</code> option, commands like <a class="el" href="commands.html#cmdcond">\cond</a> and <a class="el" href="commands.html#cmdif">\if</a> don't work with this command due to the moment of parsing.</dd>
+<dl class="section note"><dt>注意</dt><dd>Some that when using the <code>{doc}</code> option, commands like <a class="el" href="commands.html#cmdcond">\cond</a> and <a class="el" href="commands.html#cmdif">\if</a> don't work with this command due to the moment of parsing.</dd>
 <dd>
 The included documentation should not have comment signs in it as they will appear in the documentation as well.</dd></dl>
 <p>see section <a class="el" href="commands.html#cmddontinclude">\dontinclude</a> for an alternative way to include fragments of a source file that does not require markers.</p>
@@ -1393,12 +1428,12 @@ The included documentation should not have comment signs in it as they will appe
  <h1><a class="anchor" id="cmdsnippetlineno"></a>
 \snippetlineno &lt;file-name&gt; ( block_id )</h1>
 <p><a name="a419_:5csnippetlineno"></a> This command is obsolete and is still supported for backward compatibility reasons, it works the same way as <a class="el" href="commands.html#cmdsnippet">\snippet{lineno}</a></p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdsnippet">\snippet{lineno}</a></dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdsnippet">\snippet{lineno}</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdsnippetdoc"></a>
 \snippetdoc &lt;file-name&gt; ( block_id )</h1>
 <p><a name="a420_:5csnippetdoc"></a> This command is obsolete and is still supported for backward compatibility reasons, it works the same way as <a class="el" href="commands.html#cmdsnippet">\snippet{doc}</a></p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdsnippet">\snippet{doc}</a> and <a class="el" href="commands.html#cmdinclude">\include{doc}</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdsnippet">\snippet{doc}</a> and <a class="el" href="commands.html#cmdinclude">\include{doc}</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmduntil"></a>
 \until ( pattern )</h1>
@@ -1416,7 +1451,7 @@ The included documentation should not have comment signs in it as they will appe
 <p><a name="a423_:5chtmlinclude"></a> This command includes the file &lt;file-name&gt; as is in the HTML documentation. The command is equivalent to pasting the file in the documentation and placing <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a> and <a class="el" href="commands.html#cmdendhtmlonly">\endhtmlonly</a> commands around it.</p>
 <p>Normally the contents of the file indicated by <a class="el" href="commands.html#cmdhtmlinclude">\htmlinclude</a> is inserted as-is. When you want to insert a HTML fragment that has block scope like a table or list which should appear outside &lt;p&gt;..&lt;/p&gt;, this can lead to invalid HTML. You can use \htmlinclude[block] to make doxygen end the current paragraph and restart after the file is included.</p>
 <p>Files or directories that doxygen should look for can be specified using the <a class="el" href="config.html#cfg_example_path">EXAMPLE_PATH</a> tag of doxygen's configuration file.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>. <hr  />
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>. <hr  />
 </dd></dl>
 <h1><a class="anchor" id="cmdlatexinclude"></a>
 \latexinclude &lt;file-name&gt;</h1>
@@ -1428,7 +1463,7 @@ The included documentation should not have comment signs in it as they will appe
 <h1><a class="anchor" id="cmda"></a>
 \a &lt;word&gt;</h1>
 <p><a name="a425_:5ca"></a> Displays the argument &lt;word&gt; in italics. Use this command to emphasize words. Use this command to refer to member arguments in the running text.</p>
-<dl class="section user"><dt>Example:</dt><dd><pre class="fragment">  ... the \a x and \a y coordinates are used to ...</pre> This will result in the following text:<br  />
+<dl class="section user"><dt>例如：</dt><dd><pre class="fragment">  ... the \a x and \a y coordinates are used to ...</pre> This will result in the following text:<br  />
 <br  />
  ... the <em>x</em> and <em>y</em> coordinates are used to ...</dd></dl>
 <p>Equivalent to <a class="el" href="commands.html#cmde">\e</a> and <a class="el" href="commands.html#cmdem">\em</a>. To emphasize multiple words use &lt;em&gt;multiple words&lt;/em&gt;.</p>
@@ -1436,7 +1471,7 @@ The included documentation should not have comment signs in it as they will appe
  <h1><a class="anchor" id="cmdarg"></a>
 \arg { item-description }</h1>
 <p><a name="a426_:5carg"></a> This command has one argument that continues until the first blank line or until another <code>\arg</code> is encountered. The command can be used to generate a simple, not nested list of arguments. Each argument should start with a <code>\arg</code> command.</p>
-<dl class="section user"><dt>Example:</dt><dd>Typing: <pre class="fragment">  \arg \c AlignLeft left alignment.
+<dl class="section user"><dt>例如：</dt><dd>Typing: <pre class="fragment">  \arg \c AlignLeft left alignment.
   \arg \c AlignCenter center alignment.
   \arg \c AlignRight right alignment
 
@@ -1452,7 +1487,7 @@ The included documentation should not have comment signs in it as they will appe
 </ul>
 <br  />
  No other types of alignment are supported.</dd></dl>
-<dl class="section user"><dt>Note:</dt><dd>For nested lists, HTML commands should be used.</dd></dl>
+<dl class="section user"><dt>注意:</dt><dd>For nested lists, HTML commands should be used.</dd></dl>
 <p>Equivalent to <a class="el" href="commands.html#cmdli">\li</a></p>
 <hr  />
  <h1><a class="anchor" id="cmdb"></a>
@@ -1462,7 +1497,7 @@ The included documentation should not have comment signs in it as they will appe
  <h1><a class="anchor" id="cmdc"></a>
 \c &lt;word&gt;</h1>
 <p><a name="a428_:5cc"></a> Displays the argument &lt;word&gt; using a typewriter font. Use this to refer to a word of code. Equivalent to &lt;tt&gt;word&lt;/tt&gt;.</p>
-<dl class="section user"><dt>Example:</dt><dd>Typing: <pre class="fragment">     ... This function returns \c void and not \c int ...</pre> will result in the following text:<br  />
+<dl class="section user"><dt>例如：</dt><dd>Typing: <pre class="fragment">     ... This function returns \c void and not \c int ...</pre> will result in the following text:<br  />
 <br  />
  ... This function returns <code>void</code> and not <code>int</code> ...</dd></dl>
 <p>Equivalent to <a class="el" href="commands.html#cmdp">\p</a> To have multiple words in typewriter font use &lt;tt&gt;multiple words&lt;/tt&gt;.</p>
@@ -1488,7 +1523,7 @@ The included documentation should not have comment signs in it as they will appe
   \code{.sh}
   echo "This is a shell script"
   \endcode
-</pre><dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdendcode">\endcode</a> and section <a class="el" href="commands.html#cmdverbatim">\verbatim</a>.</dd></dl>
+</pre><dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdendcode">\endcode</a> and section <a class="el" href="commands.html#cmdverbatim">\verbatim</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdcopydoc"></a>
 \copydoc &lt;link-object&gt;</h1>
@@ -1517,7 +1552,7 @@ The included documentation should not have comment signs in it as they will appe
  <h1><a class="anchor" id="cmddocbookonly"></a>
 \docbookonly</h1>
 <p><a name="a433_:5cdocbookonly"></a> Starts a block of text that will be verbatim included in the generated DocBook documentation only. The block ends with a <a class="el" href="commands.html#cmdenddocbookonly">\enddocbookonly</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, and <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, and <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmddot"></a>
 \dot ["caption"] [&lt;sizeindication&gt;=&lt;size&gt;]</h1>
@@ -1557,7 +1592,7 @@ The included documentation should not have comment signs in it as they will appe
 <p><a name="a435_:5cmsc"></a> Starts a text fragment which should contain a valid description of a message sequence chart. See <a href="http://www.mcternan.me.uk/mscgen/">http://www.mcternan.me.uk/mscgen/</a> for examples. The text fragment ends with <a class="el" href="commands.html#cmdendmsc">\endmsc</a>.</p>
 <p>The first argument is optional and can be used to specify the caption that is displayed below the image. This argument has to be specified between quotes even if it does not contain any spaces. The quotes are stripped before the caption is displayed.</p>
 <p>The second argument is also optional and can be used to specify the width or height of the image. For a description of the possibilities see the paragraph <a class="el" href="commands.html#image_sizeindicator">Size indication</a> with the <a class="el" href="commands.html#cmdimage">\image</a> command.</p>
-<dl class="section note"><dt>Note</dt><dd>The text fragment should only include the part of the message sequence chart that is within the <code>msc {...}</code> block (this is different from <a class="el" href="commands.html#cmdmscfile">\mscfile</a>). </dd>
+<dl class="section note"><dt>注意</dt><dd>The text fragment should only include the part of the message sequence chart that is within the <code>msc {...}</code> block (this is different from <a class="el" href="commands.html#cmdmscfile">\mscfile</a>). </dd>
 <dd>
 mscgen is now built in into doxygen</dd></dl>
 <p>Here is an example of the use of the <code>\msc</code> command. </p><div class="fragment"><div class="line"><span class="comment">/** Sender class. Can be used to send a command to the server.</span></div>
@@ -1589,11 +1624,12 @@ mscgen is now built in into doxygen</dd></dl>
 <div class="line"><span class="comment">    /** Executable a command on the server */</span></div>
 <div class="line">    <span class="keywordtype">void</span> Command(<span class="keywordtype">int</span> commandId);</div>
 <div class="line">};</div>
-</div><!-- fragment --><dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdmscfile">\mscfile</a>.</dd></dl>
+</div><!-- fragment --><dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdmscfile">\mscfile</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdstartuml"></a>
 \startuml [{file}] ["caption"] [&lt;sizeindication&gt;=&lt;size&gt;]</h1>
-<p><a name="a436_:5cstartuml"></a> Starts a text fragment which should contain a valid description of a PlantUML diagram. See <a href="http://plantuml.com/">http://plantuml.com/</a> for examples. The text fragment ends with <a class="el" href="commands.html#cmdenduml">\enduml</a>. </p><dl class="section note"><dt>Note</dt><dd>You need to install Java and the PlantUML's jar file, if you want to use this command. The location of the jar file should be specified using <a class="el" href="config.html#cfg_plantuml_jar_path">PLANTUML_JAR_PATH</a>.</dd></dl>
+<p><a name="a436_:5cstartuml"></a> Starts a text fragment which should contain a valid description of a PlantUML diagram. See <a href="http://plantuml.com/">http://plantuml.com/</a> for examples. The text fragment ends with <a class="el" href="commands.html#cmdenduml">\enduml</a>. </p><dl class="section note"><dt>
+		注意</dt><dd>You need to install Java and the PlantUML's jar file, if you want to use this command. The location of the jar file should be specified using <a class="el" href="config.html#cfg_plantuml_jar_path">PLANTUML_JAR_PATH</a>.</dd></dl>
 <p>The first argument is optional and is for compatibility with running PlantUML as a preprocessing step before running doxygen, you can also add the name of the image file after <code>\startuml</code> and inside curly brackets, i.e. </p><pre class="fragment">  @startuml{myimage.png} "Image Caption" width=5cm
   Alice -&gt; Bob : Hello
   @enduml</pre><p> When the name of the image is specified, doxygen will generate an image with that name. Without the name doxygen will choose a name automatically.</p>
@@ -1633,7 +1669,7 @@ mscgen is now built in into doxygen</dd></dl>
 <p>The first argument specifies the file name of the image. doxygen will look for files in the paths (or files) that you specified after the <a class="el" href="config.html#cfg_dotfile_dirs">DOTFILE_DIRS</a> tag. If the dot file is found it will be used as an input file to the dot tool. The resulting image will be put into the correct output directory. If the dot file name contains spaces you'll have to put quotes ("...") around it.</p>
 <p>The second argument is optional and can be used to specify the caption that is displayed below the image. This argument has to be specified between quotes even if it does not contain any spaces. The quotes are stripped before the caption is displayed.</p>
 <p>The third argument is also optional and can be used to specify the width or height of the image. For a description of the possibilities see the paragraph <a class="el" href="commands.html#image_sizeindicator">Size indication</a> with the <a class="el" href="commands.html#cmdimage">\image</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmddot">\dot</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmddot">\dot</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdmscfile"></a>
 \mscfile &lt;file&gt; ["caption"] [&lt;sizeindication&gt;=&lt;size&gt;]</h1>
@@ -1641,8 +1677,8 @@ mscgen is now built in into doxygen</dd></dl>
 <p>The first argument specifies the file name of the image. doxygen will look for files in the paths (or files) that you specified after the <a class="el" href="config.html#cfg_mscfile_dirs">MSCFILE_DIRS</a> tag. If the msc file is found it will be used as an input file to the built in mscgen tool. The resulting image will be put into the correct output directory. If the msc file name contains spaces you'll have to put quotes ("...") around it.</p>
 <p>The second argument is optional and can be used to specify the caption that is displayed below the image. This argument has to be specified between quotes even if it does not contain any spaces. The quotes are stripped before the caption is displayed.</p>
 <p>The third argument is also optional and can be used to specify the width or height of the image. For a description of the possibilities see the paragraph <a class="el" href="commands.html#image_sizeindicator">Size indication</a> with the <a class="el" href="commands.html#cmdimage">\image</a> command.</p>
-<dl class="section note"><dt>Note</dt><dd>The text fragment should include the part message of the sequence chart as well as the starting <code>msc {</code> and ending <code>}</code> (this is different from <a class="el" href="commands.html#cmdmsc">\msc</a>).</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdmsc">\msc</a>.</dd></dl>
+<dl class="section note"><dt>注意</dt><dd>The text fragment should include the part message of the sequence chart as well as the starting <code>msc {</code> and ending <code>}</code> (this is different from <a class="el" href="commands.html#cmdmsc">\msc</a>).</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdmsc">\msc</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmddiafile"></a>
 \diafile &lt;file&gt; ["caption"] [&lt;sizeindication&gt;=&lt;size&gt;]</h1>
@@ -1654,7 +1690,7 @@ mscgen is now built in into doxygen</dd></dl>
  <h1><a class="anchor" id="cmde"></a>
 \e &lt;word&gt;</h1>
 <p><a name="a440_:5ce"></a> Displays the argument &lt;word&gt; in italics. Use this command to emphasize words.</p>
-<dl class="section user"><dt>Example:</dt><dd>Typing: <pre class="fragment">  ... this is a \e really good example ...</pre> will result in the following text:<br  />
+<dl class="section user"><dt>例如：</dt><dd>Typing: <pre class="fragment">  ... this is a \e really good example ...</pre> will result in the following text:<br  />
 <br  />
  ... this is a <em>really</em> good example ...</dd></dl>
 <p>Equivalent to <a class="el" href="commands.html#cmda">\a</a> and <a class="el" href="commands.html#cmdem">\em</a>. To emphasize multiple words use &lt;em&gt;multiple words&lt;/em&gt;.</p>
@@ -1662,19 +1698,20 @@ mscgen is now built in into doxygen</dd></dl>
  <h1><a class="anchor" id="cmdem"></a>
 \em &lt;word&gt;</h1>
 <p><a name="a441_:5cem"></a> Displays the argument &lt;word&gt; in italics. Use this command to emphasize words.</p>
-<dl class="section user"><dt>Example:</dt><dd>Typing: <pre class="fragment">  ... this is a \em really good example ...</pre> will result in the following text:<br  />
+<dl class="section user"><dt>例如：</dt><dd>Typing: <pre class="fragment">  ... this is a \em really good example ...</pre> will result in the following text:<br  />
 <br  />
  ... this is a <em>really</em> good example ...</dd></dl>
 <p>Equivalent to <a class="el" href="commands.html#cmda">\a</a> and <a class="el" href="commands.html#cmde">\e</a>. To emphasize multiple words use &lt;em&gt;multiple words&lt;/em&gt;.</p>
 <hr  />
  <h1><a class="anchor" id="cmdendcode"></a>
 \endcode</h1>
-<p><a name="a442_:5cendcode"></a> Ends a block of code. </p><dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdcode">\code</a></dd></dl>
+<p><a name="a442_:5cendcode"></a> Ends a block of code. </p><dl class="section see"><dt>
+		参考</dt><dd>section <a class="el" href="commands.html#cmdcode">\code</a></dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdenddocbookonly"></a>
 \enddocbookonly</h1>
 <p><a name="a443_:5cenddocbookonly"></a> Ends a block of text that was started with a <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdenddot"></a>
 \enddot</h1>
@@ -1691,66 +1728,71 @@ mscgen is now built in into doxygen</dd></dl>
  <h1><a class="anchor" id="cmdendhtmlonly"></a>
 \endhtmlonly</h1>
 <p><a name="a447_:5cendhtmlonly"></a> Ends a block of text that was started with a <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdendlatexonly"></a>
 \endlatexonly</h1>
 <p><a name="a448_:5cendlatexonly"></a> Ends a block of text that was started with a <a class="el" href="commands.html#cmdlatexonly">\latexonly</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdendmanonly"></a>
 \endmanonly</h1>
 <p><a name="a449_:5cendmanonly"></a> Ends a block of text that was started with a <a class="el" href="commands.html#cmdmanonly">\manonly</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdmanonly">\manonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdmanonly">\manonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdendrtfonly"></a>
 \endrtfonly</h1>
 <p><a name="a450_:5cendrtfonly"></a> Ends a block of text that was started with a <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdendverbatim"></a>
 \endverbatim</h1>
 <p><a name="a451_:5cendverbatim"></a> Ends a block of text that was started with a <a class="el" href="commands.html#cmdverbatim">\verbatim</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdverbatim">\verbatim</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdverbatim">\verbatim</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdendxmlonly"></a>
 \endxmlonly</h1>
 <p><a name="a452_:5cendxmlonly"></a> Ends a block of text that was started with a <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a> command.</p>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdfdollar"></a>
 \f$</h1>
 <p><a name="a453_:5cf:24"></a></p>
-<p>Marks the start and end of an in-text formula. </p><dl class="section see"><dt>See also</dt><dd>section <a class="el" href="formulas.html">formulas</a> for an example.</dd></dl>
+<p>Marks the start and end of an in-text formula. </p><dl class="section see"><dt>
+		参考</dt><dd>section <a class="el" href="formulas.html">formulas</a> for an example.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdfbropen"></a>
 \f[</h1>
 <p><a name="a454_:5cf:5b"></a></p>
-<p>Marks the start of a long formula that is displayed centered on a separate line. </p><dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdfbrclose">\f]</a> and section <a class="el" href="formulas.html">formulas</a>.</dd></dl>
+<p>Marks the start of a long formula that is displayed centered on a separate line. </p><dl class="section see"><dt>
+		参考</dt><dd>section <a class="el" href="commands.html#cmdfbrclose">\f]</a> and section <a class="el" href="formulas.html">formulas</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdfbrclose"></a>
 \f]</h1>
 <p><a name="a455_:5cf:5d"></a></p>
-<p>Marks the end of a long formula that is displayed centered on a separate line. </p><dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdfbropen">\f[</a> and section <a class="el" href="formulas.html">formulas</a>.</dd></dl>
+<p>Marks the end of a long formula that is displayed centered on a separate line. </p><dl class="section see"><dt>
+		参考</dt><dd>section <a class="el" href="commands.html#cmdfbropen">\f[</a> and section <a class="el" href="formulas.html">formulas</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdfcurlyopen"></a>
 \f{environment}{</h1>
 <p><a name="a456_:5cf:7b"></a></p>
-<p>Marks the start of a formula that is in a specific environment. </p><dl class="section note"><dt>Note</dt><dd>The second <code>{</code> is optional and is only to help editors (such as <code>Vim</code>) to do proper syntax highlighting by making the number of opening and closing braces the same. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdfcurlyclose">\f}</a> and section <a class="el" href="formulas.html">formulas</a>.</dd></dl>
+<p>Marks the start of a formula that is in a specific environment. </p><dl class="section note"><dt>
+		注意</dt><dd>The second <code>{</code> is optional and is only to help editors (such as <code>Vim</code>) to do proper syntax highlighting by making the number of opening and closing braces the same. </dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdfcurlyclose">\f}</a> and section <a class="el" href="formulas.html">formulas</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdfcurlyclose"></a>
 \f}</h1>
 <p><a name="a457_:5cf:7d"></a></p>
-<p>Marks the end of a formula that is in a specific environment. </p><dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdfcurlyopen">\f{</a> and section <a class="el" href="formulas.html">formulas</a>.</dd></dl>
+<p>Marks the end of a formula that is in a specific environment. </p><dl class="section see"><dt>
+		参考</dt><dd>section <a class="el" href="commands.html#cmdfcurlyopen">\f{</a> and section <a class="el" href="formulas.html">formulas</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdhtmlonly"></a>
 \htmlonly ["[block]"]</h1>
 <p><a name="a458_:5chtmlonly"></a> Starts a block of text that will be verbatim included in the generated HTML documentation only. The block ends with a <a class="el" href="commands.html#cmdendhtmlonly">\endhtmlonly</a> command.</p>
 <p>This command can be used to include HTML code that is too complex for doxygen (i.e. applets, java-scripts, and HTML tags that require specific attributes).</p>
 <p>Normally the contents between <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a> and <a class="el" href="commands.html#cmdendhtmlonly">\endhtmlonly</a> is inserted as-is. When you want to insert a HTML fragment that has block scope like a table or list which should appear outside &lt;p&gt;..&lt;/p&gt;, this can lead to invalid HTML. You can use \htmlonly[block] to make doxygen end the current paragraph and restart it after \endhtmlonly.</p>
-<dl class="section note"><dt>Note</dt><dd>environment variables (like $(HOME) ) are resolved inside a HTML-only block.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>section <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>, and <a class="el" href="commands.html#cmdhtmlinclude">\htmlinclude</a>.</dd></dl>
+<dl class="section note"><dt>注意</dt><dd>environment variables (like $(HOME) ) are resolved inside a HTML-only block.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>section <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>, and <a class="el" href="commands.html#cmdhtmlinclude">\htmlinclude</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdimage"></a>
 \image['{'option'}'] &lt;format&gt; &lt;file&gt; ["caption"] [&lt;sizeindication&gt;=&lt;size&gt;]</h1>
@@ -1775,19 +1817,19 @@ mscgen is now built in into doxygen</dd></dl>
 \latexonly</h1>
 <p><a name="a460_:5clatexonly"></a> Starts a block of text that will be verbatim included in the generated <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> documentation only. The block ends with a <a class="el" href="commands.html#cmdendlatexonly">\endlatexonly</a> command.</p>
 <p>This command can be used to include <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> code that is too complex for doxygen (i.e. images, formulas, special characters). You can use the <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a> and <a class="el" href="commands.html#cmdendhtmlonly">\endhtmlonly</a> pair to provide a proper HTML alternative.</p>
-<p><b>Note:</b> environment variables (like $(HOME) ) are resolved inside a <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/>-only block.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>, and <a class="el" href="commands.html#cmdhtmlonly">\docbookonly</a>.</dd></dl>
+<p><b>注意:</b> environment variables (like $(HOME) ) are resolved inside a <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/>-only block.</p>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>, and <a class="el" href="commands.html#cmdhtmlonly">\docbookonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdmanonly"></a>
 \manonly</h1>
 <p><a name="a461_:5cmanonly"></a> Starts a block of text that will be verbatim included in the generated MAN documentation only. The block ends with a <a class="el" href="commands.html#cmdendmanonly">\endmanonly</a> command.</p>
 <p>This command can be used to include groff code directly into MAN pages. You can use the <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a> and <a class="el" href="commands.html#cmdendhtmlonly">\endhtmlonly</a> and <a class="el" href="commands.html#cmdlatexonly">\latexonly</a> and <a class="el" href="commands.html#cmdendlatexonly">\endlatexonly</a> pairs to provide proper HTML and <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/> alternatives.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, and <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, and <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdli"></a>
 \li { item-description }</h1>
 <p><a name="a462_:5cli"></a> This command has one argument that continues until the first blank line or until another <code>\li</code> is encountered. The command can be used to generate a simple, not nested list of arguments. Each argument should start with a <code>\li</code> command.</p>
-<dl class="section user"><dt>Example:</dt><dd>Typing: <pre class="fragment">  \li \c AlignLeft left alignment.
+<dl class="section user"><dt>例如：</dt><dd>Typing: <pre class="fragment">  \li \c AlignLeft left alignment.
   \li \c AlignCenter center alignment.
   \li \c AlignRight right alignment
 
@@ -1803,7 +1845,7 @@ mscgen is now built in into doxygen</dd></dl>
 </ul>
 <br  />
  No other types of alignment are supported.</dd></dl>
-<dl class="section user"><dt>Note:</dt><dd>For nested lists, HTML commands should be used.</dd></dl>
+<dl class="section user"><dt>注意:</dt><dd>For nested lists, HTML commands should be used.</dd></dl>
 <p>Equivalent to <a class="el" href="commands.html#cmdarg">\arg</a></p>
 <hr  />
  <h1><a class="anchor" id="cmdn"></a>
@@ -1813,7 +1855,7 @@ mscgen is now built in into doxygen</dd></dl>
  <h1><a class="anchor" id="cmdp"></a>
 \p &lt;word&gt;</h1>
 <p><a name="a464_:5cp"></a> Displays the parameter &lt;word&gt; using a typewriter font. You can use this command to refer to member function parameters in the running text.</p>
-<dl class="section user"><dt>Example:</dt><dd><pre class="fragment">  ... the \p x and \p y coordinates are used to ...</pre> This will result in the following text:<br  />
+<dl class="section user"><dt>例如：</dt><dd><pre class="fragment">  ... the \p x and \p y coordinates are used to ...</pre> This will result in the following text:<br  />
 <br  />
  ... the <code>x</code> and <code>y</code> coordinates are used to ...</dd></dl>
 <p>Equivalent to <a class="el" href="commands.html#cmdc">\c</a> To have multiple words in typewriter font use &lt;tt&gt;multiple words&lt;/tt&gt;.</p>
@@ -1822,20 +1864,20 @@ mscgen is now built in into doxygen</dd></dl>
 \rtfonly</h1>
 <p><a name="a465_:5crtfonly"></a> Starts a block of text that will be verbatim included in the generated RTF documentation only. The block ends with a <a class="el" href="commands.html#cmdendrtfonly">\endrtfonly</a> command.</p>
 <p>This command can be used to include RTF code that is too complex for doxygen.</p>
-<p><b>Note:</b> environment variables (like $(HOME) ) are resolved inside a RTF-only block.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>, and <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>.</dd></dl>
+<p><b>注意:</b> environment variables (like $(HOME) ) are resolved inside a RTF-only block.</p>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdxmlonly">\xmlonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>, and <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdverbatim"></a>
 \verbatim</h1>
 <p><a name="a466_:5cverbatim"></a> Starts a block of text that will be verbatim included in the documentation. The block should end with a <a class="el" href="commands.html#cmdendverbatim">\endverbatim</a> command. All commands are disabled in a verbatim block.</p>
 <dl class="section warning"><dt>Warning</dt><dd>Make sure you include a <a class="el" href="commands.html#cmdendverbatim">\endverbatim</a> command for each <code>\verbatim</code> command or the parser will get confused!</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdcode">\code</a>, <a class="el" href="commands.html#cmdendverbatim">\endverbatim</a> and <a class="el" href="commands.html#cmdverbinclude">\verbinclude</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdcode">\code</a>, <a class="el" href="commands.html#cmdendverbatim">\endverbatim</a> and <a class="el" href="commands.html#cmdverbinclude">\verbinclude</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdxmlonly"></a>
 \xmlonly</h1>
 <p><a name="a467_:5cxmlonly"></a> Starts a block of text that will be verbatim included in the generated XML output only. The block ends with a <a class="el" href="commands.html#cmdendxmlonly">\endxmlonly</a> command.</p>
 <p>This command can be used to include custom XML tags.</p>
-<dl class="section see"><dt>See also</dt><dd>sections <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>, and <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>.</dd></dl>
+<dl class="section see"><dt>参考</dt><dd>sections <a class="el" href="commands.html#cmdmanonly">\manonly</a>, <a class="el" href="commands.html#cmdrtfonly">\rtfonly</a>, <a class="el" href="commands.html#cmdlatexonly">\latexonly</a>, <a class="el" href="commands.html#cmdhtmlonly">\htmlonly</a>, and <a class="el" href="commands.html#cmddocbookonly">\docbookonly</a>.</dd></dl>
 <hr  />
  <h1><a class="anchor" id="cmdbackslash"></a>
 \\</h1>
@@ -1848,7 +1890,7 @@ mscgen is now built in into doxygen</dd></dl>
  <h1><a class="anchor" id="cmdtilde"></a>
 \~[LanguageId]</h1>
 <p><a name="a470_:5c:7e"></a> This command enables/disables a language specific filter. This can be used to put documentation for different language into one comment block and use the <a class="el" href="config.html#cfg_output_language">OUTPUT_LANGUAGE</a> tag to filter out only a specific language. Use <code>\~language_id</code> to enable output for a specific language only and <code>\~</code> to enable output for all languages (this is also the default mode).</p>
-<p>Example: </p><pre class="fragment">/*! \~english This is English \~dutch Dit is Nederlands \~german Dies ist
+<p>例如： </p><pre class="fragment">/*! \~english This is English \~dutch Dit is Nederlands \~german Dies ist
     Deutsch. \~ output for all languages.
  */
 </pre><hr  />

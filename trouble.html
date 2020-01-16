@@ -54,63 +54,75 @@ $(document).ready(function(){initNavTree('trouble.html','');});
 <div id="doc-content">
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Troubleshooting </div>  </div>
+<div class="title">故障排除 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="knowproblems"></a>
-Known Problems</h1>
+<div class="textblock"><h1><a class="anchor" id="knowproblems"></a>已知问题</h1>
 <ul>
 <li>
-Doxygen is <em>not</em> a real compiler, it is only a lexical scanner. This means that it can and will not detect errors in your source code. </li>
+Doxygen不是一个真正的编译器，它只是一个词汇扫描器。这意味着它不会检测到源代码中的错误。</li>
 <li>
-Doxygen has a built-in preprocessor, but this works slightly different than the C preprocessor. Doxygen assumes a header file is properly guarded against multiple inclusion, and that each include file is standalone (i.e. it could be placed at the top of a source file without causing compiler errors). As long as this is true (and this is a good design practice) you should not encounter problems. </li>
+Doxygen有一个内置的预处理器，但它的工作原理与C预处理器略有不同。Doxygen假设一个头文件被正确地保护起来，防止多重包含，并且每个包含文件都是独立的(例如，它可以放在源文件的顶部，而不会引起编译器错误)。只要这是正确的(这是一个很好的设计实践)，您就不应该遇到问题。</li>
 <li>
-Since it is impossible to test all possible code fragments, it is very well possible, that some valid piece of C/C++ code is not handled properly. If you find such a piece, please send it to me, so I can improve doxygen's parsing capabilities. Try to make the piece of code you send as small as possible, to help me narrow down the search. </li>
+由于不可能测试所有可能的代码片段，所以很有可能某些有效的C/ 
+C++代码没有得到适当的处理。如果你发现这样的情况，请告知我们，我们尽量提高doxygen的解析能力。试着让你发送的代码尽可能小，以帮助我缩小搜索范围。</li>
 <li>
-Doxygen does not work properly if there are multiple classes, structs or unions with the same name in your code. It should not crash however, rather it should ignore all of the classes with the same name except one. </li>
+如果代码中有多个具有相同名称的类、结构或联合，则Doxygen无法正常工作。但是，它应该不会崩溃，相反，它应该忽略所有具有相同名称的类，而只保留一个。</li>
 <li>
-Some commands do not work inside the arguments of other commands. Inside a HTML link (i.e. &lt;a&#160;href="..."&gt;...&lt;a&gt;) for instance other commands (including other HTML commands) do not work! The sectioning commands are an important exception. </li>
+有些命令在其他命令的参数中不起作用。在一个HTML链接中(例如&lt;a 
+href=&quot;…&quot;&gt;…&lt;a&gt;)其他命令(包括其他HTML命令)不起作用!分段命令是一个重要的例外。</li>
 <li>
-Redundant braces can confuse doxygen in some cases. For example: <pre class="fragment">  void f (int);
-</pre> is properly parsed as a function declaration, but <pre class="fragment">  const int (a);
-</pre> is also seen as a function declaration with name <code>int</code>, because only the syntax is analyzed, not the semantics. If the redundant braces can be detected, as in <pre class="fragment">  int *(a[20]);
-</pre> then doxygen will remove the braces and correctly parse the result. </li>
+在某些情况下，冗余括号会使doxygen混淆。例如: <pre class="fragment">  void f (int);
+</pre> 被正确地解析为一个函数声明，但是 <pre class="fragment">  const int (a);
+</pre>
+也被看作是一个名为int的函数声明，因为只分析语法，不分析语义。如果可以检测到冗余的括号，如 <pre class="fragment">  int *(a[20]);
+</pre> 然后doxygen将删除括号并正确解析结果。</li>
 <li>
-<p class="startli">Not all names in code fragments that are included in the documentation are replaced by links (for instance when using <a class="el" href="config.html#cfg_source_browser">SOURCE_BROWSER</a> = <code>YES</code>) and links to overloaded members may point to the wrong member. This also holds for the "Referenced by" list that is generated for each function.</p>
-<p class="endli">For a part this is because the code parser isn't smart enough at the moment. I'll try to improve this in the future. But even with these improvements not everything can be properly linked to the corresponding documentation, because of possible ambiguities or lack of information about the context in which the code fragment is found. <br  />
+<p class="startli">并不是文档中包含的所有代码片段中的名称都被链接所替换(例如，当使用 <a class="el" href="config.html#cfg_source_browser">SOURCE_BROWSER</a> = <code>YES时)，并且到重载成员的链接可能指向错误的成员。这也适用于为每个函数生成的引用列表。</code></p>
+<p class="endli">
+在某种程度上，这是因为代码解析器目前还不够智能。我们以后会努力改进的。但是，即使有了这些改进，也不是所有内容都可以正确地链接到相应的文档，因为可能存在关于找到代码片段的上下文的模糊或缺乏信息等的问题。<br  />
  </p>
 </li>
 <li>
-It is not possible to insert a non-member function f in a class A using the <a class="el" href="commands.html#cmdrelates">\relates</a> or <a class="el" href="commands.html#cmdrelatesalso">\relatesalso</a> command, if class A already has a member with name f and the same argument list. </li>
+如果类a已经有一个名为f的成员和相同的参数列表，则不能使 <a class="el" href="commands.html#cmdrelates">\relates</a> 
+或 <a class="el" href="commands.html#cmdrelatesalso">\relatesalso</a> 
+令在类a中插入非成员函数f。</li>
 <li>
-There is only very limited support for member specialization at the moment. It only works if there is a specialized template class as well. </li>
+目前对成员特化的支持非常有限。它只在有专门的模板类的情况下工作。</li>
 <li>
-Not all special commands are properly translated to RTF. </li>
+并不是所有的特殊命令都被正确地翻译成RTF。</li>
 <li>
-Version 1.8.6 of dot (and maybe earlier versions too) do not generate proper map files, causing the graphs that doxygen generates not to be properly clickable. </li>
+dot的1.8.6版本(可能还有更早的版本)没有生成正确的图表文件，导致doxygen生成的图形不能正确点击。</li>
 <li>
-PHP only: Doxygen requires that all PHP statements (i.e. code) is wrapped in a functions/methods, otherwise you may run into parse problems. </li>
+只使用PHP: Doxygen要求所有PHP语句(即代码)都包装在函数/方法中，否则可能会遇到解析问题。</li>
 </ul>
-<h1><a class="anchor" id="howtohelp"></a>
-How to Help</h1>
-<p>The development of doxygen highly depends on your input!</p>
-<p>If you are trying doxygen let me know what you think of it (do you miss certain features?). Even if you decide not to use it, please let me know why.</p>
-<h1><a class="anchor" id="bug_reports"></a>
-How to report a bug</h1>
-<p>Bugs are tracked in GitHub's <a href="https://github.com/doxygen/doxygen/issues">issue tracker</a>. Before submitting a <a href="https://github.com/doxygen/doxygen/issues/new">new bug</a>, first <a href="https://github.com/doxygen/doxygen/issues">search</a> through the database if the same bug has already been submitted by others. If you believe you have found a new bug, please <a href="https://github.com/doxygen/doxygen/issues/new">report it</a>.</p>
-<p>If you are unsure whether or not something is a bug, please ask help on the <a href="http://sourceforge.net/mail/?group_id=5971">users mailing list</a> first (subscription is required).</p>
-<p>If you send only a (vague) description of a bug, you are usually not very helpful and it will cost me much more time to figure out what you mean. In the worst-case your bug report may even be completely ignored by me, so always try to include the following information in your bug report:</p><ul>
-<li>The version of doxygen you are using (for instance 1.5.3, use <code>doxygen --version</code> if you are not sure).</li>
-<li>The name and version number of your operating system (for instance Ubuntu Linux 18.04 LTS)</li>
-<li>It is usually a good idea to send along the configuration file as well, but please use doxygen with the <code>-s</code> flag while generating it to keep it small (use <code>doxygen -s -u [configName]</code> to strip the comments from an existing configuration file).</li>
-<li>The easiest (and often the only) way for me to fix bugs is if you can attach a small example demonstrating the problem you have to the bug report, so I can reproduce it on my machine. Please make sure the example is valid source code (could potentially compile) and that the problem is really captured by the example (I often get examples that do not trigger the actual bug!). If you intend to send more than one file please zip or tar the files together into a single file for easier processing. Note that when reporting a new bug you'll get a chance to attach a file to it only <em>after</em> submitting the initial bug description.</li>
+<h1>如何帮助我们</h1>
+<p>doxygen的发展高度依赖于您的投入!</p>
+<p>
+如果你正在使用doxygen，请让我们了解你有什么样的可以让doxygen更棒好点子。不过我觉得您有时候可能错过了现有的一些doxygen功能。如果你决定不使用它们的某些功能，也请让我们了解为什么。</p>
+<h1>如何报告bug</h1>
+<p>bug在GitHub的<a href="https://github.com/doxygen/doxygen/issues">问题跟踪器</a>中被跟踪。在提交一个<a href="https://github.com/doxygen/doxygen/issues/new">新的bug</a>之前, 
+首先在数据库中<a href="https://github.com/doxygen/doxygen/issues">搜索</a>
+<a href="https://github.com/doxygen/doxygen/issues/new">是否其他人已经提交了相同的错误。<br />
+如果你相信你发现了一个新的错误，请报告。</a></p>
+<p>如果您不确定是否有问题，请首先在 <a href="http://sourceforge.net/mail/?group_id=5971">用户邮件列表</a> 
+中询问帮助(需要订阅)。</p>
+<p>
+如果你只发送一个(模糊的)bug描述，这个报告通常不但不会为我们提供很多帮助，甚至会花费我们很多的时间来弄清楚意思。在最坏的情况下，你的错误报告甚至可能被我们完全忽略，所以希望在你的错误报告中包括以下信息:</p><ul>
+<li>您正在使用的doxygen版本(例如1.5.3，如果您不确定，请使用 <code>doxygen --version命令查看）。</code></li>
+<li>操作系统的名称和版本号(例如Ubuntu Linux 18.04 LTS)</li>
+<li>通常，发送配置文件也是一个好主意，但请在生成配置文件时使用带-s标志的doxygen，以使其保持较小(使用doxygen -s -u 
+[configName]从现有配置文件中删除注释)。</li>
+<li>
+对我来说，修复bug最简单(通常也是唯一)的方法是，您可以将演示问题的小示例附加到bug报告中，这样我就可以在我的机器上重新复现它。请确保示例是有效的源代码(可能会编译)，并且示例确实和问题匹配。 
+如果您打算发送多个文件，请将这些文件压缩或tar到一个单独的文件中，以便于处理。请注意，在报告新bug时，只有在提交了初始bug描述之后，才有机会向其附加文件。</li>
 </ul>
-<p>You can (and are encouraged to) add a patch for a bug. If you do so please use PATCH as a keyword in the bug entry form.</p>
-<p>If you have ideas how to fix existing bugs and limitations please discuss them on the <a href="http://sourceforge.net/mail/?group_id=5971">developers mailing list</a> (subscription required). Patches can also be sent directly to <a href="#" onclick="location.href='mai'+'lto:'+'dox'+'yg'+'en@'+'gm'+'ail'+'.c'+'om'; return false;">doxyg<span style="display: none;">.nosp@m.</span>en@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a> if you prefer not to send them via the bug tracker or mailing list.</p>
-<p>For patches please use "diff -uN" or include the files you modified. If you send more than one file please tar or zip everything, so I only have to save and download one file.</p>
+<p>您可以为一个bug添加一个补丁。如果您这样做了，请在错误输入表单中使用PATCH作为关键字。</p>
+<p>如果您有关于如何修复现有缺陷和限制的想法，请在 <a href="http://sourceforge.net/mail/?group_id=5971">
+开发人员邮件列表(需要订阅)中讨论它们。如果您不愿意通过bug跟踪器或邮件列表发送补丁的话，也可以将补丁直接发送到</a> <a href="#" onclick="location.href='mai'+'lto:'+'dox'+'yg'+'en@'+'gm'+'ail'+'.c'+'om'; return false;">doxyg<span style="display: none;">.nosp@m.</span>en@g<span style="display: none;">.nosp@m.</span>mail.<span style="display: none;">.nosp@m.</span>com</a>。</p>
+<p>对于补丁，请使用“diff -uN”或包含您修改的文件。如果你发送一个以上的文件，请把所有的东西用tar或zip打包，这样我就只需要保存和下载一个文件。</p>
 <p> 
-Go to the <a href="features.html">next</a> section or return to the
- <a href="index.html">index</a>.
+转到 <a href="features.html">下一节</a>或者返回到<a href="index.html">索引</a>。
  </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

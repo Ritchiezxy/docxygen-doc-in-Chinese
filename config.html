@@ -1528,7 +1528,10 @@ Doxygen附带了一个示例索引器 (<code>doxyindexer</code>) 和搜索引擎
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_latex">GENERATE_LATEX</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_latex_emoji_directory"></a></p>
 </dd>
 <dt><code>LATEX_EMOJI_DIRECTORY</code> </dt>
-<dd><p class="startdd"><a name="a223_LATEX_EMOJI_DIRECTORY"></a> The <code>LATEX_EMOJI_DIRECTORY</code> tag is used to specify the (relative or absolute) path from which the emoji images will be read. If a relative path is entered, it will be relative to the <a class="el" href="config.html#cfg_latex_output">LATEX_OUTPUT</a> directory. If left blank the <a class="el" href="config.html#cfg_latex_output">LATEX_OUTPUT</a> directory will be used.</p>
+<dd><p class="startdd"><a name="a223_LATEX_EMOJI_DIRECTORY"></a><code>LATEX_EMOJI_DIRECTORY</code> 
+标签用于指定读取表情符号图像的(相对或绝对)路径。如果输入了相对路径，它是相对于 <a class="el" href="config.html#cfg_latex_output">LATEX_OUTPUT</a> 
+目录的。如果留空，将使用 <a class="el" href="config.html#cfg_latex_output">LATEX_OUTPUT</a> 
+目录。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_latex">GENERATE_LATEX</a> 设置为 <code>YES</code>。 </p>
 </dd>
 </dl>
@@ -1536,39 +1539,46 @@ Doxygen附带了一个示例索引器 (<code>doxyindexer</code>) 和搜索引擎
 与RTF输出相关的配置选项</h1>
 <p><a class="anchor" id="cfg_generate_rtf"></a></p><dl>
 <dt><code>GENERATE_RTF</code> </dt>
-<dd><p class="startdd"><a name="a224_GENERATE_RTF"></a> If the <code>GENERATE_RTF</code> 标记被设置为 <code>YES</code>, doxygen will generate RTF output. The RTF output is optimized for Word 97 and may not look too pretty with other RTF readers/editors.</p>
+<dd><p class="startdd"><a name="a224_GENERATE_RTF"></a> If the <code>GENERATE_RTF</code> 标记被设置为 <code>YES</code>, 
+doxygen将生成RTF输出。RTF输出针对Word 97进行了优化，与其他RTF阅读器/编辑器一起使用可能不太好看。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_rtf_output"></a></p>
 </dd>
 <dt><code>RTF_OUTPUT</code> </dt>
-<dd><p class="startdd"><a name="a225_RTF_OUTPUT"></a> The <code>RTF_OUTPUT</code> tag is used to specify where the RTF docs will be put. If a relative path is entered the value of <a class="el" href="config.html#cfg_output_directory">OUTPUT_DIRECTORY</a> will be put in front of it.</p>
-<p class="interdd">The default directory is: <code>rtf</code>.</p>
+<dd><p class="startdd"><a name="a225_RTF_OUTPUT"></a><code>RTF_OUTPUT</code> 
+标签用于指定RTF文档将放在何处。如果输入了一个相对路径，则 <a class="el" href="config.html#cfg_output_directory">OUTPUT_DIRECTORY</a> 
+的值将放在它前面。</p>
+<p class="interdd">默认目录是:rtf。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_rtf">GENERATE_RTF</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_compact_rtf"></a></p>
 </dd>
 <dt><code>COMPACT_RTF</code> </dt>
-<dd><p class="startdd"><a name="a226_COMPACT_RTF"></a> If the <code>COMPACT_RTF</code> 标记被设置为 <code>YES</code>, doxygen generates more compact RTF documents. This may be useful for small projects and may help to save some trees in general.</p>
+<dd><p class="startdd"><a name="a226_COMPACT_RTF"></a> If the <code>COMPACT_RTF</code> 标记被设置为 <code>YES</code>, 
+doxygen生成更紧凑的RTF文档。这可能对小项目有用，也可能帮助节省一些树。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_rtf">GENERATE_RTF</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_rtf_hyperlinks"></a></p>
 </dd>
 <dt><code>RTF_HYPERLINKS</code> </dt>
-<dd><p class="startdd"><a name="a227_RTF_HYPERLINKS"></a> If the <code>RTF_HYPERLINKS</code> 标记被设置为 <code>YES</code>, the RTF that is generated will contain hyperlink fields. The RTF file will contain links (just like the HTML output) instead of page references. This makes the output suitable for online browsing using Word or some other Word compatible readers that support those fields.</p>
+<dd><p class="startdd"><a name="a227_RTF_HYPERLINKS"></a>如果 <code>RTF_HYPERLINKS</code> 标记被设置为 <code>YES</code>, 
+生成的RTF将包含超链接字段。RTF文件将包含链接(就像HTML输出一样)，而不是页面引用。这使得输出适合使用Word或其他支持这些字段的Word兼容阅读器进行在线浏览。</p>
 <p class="interdd"><br  />
-注意: WordPad (write) and others do not support links.</p>
+注意: 写字板(写)和其他不支持链接。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_rtf">GENERATE_RTF</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_rtf_stylesheet_file"></a></p>
 </dd>
 <dt><code>RTF_STYLESHEET_FILE</code> </dt>
-<dd><p class="startdd"><a name="a228_RTF_STYLESHEET_FILE"></a> Load stylesheet definitions from file. Syntax is similar to doxygen's configuration file, i.e. a series of assignments. You only have to provide replacements, missing definitions are set to their default value. <br  />
- See also section <a class="el" href="doxygen_usage.html">Doxygen usage</a> for information on how to generate the default style sheet that doxygen normally uses.</p>
+<dd><p class="startdd"><a name="a228_RTF_STYLESHEET_FILE">
+从文件中加载样式表定义。语法类似于doxygen的配置文件，即一系列的赋值。您只需要提供替换，缺少的定义被设置为它们的默认值。有关如何生成Doxygen通常使用的默认样式表的信息，请参阅</a><a class="el" href="doxygen_usage.html">Doxygen 
+用法</a> 一节。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_rtf">GENERATE_RTF</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_rtf_extensions_file"></a></p>
 </dd>
 <dt><code>RTF_EXTENSIONS_FILE</code> </dt>
-<dd><p class="startdd"><a name="a229_RTF_EXTENSIONS_FILE"></a> Set optional variables used in the generation of an RTF document. Syntax is similar to doxygen's configuration file. A template extensions file can be generated using <code>doxygen -e rtf extensionFile</code>.</p>
+<dd><p class="startdd"><a name="a229_RTF_EXTENSIONS_FILE">
+设置用于生成RTF文档的可选变量。语法类似于doxygen的配置文件。可以使用</a> <code>doxygen -e rtf extensionFile生成模板扩展文件。</code></p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_rtf">GENERATE_RTF</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_rtf_source_code"></a></p>
 </dd>
 <dt><code>RTF_SOURCE_CODE</code> </dt>
-<dd><p class="startdd"><a name="a230_RTF_SOURCE_CODE"></a> If the <code>RTF_SOURCE_CODE</code> 标记被设置为 <code>YES</code> then doxygen will include source code with syntax highlighting in the RTF output. <br  />
-注意 that which sources are shown also depends on other settings such as <a class="el" href="config.html#cfg_source_browser">SOURCE_BROWSER</a>.</p>
+<dd><p class="startdd"><a name="a230_RTF_SOURCE_CODE"></a>如果 <code>RTF_SOURCE_CODE</code> 标记被设置为 <code>YES，</code>然后doxygen将在RTF输出中包含语法高亮显示的源代码。<br  />
+注意显示哪些源代码还取决于其他设置，如<a class="el" href="config.html#cfg_source_browser">SOURCE_BROWSER</a>。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_rtf">GENERATE_RTF</a> 设置为 <code>YES</code>。 </p>
 </dd>
@@ -1577,26 +1587,33 @@ Doxygen附带了一个示例索引器 (<code>doxyindexer</code>) 和搜索引擎
 与手册页输出相关的配置选项</h1>
 <p><a class="anchor" id="cfg_generate_man"></a></p><dl>
 <dt><code>GENERATE_MAN</code> </dt>
-<dd><p class="startdd"><a name="a231_GENERATE_MAN"></a> If the <code>GENERATE_MAN</code> 标记被设置为 <code>YES</code>, doxygen will generate man pages for classes and files.</p>
+<dd><p class="startdd"><a name="a231_GENERATE_MAN"></a><code>如果GENERATE_MAN</code> 标记被设置为 <code>YES</code>, 
+doxygen将为类和文件生成手册页。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_man_output"></a></p>
 </dd>
 <dt><code>MAN_OUTPUT</code> </dt>
-<dd><p class="startdd"><a name="a232_MAN_OUTPUT"></a> The <code>MAN_OUTPUT</code> tag is used to specify where the man pages will be put. If a relative path is entered the value of <a class="el" href="config.html#cfg_output_directory">OUTPUT_DIRECTORY</a> will be put in front of it. A directory <code>man3</code> will be created inside the directory specified by <code>MAN_OUTPUT</code>.</p>
-<p class="interdd">The default directory is: <code>man</code>.</p>
+<dd><p class="startdd"><a name="a232_MAN_OUTPUT"></a><code>MAN_OUTPUT</code> 
+标记用于指定手册页放置的位置。如果输入了一个相对路径，则 <a class="el" href="config.html#cfg_output_directory">OUTPUT_DIRECTORY的值将放在它前面。</a> <code>man3</code> 
+<code>目录将在MAN_OUTPUT指定的目录中创建。n&nbsp; n j</code></p>
+<p class="interdd"><code>默认目录是：man</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_man">GENERATE_MAN</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_man_extension"></a></p>
 </dd>
 <dt><code>MAN_EXTENSION</code> </dt>
-<dd><p class="startdd"><a name="a233_MAN_EXTENSION"></a> The <code>MAN_EXTENSION</code> tag determines the extension that is added to the generated man pages. In case the manual section does not start with a number, the number 3 is prepended. The dot (.) at the beginning of the <code>MAN_EXTENSION</code> tag is optional.</p>
+<dd><p class="startdd">&nbsp;<code>MAN_EXTENSION</code> 
+标记确定添加到生成的手册页的扩展名。如果手册部分没有以数字开头，则数字3是前置的。 <code>MAN_EXTENSION标记开头的点(.)是可选的。</code></p>
 <p class="interdd">默认值是: <code>.3</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_man">GENERATE_MAN</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_man_subdir"></a></p>
 </dd>
 <dt><code>MAN_SUBDIR</code> </dt>
-<dd><p class="startdd"><a name="a234_MAN_SUBDIR"></a> The <code>MAN_SUBDIR</code> tag determines the name of the directory created within <code>MAN_OUTPUT</code> in which the man pages are placed. If defaults to man followed by <code>MAN_EXTENSION</code> with the initial . removed.</p>
+<dd><p class="startdd"><a name="a234_MAN_SUBDIR"></a><code>MAN_SUBDIR</code> 
+标记确定在 <code>MAN_OUTPUT</code> 中创建的目录的名称，手册页放在其中。如果默认为man，后面跟着带 initial . removed <code>
+的MAN_EXTENSION</code>。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_man">GENERATE_MAN</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_man_links"></a></p>
 </dd>
 <dt><code>MAN_LINKS</code> </dt>
-<dd><p class="startdd"><a name="a235_MAN_LINKS"></a> If the <code>MAN_LINKS</code> 标记被设置为 <code>YES</code> and doxygen generates man output, then it will generate one additional man file for each entity documented in the real man page(s). These additional files only source the real man page, but without them the <code>man</code> command would be unable to find the correct page.</p>
+<dd><p class="startdd"><a name="a235_MAN_LINKS"></a> If the <code>MAN_LINKS</code> 标记被设置为 <code>YES，doxygen生成man输出，然后它将为实际手册页中记录的每个实体生成一个额外的man文件。这些附加文件只提供实际的手册页，但是如果没有它们，</code> <code>man</code> 
+命令将无法找到正确的页面。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_man">GENERATE_MAN</a> 设置为 <code>YES</code>。 </p>
 </dd>
@@ -1605,7 +1622,8 @@ Doxygen附带了一个示例索引器 (<code>doxyindexer</code>) 和搜索引擎
 与XML输出相关的配置选项</h1>
 <p><a class="anchor" id="cfg_generate_xml"></a></p><dl>
 <dt><code>GENERATE_XML</code> </dt>
-<dd><p class="startdd"><a name="a236_GENERATE_XML"></a> If the <code>GENERATE_XML</code> 标记被设置为 <code>YES</code>, doxygen will generate an XML file that captures the structure of the code including all documentation.</p>
+<dd><p class="startdd"><a name="a236_GENERATE_XML"></a>如果 <code>GENERATE_XML</code> 标记被设置为 <code>YES</code>, 
+doxygen将生成一个XML文件，捕获代码的结构，包括所有文档。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_xml_output"></a></p>
 </dd>
@@ -1615,12 +1633,13 @@ Doxygen附带了一个示例索引器 (<code>doxyindexer</code>) 和搜索引擎
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_xml">GENERATE_XML</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_xml_programlisting"></a></p>
 </dd>
 <dt><code>XML_PROGRAMLISTING</code> </dt>
-<dd><p class="startdd"><a name="a238_XML_PROGRAMLISTING"></a> If the <code>XML_PROGRAMLISTING</code> 标记被设置为 <code>YES</code>, doxygen will dump the program listings (including syntax highlighting and cross-referencing information) to the XML output. 注意 that enabling this will significantly increase the size of the XML output.</p>
+<dd><p class="startdd"><a name="a238_XML_PROGRAMLISTING"></a>如果 <code>XML_PROGRAMLISTING</code> 标记被设置为 <code>YES</code>,doxygen将把程序清单(包括语法突出显示和交叉引用信息)转储到XML输出中。注意这样做将显著增加XML输出的大小。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_xml">GENERATE_XML</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_xml_ns_memb_file_scope"></a></p>
 </dd>
 <dt><code>XML_NS_MEMB_FILE_SCOPE</code> </dt>
-<dd><p class="startdd"><a name="a239_XML_NS_MEMB_FILE_SCOPE"></a> If the <code>XML_NS_MEMB_FILE_SCOPE</code> 标记被设置为 <code>YES</code>, doxygen will include namespace members in file scope as well, matching the HTML output.</p>
+<dd><p class="startdd"><a name="a239_XML_NS_MEMB_FILE_SCOPE"></a>如果 <code>XML_NS_MEMB_FILE_SCOPE</code> 标记被设置为 <code>YES</code>, 
+doxygen还将在文件范围内包含名称空间成员，以匹配HTML输出。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_xml">GENERATE_XML</a> 设置为 <code>YES</code>。 </p>
 </dd>
@@ -1629,17 +1648,21 @@ Doxygen附带了一个示例索引器 (<code>doxyindexer</code>) 和搜索引擎
 与DOCBOOK输出相关的配置选项</h1>
 <p><a class="anchor" id="cfg_generate_docbook"></a></p><dl>
 <dt><code>GENERATE_DOCBOOK</code> </dt>
-<dd><p class="startdd"><a name="a240_GENERATE_DOCBOOK"></a> If the <code>GENERATE_DOCBOOK</code> 标记被设置为 <code>YES</code>, doxygen will generate Docbook files that can be used to generate PDF.</p>
+<dd><p class="startdd"><a name="a240_GENERATE_DOCBOOK"></a>如果 <code>GENERATE_DOCBOOK</code> 标记被设置为 <code>YES</code>, 
+doxygen将生成可用于生成PDF的Docbook文件。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_docbook_output"></a></p>
 </dd>
 <dt><code>DOCBOOK_OUTPUT</code> </dt>
-<dd><p class="startdd"><a name="a241_DOCBOOK_OUTPUT"></a> The <code>DOCBOOK_OUTPUT</code> tag is used to specify where the Docbook pages will be put. If a relative path is entered the value of <a class="el" href="config.html#cfg_output_directory">OUTPUT_DIRECTORY</a> will be put in front of it.</p>
-<p class="interdd">The default directory is: <code>docbook</code>.</p>
+<dd><p class="startdd"><a name="a241_DOCBOOK_OUTPUT"></a><code>DOCBOOK_OUTPUT</code> 
+标记用于指定将Docbook页面放置在何处。如果输入了一个相对路径，则 <a class="el" href="config.html#cfg_output_directory">OUTPUT_DIRECTORY</a> 
+的值将放在它前面。</p>
+<p class="interdd"><code>默认目录是: docbook</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_docbook">GENERATE_DOCBOOK</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_docbook_programlisting"></a></p>
 </dd>
 <dt><code>DOCBOOK_PROGRAMLISTING</code> </dt>
-<dd><p class="startdd"><a name="a242_DOCBOOK_PROGRAMLISTING"></a> If the <code>DOCBOOK_PROGRAMLISTING</code> 标记被设置为 <code>YES</code>, doxygen will include the program listings (including syntax highlighting and cross-referencing information) to the DOCBOOK output. 注意 that enabling this will significantly increase the size of the DOCBOOK output.</p>
+<dd><p class="startdd"><a name="a242_DOCBOOK_PROGRAMLISTING"></a>如果 <code>DOCBOOK_PROGRAMLISTING</code> 标记被设置为 <code>YES</code>, 
+doxygen将把程序清单(包括语法突出显示和交叉引用信息)包含到DOCBOOK输出中。注意 这样做将显著增加DOCBOOK输出的大小。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_docbook">GENERATE_DOCBOOK</a> 设置为 <code>YES</code>。 </p>
 </dd>
@@ -1648,7 +1671,8 @@ Doxygen附带了一个示例索引器 (<code>doxyindexer</code>) 和搜索引擎
 AutoGen定义输出的配置选项</h1>
 <p><a class="anchor" id="cfg_generate_autogen_def"></a></p><dl>
 <dt><code>GENERATE_AUTOGEN_DEF</code> </dt>
-<dd><p class="startdd"><a name="a243_GENERATE_AUTOGEN_DEF"></a> If the <code>GENERATE_AUTOGEN_DEF</code> 标记被设置为 <code>YES</code>, doxygen will generate an AutoGen Definitions (see <a href="http://autogen.sourceforge.net/">http://autogen.sourceforge.net/</a>) file that captures the structure of the code including all documentation. 注意 that this feature is still experimental and incomplete at the moment.</p>
+<dd><p class="startdd"><a name="a243_GENERATE_AUTOGEN_DEF"></a>如果 <code>GENERATE_AUTOGEN_DEF</code> 标记被设置为 <code>YES</code>, 
+doxygen将生成一个自动生成定义(参见 <a href="http://autogen.sourceforge.net/">http://autogen.sourceforge.net/)文件，该文件捕获代码的结构，包括所有文档。</a>注意这个功能目前还处于试验阶段，还不完善。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd"></p>
 </dd>
@@ -1657,8 +1681,9 @@ AutoGen定义输出的配置选项</h1>
 与Perl模块输出相关的配置选项</h1>
 <p><a class="anchor" id="cfg_generate_perlmod"></a></p><dl>
 <dt><code>GENERATE_PERLMOD</code> </dt>
-<dd><p class="startdd"><a name="a244_GENERATE_PERLMOD"></a> If the <code>GENERATE_PERLMOD</code> 标记被设置为 <code>YES</code>, doxygen will generate a Perl module file that captures the structure of the code including all documentation. <br  />
-注意 that this feature is still experimental and incomplete at the moment.</p>
+<dd><p class="startdd"><a name="a244_GENERATE_PERLMOD"></a>如果 <code>GENERATE_PERLMOD</code> 标记被设置为 <code>YES</code>, 
+doxygen将生成一个Perl模块文件，捕获代码的结构，包括所有文档。<br  />
+注意 这个功能目前还处于试验阶段，还不完善。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_perlmod_latex"></a></p>
 </dd>
@@ -1668,12 +1693,16 @@ AutoGen定义输出的配置选项</h1>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_perlmod">GENERATE_PERLMOD</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_perlmod_pretty"></a></p>
 </dd>
 <dt><code>PERLMOD_PRETTY</code> </dt>
-<dd><p class="startdd"><a name="a246_PERLMOD_PRETTY"></a> If the <code>PERLMOD_PRETTY</code> 标记被设置为 <code>YES</code>, the Perl module output will be nicely formatted so it can be parsed by a human reader. This is useful if you want to understand what is going on. On the other hand, if this 标记被设置为 <code>NO</code>, the size of the Perl module output will be much smaller and Perl will parse it just the same.</p>
+<dd><p class="startdd"><a name="a246_PERLMOD_PRETTY"></a>如果 <code>PERLMOD_PRETTY</code> 标记被设置为 <code>YES</code>, 
+Perl模块输出将被很好地格式化，这样就可以由人类读者进行解析。如果你想知道发生了什么，这是很有用的。另一方面，如果该标记被设置为 <code>NO</code>, 
+Perl模块输出的大小将小得多，Perl将解析它。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_perlmod">GENERATE_PERLMOD</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_perlmod_makevar_prefix"></a></p>
 </dd>
 <dt><code>PERLMOD_MAKEVAR_PREFIX</code> </dt>
-<dd><p class="startdd"><a name="a247_PERLMOD_MAKEVAR_PREFIX"></a> The names of the make variables in the generated <code>doxyrules.make</code> file are prefixed with the string contained in <code>PERLMOD_MAKEVAR_PREFIX</code>。 This is useful so different <code>doxyrules.make</code> files included by the same <code>Makefile</code> don't overwrite each other's variables.</p>
+<dd><p class="startdd"><a name="a247_PERLMOD_MAKEVAR_PREFIX">生成的</a> <code>doxyrules.make</code> 
+文件中的make变量的名称以 <code>PERLMOD_MAKEVAR_PREFIX</code>。 <code>
+中包含的字符串为前缀。这很有用，所以同一Makefile包含的不同doxyrules.make</code> 文件不会覆盖彼此的变量。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_generate_perlmod">GENERATE_PERLMOD</a> 设置为 <code>YES</code>。 </p>
 </dd>
 </dl>
@@ -1681,35 +1710,48 @@ AutoGen定义输出的配置选项</h1>
 与预处理器相关的配置选项</h1>
 <p><a class="anchor" id="cfg_enable_preprocessing"></a></p><dl>
 <dt><code>ENABLE_PREPROCESSING</code> </dt>
-<dd><p class="startdd"><a name="a248_ENABLE_PREPROCESSING"></a> If the <code>ENABLE_PREPROCESSING</code> 标记被设置为 <code>YES</code>, doxygen will evaluate all C-preprocessor directives found in the sources and include files.</p>
+<dd><p class="startdd"><a name="a248_ENABLE_PREPROCESSING"></a>如果</p>
+<p class="startdd">&nbsp;<code>如果ENABLE_PREPROCESSING</code> 标记被设置为 <code>YES</code>, 
+doxygen将评估源代码中找到的所有C-预处理指令并包含文件。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_macro_expansion"></a></p>
 </dd>
 <dt><code>MACRO_EXPANSION</code> </dt>
-<dd><p class="startdd"><a name="a249_MACRO_EXPANSION"></a> If the <code>MACRO_EXPANSION</code> 标记被设置为 <code>YES</code>, doxygen will expand all macro names in the source code. If set to <code>NO</code>, only conditional compilation will be performed. Macro expansion can be done in a controlled way by setting <a class="el" href="config.html#cfg_expand_only_predef">EXPAND_ONLY_PREDEF</a> to <code>YES</code>.</p>
+<dd><p class="startdd"><a name="a249_MACRO_EXPANSION"></a>如果 <code>MACRO_EXPANSION</code> 标记被设置为 <code>YES</code>, 
+doxygen将展开源代码中的所有宏名。如果其被设置为 <code>NO</code>, ，则只执行条件编译。通过将 <a class="el" href="config.html#cfg_expand_only_predef">EXPAND_ONLY_PREDEF</a> 
+设置为 <code>YES，可以控制宏扩展。</code></p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_expand_only_predef"></a></p>
 </dd>
 <dt><code>EXPAND_ONLY_PREDEF</code> </dt>
-<dd><p class="startdd"><a name="a250_EXPAND_ONLY_PREDEF"></a> If the <code>EXPAND_ONLY_PREDEF</code> and <a class="el" href="config.html#cfg_macro_expansion">MACRO_EXPANSION</a> tags are both set to <code>YES</code> then the macro expansion is limited to the macros specified with the <a class="el" href="config.html#cfg_predefined">PREDEFINED</a> and <a class="el" href="config.html#cfg_expand_as_defined">EXPAND_AS_DEFINED</a> tags.</p>
+<dd><p class="startdd">如果 <code>EXPAND_ONLY_PREDEF</code> 和 <a class="el" href="config.html#cfg_macro_expansion">MACRO_EXPANSION</a> 
+<code>标记都设置为YES，那么宏扩展将仅限于使用预定义和</code> <a class="el" href="config.html#cfg_predefined">PREDEFINED</a> and <a class="el" href="config.html#cfg_expand_as_defined">EXPAND_AS_DEFINED</a> 
+标记指定的宏。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_search_includes"></a></p>
 </dd>
 <dt><code>SEARCH_INCLUDES</code> </dt>
-<dd><p class="startdd"><a name="a251_SEARCH_INCLUDES"></a> If the <code>SEARCH_INCLUDES</code> 标记被设置为 <code>YES</code>, the include files in the <a class="el" href="config.html#cfg_include_path">INCLUDE_PATH</a> will be searched if a <code>#include</code> is found.</p>
+<dd><p class="startdd"><a name="a251_SEARCH_INCLUDES"></a>如果 <code>SEARCH_INCLUDES</code> 标记被设置为 <code>YES</code>, 
+如果找到一个 <code>#include</code> <a class="el" href="config.html#cfg_include_path">INCLUDE_PATH</a><a href="#cfg_include_path">中的包含文件将被搜索。</a></p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_include_path"></a></p>
 </dd>
 <dt><code>INCLUDE_PATH</code> </dt>
-<dd><p class="startdd"><a name="a252_INCLUDE_PATH"></a> The <code>INCLUDE_PATH</code> tag can be used to specify one or more directories that contain include files that are not input files but should be processed by the preprocessor.</p>
+<dd><p class="startdd"><a name="a252_INCLUDE_PATH"></a><code>INCLUDE_PATH</code> 
+标记可用于指定一个或多个目录，其中包含的文件不是输入文件，但应该由预处理程序处理。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_search_includes">SEARCH_INCLUDES</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_include_file_patterns"></a></p>
 </dd>
 <dt><code>INCLUDE_FILE_PATTERNS</code> </dt>
-<dd><p class="startdd"><a name="a253_INCLUDE_FILE_PATTERNS"></a> You can use the <code>INCLUDE_FILE_PATTERNS</code> tag to specify one or more wildcard patterns (like <code>*.h</code> and <code>*.hpp</code>) to filter out the header-files in the directories. If left blank, the patterns specified with <a class="el" href="config.html#cfg_file_patterns">FILE_PATTERNS</a> will be used.</p>
+<dd><p class="startdd"><a name="a253_INCLUDE_FILE_PATTERNS">可以使用</a> <code>INCLUDE_FILE_PATTERNS</code> 
+标记指定一个或多个通配符模式(如 <code>*.h</code> and <code>*.hpp)来过滤目录中的标题文件。如果留空，则使用</code> <a class="el" href="config.html#cfg_file_patterns">FILE_PATTERNS</a> 
+指定的模式。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_predefined"></a></p>
 </dd>
 <dt><code>PREDEFINED</code> </dt>
-<dd><p class="startdd"><a name="a254_PREDEFINED"></a> The <code>PREDEFINED</code> tag can be used to specify one or more macro names that are defined before the preprocessor is started (similar to the <code>-D</code> option of e.g. <code>gcc</code>). The argument of the tag is a list of macros of the form: <code>name</code> or <code>name=definition</code> (no spaces). If the definition and the <code>"="</code> are omitted, <code>"=1"</code> is assumed. To prevent a macro definition from being undefined via <code>#undef</code> or recursively expanded use the <code>:=</code> operator instead of the <code>=</code> operator.</p>
+<dd><p class="startdd"><a name="a254_PREDEFINED"></a> The <code>PREDEFINED</code> 
+的标签可以用来指定一个或多个宏名，这些宏名是在预处理程序启动之前定义的(类似于 <code>gcc</code>中的 <code>-D</code>选项)。 
+标记的参数是表单的宏列表:<code>name</code> 或 <code>name=definition</code> 
+(没有空格)。如果省略了定义和“=”，则假定“=1”。要防止通过#undef或递归扩展宏定义未定义，请使用:=操作符而不是=操作符。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_expand_as_defined"></a></p>
 </dd>
 <dt><code>EXPAND_AS_DEFINED</code> </dt>
@@ -1717,7 +1759,8 @@ AutoGen定义输出的配置选项</h1>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_skip_function_macros"></a></p>
 </dd>
 <dt><code>SKIP_FUNCTION_MACROS</code> </dt>
-<dd><p class="startdd"><a name="a256_SKIP_FUNCTION_MACROS"></a> If the <code>SKIP_FUNCTION_MACROS</code> 标记被设置为 <code>YES</code> then doxygen's preprocessor will remove all references to function-like macros that are alone on a line, have an all uppercase name, and do not end with a semicolon. Such function macros are typically used for boiler-plate code, and will confuse the parser if not removed.</p>
+<dd><p class="startdd"><a name="a256_SKIP_FUNCTION_MACROS"></a>如果 <code>SKIP_FUNCTION_MACROS</code> 标记被设置为 <code>YES</code> 
+，然后doxygen的预处理程序将删除对类似函数的宏的所有引用，这些宏单独在一行上，具有全大写的名称，并且不以分号结尾。此类函数宏通常用于样板代码，如果不删除它们，解析器就会产生混淆。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 设置为 <code>YES</code>。 </p>
 </dd>
@@ -1726,217 +1769,262 @@ AutoGen定义输出的配置选项</h1>
 与外部引用相关的配置选项</h1>
 <p><a class="anchor" id="cfg_tagfiles"></a></p><dl>
 <dt><code>TAGFILES</code> </dt>
-<dd><p class="startdd"><a name="a257_TAGFILES"></a> The <code>TAGFILES</code> tag can be used to specify one or more tag files.</p>
-<p class="interdd">For each tag file the location of the external documentation should be added. The format of a tag file without this location is as follows: </p><pre class="fragment">  TAGFILES = file1 file2 ...
-</pre><p> Adding location for the tag files is done as follows: </p><pre class="fragment">  TAGFILES = file1=loc1 "file2 = loc2" ...
-</pre><p> where <code>loc1</code> and <code>loc2</code> can be relative or absolute paths or URLs. See the section <a class="el" href="external.html">Linking to external documentation</a> for more information about the use of tag files.</p>
-<dl class="section note"><dt>注意</dt><dd>Each tag file must have a unique name (where the name does <em>NOT</em> include the path). If a tag file is not located in the directory in which doxygen is run, you must also specify the path to the tagfile here.</dd></dl>
+<dd><p class="startdd"><a name="a257_TAGFILES"></a>&nbsp;<code>TAGFILES</code> 
+标记可用于指定一个或多个标记文件。</p>
+<p class="interdd">对于每个标记文件，都应该添加外部文档的位置。没有此位置的标签文件格式如下:</p><pre class="fragment">  TAGFILES = file1 file2 ...
+</pre><p> 为标签文件添加位置的操作如下:</p><pre class="fragment">  TAGFILES = file1=loc1 "file2 = loc2" ...
+</pre><p> 其中loc1和loc2可以是相对或绝对路径或url。有关使用标记文件的更多信息，请参阅链接到外部文档的部分。</p>
+<dl class="section note"><dt>注意</dt><dd>
+	每个标记文件必须有唯一的名称(其中名称不包括路径)。如果标记文件不在运行doxygen的目录中，还必须在这里指定标记文件的路径。</dd></dl>
 <p><a class="anchor" id="cfg_generate_tagfile"></a></p>
 </dd>
 <dt><code>GENERATE_TAGFILE</code> </dt>
-<dd><p class="startdd"><a name="a258_GENERATE_TAGFILE"></a> When a file name is specified after <code>GENERATE_TAGFILE</code>, doxygen will create a tag file that is based on the input files it reads. See section <a class="el" href="external.html">Linking to external documentation</a> for more information about the usage of tag files.</p>
+<dd><p class="startdd"><a name="a258_GENERATE_TAGFILE"></a><code>
+<a name="a258_GENERATE_TAGFILE">当在</a> GENERATE_TAGFILE</code>, 
+之后指定文件名时，doxygen将根据它读取的输入文件创建一个标记文件。有关标记文件用法的更多信息，请参见<a class="el" href="external.html">链接到外部文档</a>的部分。</p>
 <p class="enddd"><a class="anchor" id="cfg_allexternals"></a></p>
 </dd>
 <dt><code>ALLEXTERNALS</code> </dt>
-<dd><p class="startdd"><a name="a259_ALLEXTERNALS"></a> If the <code>ALLEXTERNALS</code> 标记被设置为 <code>YES</code>, all external class will be listed in the class index. If set to <code>NO</code>, only the inherited external classes will be listed.</p>
+<dd><p class="startdd">如果 <code>ALLEXTERNALS</code> 标记被设置为 <code>YES所有外部类都将在类索引中列出。如果设置为</code> <code>NO，则只列出继承的外部类。</code></p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_external_groups"></a></p>
 </dd>
 <dt><code>EXTERNAL_GROUPS</code> </dt>
-<dd><p class="startdd"><a name="a260_EXTERNAL_GROUPS"></a> If the <code>EXTERNAL_GROUPS</code> 标记被设置为 <code>YES</code>, all external groups will be listed in the modules index. If set to <code>NO</code>, only the current project's groups will be listed.</p>
+<dd><p class="startdd">如果 <code>EXTERNAL_GROUPS</code> 标记被设置为 <code>YES</code>, 
+所有外部组将在模块索引中列出。如果设置为NO，则只列出当前项目的组。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_external_pages"></a></p>
 </dd>
 <dt><code>EXTERNAL_PAGES</code> </dt>
-<dd><p class="startdd"><a name="a261_EXTERNAL_PAGES"></a> If the <code>EXTERNAL_PAGES</code> 标记被设置为 <code>YES</code>, all external pages will be listed in the related pages index. If set to <code>NO</code>, only the current project's pages will be listed.</p>
+<dd><p class="startdd">如果 <code>EXTERNAL_PAGES</code> 标记被设置为 <code>YES，所有外部页面将被列出在相关页面索引中。如果设置为NO，则只列出当前项目的页面。</code></p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd"></p>
 </dd>
 </dl>
 <h1><a class="anchor" id="config_dot"></a>
-与点工具相关的配置选项</h1>
+与dot工具相关的配置选项</h1>
 <p><a class="anchor" id="cfg_class_diagrams"></a></p><dl>
 <dt><code>CLASS_DIAGRAMS</code> </dt>
-<dd><p class="startdd"><a name="a262_CLASS_DIAGRAMS"></a> If the <code>CLASS_DIAGRAMS</code> 标记被设置为 <code>YES</code>, doxygen will generate a class diagram (in HTML and <img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/>) for classes with base or super classes. Setting the tag to <code>NO</code> turns the diagrams off. 注意 that this option also works with <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> disabled, but it is recommended to install and use <code>dot</code>, since it yields more powerful graphs.</p>
+<dd><p class="startdd">如果 <code>CLASS_DIAGRAMS</code> 标记被设置为 <code>YES， 
+doxygen将为带有基类或超类的类生成一个类图(HTML和<img class="formulaInl" alt="$\mbox{\LaTeX}$" src="form_0.png"/>格式)。将标记设置为NO将关闭图表。</code> 
+注意 这个选项也适用于禁用的 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 
+，但建议安装和使用dot，因为它可以生成更强大的图形。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_dia_path"></a></p>
 </dd>
 <dt><code>DIA_PATH</code> </dt>
-<dd><p class="startdd"><a name="a263_DIA_PATH"></a> You can include diagrams made with dia in doxygen documentation. Doxygen will then run dia to produce the diagram and insert it in the documentation. The DIA_PATH tag allows you to specify the directory where the dia binary resides. If left empty dia is assumed to be found in the default search path.</p>
+<dd><p class="startdd"><a name="a263_DIA_PATH">
+您可以在doxygen文档中包含用dia制作的图表。然后Doxygen将运行dia生成图表并将其插入文档中。DIA_PATH标记允许您指定dia二进制文件所在的目录。如果左侧为空，则假定在默认搜索路径中找到dia。</a></p>
 <p class="enddd"><a class="anchor" id="cfg_hide_undoc_relations"></a></p>
 </dd>
 <dt><code>HIDE_UNDOC_RELATIONS</code> </dt>
-<dd><p class="startdd"><a name="a264_HIDE_UNDOC_RELATIONS"></a> If set to <code>YES</code> the inheritance and collaboration graphs will hide inheritance and usage relations if the target is undocumented or is not a class.</p>
+<dd><p class="startdd"><a name="a264_HIDE_UNDOC_RELATIONS">
+如果设置为YES，则如果目标没有文档记录或不是类，则继承和协作图将隐藏继承和使用关系。</a></p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_have_dot"></a></p>
 </dd>
 <dt><code>HAVE_DOT</code> </dt>
-<dd><p class="startdd"><a name="a265_HAVE_DOT"></a> If you set the <code>HAVE_DOT</code> tag to <code>YES</code> then doxygen will assume the <code>dot</code> tool is available from the <code>path</code>。 This tool is part of <a href="http://www.graphviz.org/">Graphviz</a>, a graph visualization toolkit from AT&amp;T and Lucent Bell Labs. The other options in this section have no effect if this option 设置为 <code>NO</code> </p>
+<dd><p class="startdd"><a name="a265_HAVE_DOT"></a>
+如果你将HAVE_DOT标签设置为YES，那么doxygen会认为这个点工具在路径中是可用的，这个工具是 <a href="http://www.graphviz.org/">Graphviz</a>,的一部分，是AT&amp;T和朗讯贝尔实验室的图形可视化工具包。如果将此选项设置为no，则本节中的其他选项无效。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd"><a class="anchor" id="cfg_dot_num_threads"></a></p>
 </dd>
 <dt><code>DOT_NUM_THREADS</code> </dt>
-<dd><p class="startdd"><a name="a266_DOT_NUM_THREADS"></a> The <code>DOT_NUM_THREADS</code> specifies the number of <code>dot</code> invocations doxygen is allowed to run in parallel. When set to <code>0</code> doxygen will base this on the number of processors available in the system. You can set it explicitly to a value larger than 0 to get control over the balance between CPU load and processing speed.</p>
+<dd><p class="startdd"><a name="a266_DOT_NUM_THREADS"></a>
+DOT_NUM_THREADS指定允许doxygen并行运行的dot调用的数量。当设置为0时，doxygen将基于系统中可用的处理器数量。您可以显式地将其设置为大于0的值，以控制CPU负载和处理速度之间的平衡。</p>
 <p class="interdd">最小值： <code>0</code>, 最大值： <code>32</code>, 默认值： <code>0</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dot_fontname"></a></p>
 </dd>
 <dt><code>DOT_FONTNAME</code> </dt>
-<dd><p class="startdd"><a name="a267_DOT_FONTNAME"></a> When you want a differently looking font in the dot files that doxygen generates you can specify the font name using <code>DOT_FONTNAME</code>。 You need to make sure dot is able to find the font, which can be done by putting it in a standard location or by setting the <code>DOTFONTPATH</code> environment variable or by setting <a class="el" href="config.html#cfg_dot_fontpath">DOT_FONTPATH</a> to the directory containing the font.</p>
+<dd><p class="startdd"><a name="a267_DOT_FONTNAME"></a>
+当你想要在doxygen生成的dot文件中使用不同的字体，您可以使用DOT_FONTNAME指定字体名称。您需要确保dot是能够找到字体,这可以通过将它在标准位置或通过设置DOTFONTPATH环境变量或通过设置 <a class="el" href="config.html#cfg_dot_fontpath">DOT_FONTPATH</a> 
+目录包含字体。</p>
 <p class="interdd">默认值是: <code>Helvetica</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dot_fontsize"></a></p>
 </dd>
 <dt><code>DOT_FONTSIZE</code> </dt>
-<dd><p class="startdd"><a name="a268_DOT_FONTSIZE"></a> The <code>DOT_FONTSIZE</code> tag can be used to set the size (in points) of the font of dot graphs.</p>
+<dd><p class="startdd"><a name="a268_DOT_FONTSIZE"></a><code>DOT_FONTSIZE</code> 
+标记可用于设置点图形字体的大小(以点为单位)。</p>
 <p class="interdd">最小值： <code>4</code>, 最大值： <code>24</code>, 默认值： <code>10</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dot_fontpath"></a></p>
 </dd>
 <dt><code>DOT_FONTPATH</code> </dt>
-<dd><p class="startdd"><a name="a269_DOT_FONTPATH"></a> By default doxygen will tell <code>dot</code> to use the default font as specified with <a class="el" href="config.html#cfg_dot_fontname">DOT_FONTNAME</a>. If you specify a different font using <a class="el" href="config.html#cfg_dot_fontname">DOT_FONTNAME</a> you can set the path where <code>dot</code> can find it using this tag.</p>
+<dd><p class="startdd"><a name="a269_DOT_FONTPATH"></a>默认情况下，doxygen会告诉dot使用 <a class="el" href="config.html#cfg_dot_fontname">DOT_FONTNAME</a>指定的默认字体。如果使用 <a class="el" href="config.html#cfg_dot_fontname">DOT_FONTNAME</a> 
+指定不同的字体，则可以设置使用此标记查找它的路径。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_class_graph"></a></p>
 </dd>
 <dt><code>CLASS_GRAPH</code> </dt>
-<dd><p class="startdd"><a name="a270_CLASS_GRAPH"></a> If the <code>CLASS_GRAPH</code> 标记被设置为 <code>YES</code> then doxygen will generate a graph for each documented class showing the direct and indirect inheritance relations. Setting this tag to <code>YES</code> will force the <a class="el" href="config.html#cfg_class_diagrams">CLASS_DIAGRAMS</a> tag to <code>NO</code>.</p>
+<dd><p class="startdd"><a name="a270_CLASS_GRAPH"></a>如果<code>CLASS_GRAPH</code> 标记被设置为 <code>YES,然后doxygen将为每个文档化的类生成一个图表，显示直接和间接的继承关系。将此标记设置为YES将强制</code><a class="el" href="config.html#cfg_class_diagrams">CLASS_DIAGRAMS</a> 
+标记为NO。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_collaboration_graph"></a></p>
 </dd>
 <dt><code>COLLABORATION_GRAPH</code> </dt>
-<dd><p class="startdd"><a name="a271_COLLABORATION_GRAPH"></a> If the <code>COLLABORATION_GRAPH</code> 标记被设置为 <code>YES</code> then doxygen will generate a graph for each documented class showing the direct and indirect implementation dependencies (inheritance, containment, and class references variables) of the class with other documented classes.</p>
+<dd><p class="startdd"><a name="a271_COLLABORATION_GRAPH"></a>如果 <code>COLLABORATION_GRAPH</code> 标记被设置为 <code>YES，然后doxygen将为每个文档化的类生成一个图表，显示该类与其他文档化的类之间的直接和间接实现依赖关系(继承、包含和类引用变量)。</code></p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_group_graphs"></a></p>
 </dd>
 <dt><code>GROUP_GRAPHS</code> </dt>
-<dd><p class="startdd"><a name="a272_GROUP_GRAPHS"></a> If the <code>GROUP_GRAPHS</code> 标记被设置为 <code>YES</code> then doxygen will generate a graph for groups, showing the direct groups dependencies.</p>
+<dd><p class="startdd"><a name="a272_GROUP_GRAPHS"></a>如果 <code>GROUP_GRAPHS</code> 标记被设置为 <code>YES，然后doxygen将为组生成一个图，显示直接组的依赖关系。</code></p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_uml_look"></a></p>
 </dd>
 <dt><code>UML_LOOK</code> </dt>
-<dd><p class="startdd"><a name="a273_UML_LOOK"></a> If the <code>UML_LOOK</code> 标记被设置为 <code>YES</code>, doxygen will generate inheritance and collaboration diagrams in a style similar to the OMG's Unified Modeling Language.</p>
+<dd><p class="startdd"><a name="a273_UML_LOOK"></a>如果 <code>UML_LOOK</code> 标记被设置为 <code>YES</code>,doxygen将以类似OMG的统一建模语言的方式生成继承和协作图。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_uml_limit_num_fields"></a></p>
 </dd>
 <dt><code>UML_LIMIT_NUM_FIELDS</code> </dt>
-<dd><p class="startdd"><a name="a274_UML_LIMIT_NUM_FIELDS"></a> If the <a class="el" href="config.html#cfg_uml_look">UML_LOOK</a> tag is enabled, the fields and methods are shown inside the class node. If there are many fields or methods and many nodes the graph may become too big to be useful. The <code>UML_LIMIT_NUM_FIELDS</code> threshold limits the number of items for each type to make the size more manageable. Set this to 0 for no limit. 注意 that the threshold may be exceeded by 50% before the limit is enforced. So when you set the threshold to 10, up to 15 fields may appear, but if the number exceeds 15, the total amount of fields shown is limited to 10.</p>
+<dd><p class="startdd"><a name="a274_UML_LIMIT_NUM_FIELDS"></a>如果启用了 <a class="el" href="config.html#cfg_uml_look">UML_LOOK</a> 
+标记，则在类节点中显示字段和方法。如果有许多字段或方法和许多节点，则图可能会变得太大而无用。UML_LIMIT_NUM_FIELDS阈值限制每种类型的项数，使大小更易于管理。设这个为0没有极限。注意阈值可能超过50%的极限之前执行。因此，当您将阈值设置为10时，可能会出现最多15个字段，但是如果数量超过15，则显示的字段总数将被限制为10。</p>
 <p class="interdd">最小值： <code>0</code>, 最大值： <code>100</code>, 默认值： <code>10</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_template_relations"></a></p>
 </dd>
 <dt><code>TEMPLATE_RELATIONS</code> </dt>
-<dd><p class="startdd"><a name="a275_TEMPLATE_RELATIONS"></a> If the <code>TEMPLATE_RELATIONS</code> 标记被设置为 <code>YES</code> then the inheritance and collaboration graphs will show the relations between templates and their instances.</p>
+<dd><p class="startdd">如果 <code>TEMPLATE_RELATIONS</code> 标记被设置为 <code>YES，那么，继承和协作图将显示模板及其实例之间的关系。</code></p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_include_graph"></a></p>
 </dd>
 <dt><code>INCLUDE_GRAPH</code> </dt>
-<dd><p class="startdd"><a name="a276_INCLUDE_GRAPH"></a> If the <code>INCLUDE_GRAPH</code>, <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> and <a class="el" href="config.html#cfg_search_includes">SEARCH_INCLUDES</a> tags are set to <code>YES</code> then doxygen will generate a graph for each documented file showing the direct and indirect include dependencies of the file with other documented files.</p>
+<dd><p class="startdd"><a name="a276_INCLUDE_GRAPH"></a>如果 <code>INCLUDE_GRAPH</code>、<a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 
+和<a class="el" href="config.html#cfg_search_includes">SEARCH_INCLUDES</a><a href="#cfg_search_includes">标记设置为YES，则doxygen将为每个文档文件生成一个图形，显示该文件与其他文档文件的直接和间接包含依赖关系。</a> </p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_included_by_graph"></a></p>
 </dd>
 <dt><code>INCLUDED_BY_GRAPH</code> </dt>
-<dd><p class="startdd"><a name="a277_INCLUDED_BY_GRAPH"></a> If the <code>INCLUDED_BY_GRAPH</code>, <a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> and <a class="el" href="config.html#cfg_search_includes">SEARCH_INCLUDES</a> tags are set to <code>YES</code> then doxygen will generate a graph for each documented file showing the direct and indirect include dependencies of the file with other documented files.</p>
+<dd><p class="startdd"><a name="a277_INCLUDED_BY_GRAPH"></a>如果 <code>INCLUDED_BY_GRAPH</code>、<a class="el" href="config.html#cfg_enable_preprocessing">ENABLE_PREPROCESSING</a> 
+和 <a class="el" href="config.html#cfg_search_includes">SEARCH_INCLUDES</a> 
+标记被设置为YES，那么doxygen将为每个文档文件生成一个图形，显示该文件与其他文档文件的直接和间接包含依赖关系。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_call_graph"></a></p>
 </dd>
 <dt><code>CALL_GRAPH</code> </dt>
-<dd><p class="startdd"><a name="a278_CALL_GRAPH"></a> If the <code>CALL_GRAPH</code> 标记被设置为 <code>YES</code> then doxygen will generate a call dependency graph for every global function or class method. <br  />
-注意 that enabling this option will significantly increase the time of a run. So in most cases it will be better to enable call graphs for selected functions only using the <a class="el" href="commands.html#cmdcallgraph">\callgraph</a> command. Disabling a call graph can be accomplished by means of the command <a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a>.</p>
+<dd><p class="startdd"><a name="a278_CALL_GRAPH"></a>如果 <code>CALL_GRAPH</code> 标记被设置为 <code>YES</code> 
+然后doxygen将为每个全局函数或类方法生成一个调用依赖关系图。<br  />
+注意启用此选项将显著增加运行时间。因此，在大多数情况下，最好只使用 <a class="el" href="commands.html#cmdcallgraph">\callgraph</a> 
+命令为选定的函数启用调用图。禁用调用图可以通过命令 <a class="el" href="commands.html#cmdhidecallgraph">\hidecallgraph</a>来完成。</p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_caller_graph"></a></p>
 </dd>
 <dt><code>CALLER_GRAPH</code> </dt>
-<dd><p class="startdd"><a name="a279_CALLER_GRAPH"></a> If the <code>CALLER_GRAPH</code> 标记被设置为 <code>YES</code> then doxygen will generate a caller dependency graph for every global function or class method. <br  />
-注意 that enabling this option will significantly increase the time of a run. So in most cases it will be better to enable caller graphs for selected functions only using the <a class="el" href="commands.html#cmdcallergraph">\callergraph</a> command. Disabling a caller graph can be accomplished by means of the command <a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a>.</p>
+<dd><p class="startdd"><a name="a279_CALLER_GRAPH"></a>如果<code>CALLER_GRAPH</code> 标记被设置为 <code>YES</code> 
+然后doxygen将为每个全局函数或类方法生成一个调用者依赖关系图。<br  />
+注意 启用此选项将显著增加运行时间。因此，在大多数情况下，最好只使用 <a class="el" href="commands.html#cmdcallergraph">\callergraph</a> 
+命令为选定的函数启用调用者图形。可以通过命令 <a class="el" href="commands.html#cmdhidecallergraph">\hidecallergraph</a><a href="commands.html#cmdhidecallergraph">来禁用调用者图。</a></p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_graphical_hierarchy"></a></p>
 </dd>
 <dt><code>GRAPHICAL_HIERARCHY</code> </dt>
-<dd><p class="startdd"><a name="a280_GRAPHICAL_HIERARCHY"></a> If the <code>GRAPHICAL_HIERARCHY</code> 标记被设置为 <code>YES</code> then doxygen will graphical hierarchy of all classes instead of a textual one.</p>
+<dd><p class="startdd">如果 <code>GRAPHICAL_HIERARCHY</code> 标记被设置为 <code>YES</code> 
+然后doxygen将所有类的图形层次结构代替文本层次结构。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_directory_graph"></a></p>
 </dd>
 <dt><code>DIRECTORY_GRAPH</code> </dt>
-<dd><p class="startdd"><a name="a281_DIRECTORY_GRAPH"></a> If the <code>DIRECTORY_GRAPH</code> 标记被设置为 <code>YES</code> then doxygen will show the dependencies a directory has on other directories in a graphical way. The dependency relations are determined by the <code>#include</code> relations between the files in the directories.</p>
+<dd><p class="startdd">如果 <code>DIRECTORY_GRAPH</code> 标记被设置为 <code>YES，然后doxygen将以图形方式显示一个目录对其他目录的依赖关系。依赖关系由目录中文件之间的#include关系确定。</code></p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dot_image_format"></a></p>
 </dd>
 <dt><code>DOT_IMAGE_FORMAT</code> </dt>
-<dd><p class="startdd"><a name="a282_DOT_IMAGE_FORMAT"></a> The <code>DOT_IMAGE_FORMAT</code> tag can be used to set the image format of the images generated by <code>dot</code>。 For an explanation of the image formats see the section output formats in the documentation of the <code>dot</code> tool (<a href="http://www.graphviz.org/">Graphviz</a>). </p><dl class="section note"><dt>注意</dt><dd>If you choose <code>svg</code> you need to set <a class="el" href="config.html#cfg_html_file_extension">HTML_FILE_EXTENSION</a> to <code>xhtml</code> in order to make the SVG files visible in IE 9+ (other browsers do not have this requirement).</dd></dl>
+<dd><p class="startdd"><a name="a282_DOT_IMAGE_FORMAT"></a>可以使用 <code>DOT_IMAGE_FORMAT</code> 
+标签设置dot生成的图像的图像格式。有关图像格式的说明，请参阅dot工具(<a href="http://www.graphviz.org/">Graphviz)文档中的输出格式部分。</a></p><dl class="section note"><dt>注意</dt><dd>
+	如果选择svg，则需要将 <a class="el" href="config.html#cfg_html_file_extension">HTML_FILE_EXTENSION</a> to 
+	设置为xhtml，以便在IE 9+中显示svg文件(其他浏览器没有这个要求)。</dd></dl>
 <p>Possible values are: <code>png</code>, <code>jpg</code>, <code>gif</code>, <code>svg</code>, <code>png:gd</code>, <code>png:gd:gd</code>, <code>png:cairo</code>, <code>png:cairo:gd</code>, <code>png:cairo:cairo</code>, <code>png:cairo:gdiplus</code>, <code>png:gdiplus</code> and <code>png:gdiplus:gdiplus</code>.</p>
 <p class="interdd">默认值是: <code>png</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_interactive_svg"></a></p>
 </dd>
 <dt><code>INTERACTIVE_SVG</code> </dt>
-<dd><p class="startdd"><a name="a283_INTERACTIVE_SVG"></a> If <a class="el" href="config.html#cfg_dot_image_format">DOT_IMAGE_FORMAT</a> 设置为 <code>svg</code>, then this option can be set to <code>YES</code> to enable generation of interactive SVG images that allow zooming and panning. <br  />
-注意 that this requires a modern browser other than Internet Explorer. Tested and working are Firefox, Chrome, Safari, and Opera. </p><dl class="section note"><dt>注意</dt><dd>For IE 9+ you need to set <a class="el" href="config.html#cfg_html_file_extension">HTML_FILE_EXTENSION</a> to <code>xhtml</code> in order to make the SVG files visible. Older versions of IE do not have SVG support.</dd></dl>
+<dd><p class="startdd"><a name="a283_INTERACTIVE_SVG"></a>如果 <a class="el" href="config.html#cfg_dot_image_format">DOT_IMAGE_FORMAT</a> 设置为 <code>svg</code>, 
+然后可以将此选项设置为YES，以启用可缩放和平移的交互式SVG图像生成。<br  />
+注意这需要一个现代的浏览器而不是ie。Firefox、Chrome、Safari和Opera都经过了测试。</p><dl class="section note"><dt>注意</dt><dd>For IE 9+ you need to set <a class="el" href="config.html#cfg_html_file_extension">HTML_FILE_EXTENSION</a> to <code>xhtml</code> in order to make the SVG files visible. Older versions of IE do not have SVG support.</dd></dl>
 <p>默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dot_path"></a></p>
 </dd>
 <dt><code>DOT_PATH</code> </dt>
-<dd><p class="startdd"><a name="a284_DOT_PATH"></a> The <code>DOT_PATH</code> tag can be used to specify the path where the <code>dot</code> tool can be found. If left blank, it is assumed the <code>dot</code> tool can be found in the <code>path</code>.</p>
+<dd><p class="startdd"><a name="a284_DOT_PATH"></a>
+可以使用DOT_PATH标记指定可以找到点工具的路径。如果留空，则假定可以在路径中找到点工具。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dotfile_dirs"></a></p>
 </dd>
 <dt><code>DOTFILE_DIRS</code> </dt>
-<dd><p class="startdd"><a name="a285_DOTFILE_DIRS"></a> The <code>DOTFILE_DIRS</code> tag can be used to specify one or more directories that contain dot files that are included in the documentation (see the <a class="el" href="commands.html#cmddotfile">\dotfile</a> command).</p>
+<dd><p class="startdd"><a name="a285_DOTFILE_DIRS"></a>
+可以使用DOTFILE_DIRS标记指定一个或多个目录，其中包含文档中包含的点文件(请参阅\dotfile命令)。</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_mscfile_dirs"></a></p>
 </dd>
 <dt><code>MSCFILE_DIRS</code> </dt>
-<dd><p class="startdd"><a name="a286_MSCFILE_DIRS"></a> The <code>MSCFILE_DIRS</code> tag can be used to specify one or more directories that contain msc files that are included in the documentation (see the <a class="el" href="commands.html#cmdmscfile">\mscfile</a> command).</p>
+<dd><p class="startdd"><a name="a286_MSCFILE_DIRS"></a>可以使用<code>MSCFILE_DIRS</code> 
+标记指定一个或多个目录，其中包含文档中包含的msc文件(请参阅 <a class="el" href="commands.html#cmdmscfile">\mscfile</a> 
+命令)。</p>
 <p class="enddd"><a class="anchor" id="cfg_diafile_dirs"></a></p>
 </dd>
 <dt><code>DIAFILE_DIRS</code> </dt>
-<dd><p class="startdd"><a name="a287_DIAFILE_DIRS"></a> The <code>DIAFILE_DIRS</code> tag can be used to specify one or more directories that contain dia files that are included in the documentation (see the <a class="el" href="commands.html#cmddiafile">\diafile</a> command).</p>
+<dd><p class="startdd"><a name="a287_DIAFILE_DIRS"></a><code>DIAFILE_DIRS</code> 
+标记可用于指定一个或多个目录，其中包含文档中包含的dia文件(请参阅 <a class="el" href="commands.html#cmddiafile">\diafile</a> 
+命令)。</p>
 <p class="enddd"><a class="anchor" id="cfg_plantuml_jar_path"></a></p>
 </dd>
 <dt><code>PLANTUML_JAR_PATH</code> </dt>
-<dd><p class="startdd"><a name="a288_PLANTUML_JAR_PATH"></a> When using plantuml, the <code>PLANTUML_JAR_PATH</code> tag should be used to specify the path where java can find the <code>plantuml.jar</code> file. If left blank, it is assumed PlantUML is not used or called during a preprocessing step. Doxygen will generate a warning when it encounters a <a class="el" href="commands.html#cmdstartuml">\startuml</a> command in this case and will not generate output for the diagram.</p>
+<dd><p class="startdd"><a name="a288_PLANTUML_JAR_PATH"></a><code>
+在使用plantuml时，应该使用PLANTUML_JAR_PATH</code> 标记来指定java可以找到 <code>plantuml.jar</code> 
+文件的路径。如果留空，则假定在预处理步骤中没有使用或调用PlantUML。在本例中，当Doxygen遇到 <a class="el" href="commands.html#cmdstartuml">\startuml</a> 
+命令时，它将生成一个警告，并且不会为图生成输出。</p>
 <p class="enddd"><a class="anchor" id="cfg_plantuml_cfg_file"></a></p>
 </dd>
 <dt><code>PLANTUML_CFG_FILE</code> </dt>
-<dd><p class="startdd"><a name="a289_PLANTUML_CFG_FILE"></a> When using plantuml, the <code>PLANTUML_CFG_FILE</code> tag can be used to specify a configuration file for plantuml.</p>
+<dd><p class="startdd"><a name="a289_PLANTUML_CFG_FILE"></a>在使用plantuml时， <code>PLANTUML_CFG_FILE</code> 
+标记可用于为plantuml指定配置文件。</p>
 <p class="enddd"><a class="anchor" id="cfg_plantuml_include_path"></a></p>
 </dd>
 <dt><code>PLANTUML_INCLUDE_PATH</code> </dt>
-<dd><p class="startdd"><a name="a290_PLANTUML_INCLUDE_PATH"></a> When using plantuml, the specified paths are searched for files specified by the <code>!include</code> statement in a plantuml block.</p>
+<dd><p class="startdd"><a name="a290_PLANTUML_INCLUDE_PATH"></a>
+在使用plantuml时，将搜索由plantuml块中的!include语句指定的文件的指定路径。</p>
 <p class="enddd"><a class="anchor" id="cfg_dot_graph_max_nodes"></a></p>
 </dd>
 <dt><code>DOT_GRAPH_MAX_NODES</code> </dt>
-<dd><p class="startdd"><a name="a291_DOT_GRAPH_MAX_NODES"></a> The <code>DOT_GRAPH_MAX_NODES</code> tag can be used to set the maximum number of nodes that will be shown in the graph. If the number of nodes in a graph becomes larger than this value, doxygen will truncate the graph, which is visualized by representing a node as a red box. 注意 that doxygen if the number of direct children of the root node in a graph is already larger than <code>DOT_GRAPH_MAX_NODES</code> then the graph will not be shown at all. Also note that the size of a graph can be further restricted by <a class="el" href="config.html#cfg_max_dot_graph_depth">MAX_DOT_GRAPH_DEPTH</a>.</p>
+<dd><p class="startdd"><a name="a291_DOT_GRAPH_MAX_NODES"></a>可以使用 <code>DOT_GRAPH_MAX_NODES</code> 
+标记设置图中显示的最大节点数。如果一个图中的节点数量大于这个值，doxygen将截断这个图，将一个节点表示为一个红色框。请注意，如果图中根节点的直接子节点的数量已经大于 <code>DOT_GRAPH_MAX_NODES</code> 
+，则根本不会显示该图。还要注意，图形的大小还可以通过 <a class="el" href="config.html#cfg_max_dot_graph_depth">MAX_DOT_GRAPH_DEPTH</a><a href="#cfg_max_dot_graph_depth">进一步限制。</a></p>
 <p class="interdd">最小值： <code>0</code>, 最大值： <code>10000</code>, 默认值： <code>50</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_max_dot_graph_depth"></a></p>
 </dd>
 <dt><code>MAX_DOT_GRAPH_DEPTH</code> </dt>
-<dd><p class="startdd"><a name="a292_MAX_DOT_GRAPH_DEPTH"></a> The <code>MAX_DOT_GRAPH_DEPTH</code> tag can be used to set the maximum depth of the graphs generated by <code>dot</code>。 A depth value of 3 means that only nodes reachable from the root by following a path via at most 3 edges will be shown. Nodes that lay further from the root node will be omitted. 注意 that setting this option to 1 or 2 may greatly reduce the computation time needed for large code bases. Also note that the size of a graph can be further restricted by <a class="el" href="config.html#cfg_dot_graph_max_nodes">DOT_GRAPH_MAX_NODES</a>. Using a depth of 0 means no depth restriction.</p>
+<dd><p class="startdd"><a name="a292_MAX_DOT_GRAPH_DEPTH"></a><code>MAX_DOT_GRAPH_DEPTH</code> 
+标记可用于设置点生成的图形的最大深度。深度值为3表示只显示通过最多3条边的路径从根节点到达的节点。离根节点更远的节点将被省略。请注意，将此选项设置为1或2可能会大大减少大型代码库所需的计算时间。还请注意，图的大小可以由 <a class="el" href="config.html#cfg_dot_graph_max_nodes">DOT_GRAPH_MAX_NODES</a>。进一步限制。使用深度0表示没有深度限制。</p>
 <p class="interdd">最小值： <code>0</code>, 最大值： <code>1000</code>, 默认值： <code>0</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dot_transparent"></a></p>
 </dd>
 <dt><code>DOT_TRANSPARENT</code> </dt>
-<dd><p class="startdd"><a name="a293_DOT_TRANSPARENT"></a> Set the <code>DOT_TRANSPARENT</code> tag to <code>YES</code> to generate images with a transparent background. This is disabled by default, because dot on Windows does not seem to support this out of the box. <br  />
- Warning: Depending on the platform used, enabling this option may lead to badly anti-aliased labels on the edges of a graph (i.e. they become hard to read).</p>
+<dd><p class="startdd"><a name="a293_DOT_TRANSPARENT"></a>将 <code>DOT_TRANSPARENT标签设置为YES，以生成具有透明背景的图像。这是默认禁用的，因为点在Windows上似乎不支持开箱即用。警告:根据使用的平台不同，启用此选项可能会导致图的边缘出现严重的反别名标签(即它们变得难以阅读)。</code></p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dot_multi_targets"></a></p>
 </dd>
 <dt><code>DOT_MULTI_TARGETS</code> </dt>
-<dd><p class="startdd"><a name="a294_DOT_MULTI_TARGETS"></a> Set the <code>DOT_MULTI_TARGETS</code> tag to <code>YES</code> to allow dot to generate multiple output files in one run (i.e. multiple -o and -T options on the command line). This makes <code>dot</code> run faster, but since only newer versions of <code>dot</code> (&gt;1.8.10) support this, this feature is disabled by default.</p>
+<dd><p class="startdd"><a name="a294_DOT_MULTI_TARGETS"></a>将 <code>DOT_MULTI_TARGETS</code> 
+设置为 <code>YES标记设置为YES，以允许dot在一次运行中生成多个输出文件(即命令行上的多个-o和-T选项)。这使得dot运行得更快，但是由于只有更新版本的dot(&gt;1.8.10)支持这个特性，所以这个特性在默认情况下是禁用的。</code></p>
 <p class="interdd">默认值是: <code>NO</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_generate_legend"></a></p>
 </dd>
 <dt><code>GENERATE_LEGEND</code> </dt>
-<dd><p class="startdd"><a name="a295_GENERATE_LEGEND"></a> If the <code>GENERATE_LEGEND</code> 标记被设置为 <code>YES</code> doxygen will generate a legend page explaining the meaning of the various boxes and arrows in the dot generated graphs.</p>
+<dd><p class="startdd"><a name="a295_GENERATE_LEGEND"></a>如果 <code>GENERATE_LEGEND</code> 标记被设置为 <code>YES，</code> 
+doxygen将生成一个图例页面，解释在dot生成的图形中各种方框和箭头的含义。</p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 <a class="anchor" id="cfg_dot_cleanup"></a></p>
 </dd>
 <dt><code>DOT_CLEANUP</code> </dt>
-<dd><p class="startdd"><a name="a296_DOT_CLEANUP"></a> If the <code>DOT_CLEANUP</code> 标记被设置为 <code>YES</code>, doxygen will remove the intermediate dot files that are used to generate the various graphs.</p>
+<dd><p class="startdd"><a name="a296_DOT_CLEANUP"></a>如果 <code>DOT_CLEANUP</code> 标记被设置为 <code>YES，doxygen将删除用于生成各种图形的中间点文件。</code></p>
 <p class="interdd">默认值是: <code>YES</code>.</p>
 <p class="enddd">这个标签需要把标记 <a class="el" href="config.html#cfg_have_dot">HAVE_DOT</a> 设置为 <code>YES</code>。 </p>
 </dd>
 </dl>
 <h1><a class="anchor" id="config_examples"></a>
 举例</h1>
-<p>Suppose you have a simple project consisting of two files: a source file <code>example.cc</code> and a header file <code>example.h</code>。 Then a minimal configuration file is as simple as: </p><pre class="fragment">INPUT            = example.cc example.h
-</pre><p>Assuming the example makes use of Qt classes and <code>perl</code> is located in <code>/usr/bin</code>, a more realistic configuration file would be: </p><pre class="fragment">PROJECT_NAME     = Example
+<p>假设您有一个由两个文件组成的简单项目:一个源文件&nbsp;example.cc和一个头文件example.h。那么一个最小的配置文件是简单的:</p><pre class="fragment">INPUT            = example.cc example.h
+</pre><p>假设这个例子使用了Qt类，并且perl位于/usr/bin中，那么更实际的配置文件应该是:</p><pre class="fragment">PROJECT_NAME     = Example
 INPUT            = example.cc example.h
 WARNINGS         = YES
 TAGFILES         = qt.tag
 SEARCHENGINE     = NO
-</pre><p>To generate the documentation for the <a href="https://sourceforge.net/projects/qdbttabular/">QdbtTabular</a> package I have used the following configuration file: </p><pre class="fragment">PROJECT_NAME     = QdbtTabular
+</pre><p>为了生成QdbtTabular包的文档，我使用了以下配置文件:</p><pre class="fragment">PROJECT_NAME     = QdbtTabular
 OUTPUT_DIRECTORY = html
 WARNINGS         = YES
 INPUT            = examples/examples.doc src
@@ -1944,7 +2032,7 @@ FILE_PATTERNS    = *.cc *.h
 INCLUDE_PATH     = examples
 TAGFILES         = qt.tag
 SEARCHENGINE     = YES
-</pre><p>To regenerate the Qt-1.44 documentation from the sources, you could use the following configuration file: </p><pre class="fragment">PROJECT_NAME         = Qt
+</pre><p>要从源代码重新生成Qt-1.44文档，可以使用以下配置文件:</p><pre class="fragment">PROJECT_NAME         = Qt
 OUTPUT_DIRECTORY     = qt_docs
 HIDE_UNDOC_MEMBERS   = YES
 HIDE_UNDOC_CLASSES   = YES
@@ -1979,7 +2067,7 @@ INPUT                = $(QTDIR)/doc \
 FILE_PATTERNS        = *.cpp *.h q*.doc
 INCLUDE_PATH         = $(QTDIR)/include
 RECURSIVE            = YES
-</pre><p>For the Qt-2.1 sources I recommend to use the following settings: </p><pre class="fragment">PROJECT_NAME          = Qt
+</pre><p>对于Qt-2.1源，我建议使用以下设置:</p><pre class="fragment">PROJECT_NAME          = Qt
 PROJECT_NUMBER        = 2.1
 HIDE_UNDOC_MEMBERS    = YES
 HIDE_UNDOC_CLASSES    = YES
@@ -2004,10 +2092,9 @@ PREDEFINED            = Q_PROPERTY(x)= \
 EXPAND_ONLY_PREDEF    = YES
 EXPAND_AS_DEFINED     = Q_OBJECT_FAKE Q_OBJECT ACTIVATE_SIGNAL_WITH_PARAM \
                         Q_VARIANT_AS
-</pre><p>Here doxygen's preprocessor is used to substitute some macro names that are normally substituted by the C preprocessor, but without doing full macro expansion.</p>
+</pre><p>在这里，doxygen的预处理器被用来代替一些通常由C预处理器代替的宏名，但是没有进行完整的宏扩展。</p>
 <p> 
-Go to the <a href="commands.html">next</a> section or return to the
- <a href="index.html">index</a>.
+转到 <a href="commands.html">下一节</a> 或返回到 <a href="index.html">索引</a>。
  </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
